@@ -5,9 +5,10 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			customCss: ['./src/styles.css'],
+			title: 'Huly Docs',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/hcengineering/platform',
 			},
 			sidebar: [
 				{
