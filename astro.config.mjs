@@ -15,10 +15,9 @@ export default defineConfig({
 					label: 'Getting Started',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Introduction', link: '/getting-started/introduction/' },
+						{ label: 'What is Huly?', link: '/getting-started/introduction/' },
 						{ label: 'Workspace Setup', link: '/getting-started/workspace-setup/' },
-						{ label: 'Creating Teams', link: '/getting-started/create-team/' },
-						{ label: 'Creating Projects', link: '/getting-started/create-project/' },
+						{ label: 'Create a Project', link: '/getting-started/create-project/' },
 						{ label: 'Support', link: '/getting-started/support/' },
 					],
 				},
