@@ -9,7 +9,7 @@ Once your Workspace has been set up, you can create your first Project. Projects
 
 Select the Tracker view by clicking the checkbox icon on the left sidebar, and ensure the side panel is open by clicking the horizontal lines at the top left.
 
-Click the `+` icon that appears when hovering over "Your Projects" in the side panel. This will open a dialog where you can enter some initial settings your Project. After entering your desired settings, click `Create`.
+Click the `+` icon that appears when hovering over "Your Projects" in the side panel. This will open a dialog where you can enter some initial settings for your Project. After entering your desired settings, click `Create`.
 
 ### Project settings
 
@@ -30,3 +30,7 @@ Click the `+` icon that appears when hovering over "Your Projects" in the side p
 **Default issue status**: Select the status all new issues should default to when they are created. For more on issue statuses, see **INSERT LINK**.  
 
 **Members**: Select all members for this project.
+
+### Next Steps
+
+After creating a Project, it's time to begin creating Issues for specific tasks that need to be completed. Click "Next" to learn how to create your first Issue.

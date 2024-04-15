@@ -18,6 +18,7 @@ export default defineConfig({
 						{ label: 'What is Huly?', link: '/getting-started/introduction/' },
 						{ label: 'Workspace Setup', link: '/getting-started/workspace-setup/' },
 						{ label: 'Create a Project', link: '/getting-started/create-project/' },
+						{ label: 'Create an Issue', link: '/getting-started/create-issue/' },
 						{ label: 'Support', link: '/getting-started/support/' },
 					],
 				},
