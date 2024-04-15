@@ -28,3 +28,7 @@ To configure Workspace settings, open the settings panel by clicking on the hori
 > **Owners**: Set roles for all team members as User, Maintainer or Owner.  
 > **Branding**: Add a custom logo for your Workspace.  
 > **Invite Settings**: Configure settings for Workspace invitations.
+
+### Next Steps
+
+Now that you have set up your Workspace, it's time to create your first Project! Click "Next" to find out how.
