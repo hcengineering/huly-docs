@@ -7,7 +7,7 @@ description: Learn more about creating, viewing and editing Issues.
 
 Issues represent specific tasks that need to be completed. Because Issues are assigned to one member at a time, they should be small in scope. Issues are organized into Projects, which define larger portions of work that a team needs to complete.
 
-Whenever an issue is created with a status of "Todo" and is assigned to a team member, the system automatically generates a [Todo](../team-workflows/todos.mdx) in that member's Planner, allowing them to add it to their own schedule.
+Whenever an issue is created with a status of "Todo" and is assigned to a team member, the system automatically generates a [Todo](../../team-workflows/todos) in that member's Planner, allowing them to add it to their own schedule.
 
 ### Creating Issues
 
@@ -27,7 +27,7 @@ Click the blue `+ New Issue` button at the stop of the side panel. This will ope
 
 **Priority**: Choose from No priority, Low, Medium, High or Urgent.
 
-**Assignee**: Select a member to assign this Issue to. When you create an Issue assigned to a member, that member will recieve a [Todo](../team-workflows/todos.mdx) in their Planner that will allow them to add it to their own schedule.
+**Assignee**: Select a member to assign this Issue to. When you create an Issue assigned to a member, that member will recieve a [Todo](../../team-workflows/todos) in their Planner that will allow them to add it to their own schedule.
 
 **Default Issue status**: Select the status all new Issues should default to when they are created.
 
