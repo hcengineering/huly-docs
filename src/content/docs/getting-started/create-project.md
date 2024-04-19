@@ -25,9 +25,9 @@ Click the `+` icon that appears when hovering over "Your Projects" in the side p
 
 **Make private**: Toggle whether you'd like this Project to be visible only to members.  
 
-**Default assignee for issues**: Select a member who you'd like to be assigned issues by default. You will only be able select from members who have been added to this project. For more on assigning issues, see **INSERT LINK**.  
+**Default assignee for Issues**: Select a member who you'd like to be assigned Issues by default. You will only be able select from members who have been added to this project.
 
-**Default issue status**: Select the status all new issues should default to when they are created. For more on issue statuses, see **INSERT LINK**.  
+**Default Issue status**: Select the status all new Issues should default to when they are created.
 
 **Members**: Select all members for this project.
 

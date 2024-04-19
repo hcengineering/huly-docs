@@ -7,7 +7,7 @@ description: Learn more about Issues.
 
 Issues represent specific tasks that need to be completed. Because Issues are assigned to one member at a time, they should be small in scope. Issues are organized into Projects, which define larger portions of work that a team needs to complete.
 
-Whenever an issue is created with a status of "Todo" and is assigned to a team member, the system automatically generates a Todo in that member's Planner, allowing them to add it to their own schedule. Learn more about Todos here (**INSERT LINK**).
+Whenever an issue is created with a status of "Todo" and is assigned to a team member, the system automatically generates a [Todo](../team-workflows/todos.mdx) in that member's Planner, allowing them to add it to their own schedule.
 
 ### Creating Issues
 
@@ -27,9 +27,9 @@ Click the blue `+ New Issue` button at the stop of the side panel. This will ope
 
 **Priority**: Choose from No priority, Low, Medium, High or Urgent.
 
-**Assignee**: Select a member to assign this Issue to. When you create an Issue assigned to a member, that member will recieve a Todo in their Planner that will allow them to add it to their own schedule. For more on Todos, see (**INSERT LINK**).
+**Assignee**: Select a member to assign this Issue to. When you create an Issue assigned to a member, that member will recieve a [Todo](../team-workflows/todos.mdx) in their Planner that will allow them to add it to their own schedule.
 
-**Default issue status**: Select the status all new issues should default to when they are created. For more on issue statuses, see **INSERT LINK**.  
+**Default Issue status**: Select the status all new Issues should default to when they are created.
 
 **Labels**: Add labels for this Issue or add new ones. This is optional, but can be helpful for sorting Issues later.
 
@@ -37,7 +37,7 @@ Click the blue `+ New Issue` button at the stop of the side panel. This will ope
 
 **Due date**: Select a due date for this Issue. This is also optional, and its usefulness will depend on your team's specific use case.
 
-**Set parent issue**: Make this Issue the sub-issue of an existing Issue.
+**Set parent Issue**: Make this Issue the sub-issue of an existing Issue.
 
 **Attach**: Attach a file, image or other media to this Issue.
 

@@ -19,7 +19,7 @@ export default defineConfig({
         label: 'What is Huly?',
         link: '/getting-started/introduction/'
       }, {
-        label: 'Workspace Setup',
+        label: 'Workspace setup',
         link: '/getting-started/workspace-setup/'
       }, {
         label: 'Create a Project',
@@ -27,10 +27,8 @@ export default defineConfig({
       }, {
         label: 'Create an Issue',
         link: '/getting-started/create-issue/'
-      }, {
-        label: 'Support',
-        link: '/getting-started/support/'
-      }]
+      }, 
+    ]
     }, {
       label: 'Team Workflows',
       items: [
@@ -45,21 +43,22 @@ export default defineConfig({
         label: 'Chat',
         link: '/team-workflows/chat/'
       }, {
-        label: 'Virtual Office',
-        link: '/team-workflows/virtual-office/'
-      }, {
         label: 'Inbox',
         link: '/team-workflows/inbox/'
       }, {
         label: 'Documents',
         link: '/team-workflows/documents/'
-      }]
+      }, {
+        label: 'Virtual office',
+        link: '/team-workflows/virtual-office/'
+      },
+    ]
     }, {
       label: 'Integrations',
       items: [
       // Each item here is one entry in the navigation menu.
       {
-        label: 'Google-Calendar',
+        label: 'Google Calendar',
         link: '/team-workflows/google-calendar/'
       }, {
         label: 'Gmail',
