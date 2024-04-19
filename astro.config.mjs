@@ -10,7 +10,7 @@ export default defineConfig({
     social: {
       github: 'https://github.com/hcengineering/platform'
     },
-    favicon: '/public/favicon.ico',
+    favicon: '/favicon.ico',
     sidebar: [{
       label: 'Getting Started',
       items: [
