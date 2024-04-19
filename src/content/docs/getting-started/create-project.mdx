@@ -3,13 +3,16 @@ title: Create a Project
 description: Learn how to create your first project in your Huly workspace.
 ---
 
+import { Image } from 'astro:assets';
+import createProject from '../../../assets/gifs/create-project.gif';
+
 Once your Workspace has been set up, you can create your first Project. Projects are all the things your team will be working on, and can be organized however you'd like to suit your needs. For example, a software engineering team may choose to break their work into Projects like "Frontend", "Backend", "UX/UI" and "Testing". A small business may choose to create Projects like "Inventory", "Marketing," and "Design".
 
 ### Creating your first Project
 
 Select the Tracker view by clicking the checkbox icon on the left sidebar, and ensure the side panel is open by clicking the horizontal lines at the top left.
 
-Click the `+` icon that appears when hovering over "Your Projects" in the side panel. This will open a dialog where you can enter some initial settings for your Project. After entering your desired settings, click `Create`.
+Click the `+` icon that appears when hovering over "Your Projects" in the side panel. Alternatively, click the dropdown menu next to the `+ New issue` button and select `Create project`. This will open a dialog where you can enter some initial settings for your Project. After entering your desired settings, click `Create`.
 
 ### Project settings
 
@@ -25,11 +28,19 @@ Click the `+` icon that appears when hovering over "Your Projects" in the side p
 
 **Make private**: Toggle whether you'd like this Project to be visible only to members.  
 
-**Default assignee for Issues**: Select a member who you'd like to be assigned Issues by default. You will only be able select from members who have been added to this project.
+**Default assignee for Issues**: Select a member who you'd like to be assigned Issues by default.
 
 **Default Issue status**: Select the status all new Issues should default to when they are created.
 
 **Members**: Select all members for this project.
+
+##### *Creating a Project:*
+ <Image 
+  src={createProject} 
+  alt='Create Project' 
+  width={800}
+  />
+  
 
 ### Next Steps
 
