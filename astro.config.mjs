@@ -53,21 +53,23 @@ export default defineConfig({
         link: '/team-workflows/virtual-office/'
       },
     ]
-    }, {
-      label: 'Integrations',
-      items: [
-      // Each item here is one entry in the navigation menu.
-      {
-        label: 'Google Calendar',
-        link: '/team-workflows/google-calendar/'
-      }, {
-        label: 'Gmail',
-        link: '/team-workflows/gmail/'
-      }, {
-        label: 'GitHub',
-        link: '/team-workflows/github/'
-      }]
-    }]
+    }, 
+    // {
+    //   label: 'Integrations',
+    //   items: [
+    //   // Each item here is one entry in the navigation menu.
+    //   {
+    //     label: 'Google Calendar',
+    //     link: '/team-workflows/google-calendar/'
+    //   }, {
+    //     label: 'Gmail',
+    //     link: '/team-workflows/gmail/'
+    //   }, {
+    //     label: 'GitHub',
+    //     link: '/team-workflows/github/'
+    //   }]
+    // }
+  ]
   })],
   image: {
     service: {
