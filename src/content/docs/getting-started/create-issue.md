@@ -1,6 +1,6 @@
 ---
 title: Create an Issue
-description: How to create your first Issue in your Huly workspace.
+description: Learn how to create your first Issue in your Huly workspace.
 ---
 
 Projects can be divided into smaller Issues, each of which represents a specific task that needs to be completed.

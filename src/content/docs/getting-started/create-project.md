@@ -1,6 +1,6 @@
 ---
 title: Create a Project
-description: How to create your first project in your Huly workspace.
+description: Learn how to create your first project in your Huly workspace.
 ---
 
 Once your Workspace has been set up, you can create your first Project. Projects are all the things your team will be working on, and can be organized however you'd like to suit your needs. For example, a software engineering team may choose to break their work into Projects like "Frontend", "Backend", "UX/UI" and "Testing". A small business may choose to create Projects like "Inventory", "Marketing," and "Design".

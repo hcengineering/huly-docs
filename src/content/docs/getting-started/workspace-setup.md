@@ -1,6 +1,6 @@
 ---
 title: Setting up your workspace
-description: How to set up your Huly workspace.
+description: Learn how to set up your Huly workspace.
 ---
 
 ### Creating your first Workspace

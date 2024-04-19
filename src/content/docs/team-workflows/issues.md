@@ -1,6 +1,6 @@
 ---
 title: Issues
-description: Learn more about Issues.
+description: Learn more about creating, viewing and editing Issues.
 ---
 
 ### What are Issues?

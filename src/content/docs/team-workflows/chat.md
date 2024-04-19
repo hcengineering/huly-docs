@@ -1,6 +1,6 @@
 ---
 title: Chat
-description: tbd
+description: Learn how to exchange messages with team members through direct messages, group chats, channels and comments.
 ---
 
 Huly offers many options for team members to communicate directly within the Huly platform without the need for an external app. Huly’s Chat functionality allows team members to exchange messages in real time through direct messaging and shared channels.
