@@ -15,12 +15,12 @@ If this is your first time using the Huly Platform, follow our Getting Started g
 
 If you've already started setting up, jump to any of the steps below:
 
-1. [Workspace Setup](../getting-started/workspace-setup.md)
-2. [Create a Project](../getting-started/create-project.md)
-3. [Create an Issue](../getting-started/create-issue.md)
+1. [Workspace Setup](../workspace-setup)
+2. [Create a Project](../create-project)
+3. [Create an Issue](../create-issue)
 
 If you need help along the way, our [Slack](https://hulycommunity.slack.com/join/shared_invite/zt-29kl7zmwz-2b3RRVTiWhhtAwzHjBm3Wg#/shared-invite/email) community is a great resource for asking questions!
 
 ### Diving deeper
 
-Once you've set up the Huly platform for your team, dive deeper into all Huly has to offer by exploring some of these popular features, like [Todos](../team-workflows/todos.mdx), [Chat](../team-workflows/chat.md) and [Virtual Office](../team-workflows/virtual-office.md).
+Once you've set up the Huly platform for your team, dive deeper into all Huly has to offer by exploring some of these popular features, like [Todos](../../team-workflows/todos), [Chat](../../team-workflows/chat) and [Virtual Office](../../team-workflows/virtual-office).

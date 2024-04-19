@@ -64,7 +64,8 @@ export default defineConfig({
     //   }, {
     //     label: 'Gmail',
     //     link: '/team-workflows/gmail/'
-    //   }, {
+    //   }, 
+    //   {
     //     label: 'GitHub',
     //     link: '/team-workflows/github/'
     //   }]
