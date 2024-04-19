@@ -39,6 +39,6 @@ Click the blue `+ New Issue` button at the stop of the side panel. This will ope
 
 ### Next Steps
 
-Now that you have created your first Workspace, Project and Issue, you're ready to dive deeper into all the rest of what Huly has to offer! Explore popular topics in depth like [Todos](../team-workflows/todos.mdx), [Chat](../team-workflows/chat.md) and [Virtual Office](../team-workflows/virtual-office.md).
+Now that you have created your first Workspace, Project and Issue, you're ready to dive deeper into all the rest of what Huly has to offer! Explore popular topics in depth like [Todos](../../team-workflows/todos), [Chat](../../team-workflows/chat) and [Virtual Office](../../team-workflows/virtual-office).
 
 If you need help along the way, our [Slack](https://hulycommunity.slack.com/join/shared_invite/zt-29kl7zmwz-2b3RRVTiWhhtAwzHjBm3Wg#/shared-invite/email) community is a great resource for asking questions!
