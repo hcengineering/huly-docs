@@ -14,6 +14,9 @@ hero:
     - text: Visit us at Huly.io
       link: https://huly.io/
       icon: external
+      attrs:
+        target: _blank
+        rel: noopener noreferrer
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
@@ -22,15 +25,15 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 <CardGrid stagger>
 	<Card title="Join the Community" icon="slack">
-		Join our community on [Slack](https://hulycommunity.slack.com/join/shared_invite/zt-29kl7zmwz-2b3RRVTiWhhtAwzHjBm3Wg#/shared-invite/email) to see how others are using the platform, get support and share your own experiences.
+		Join our community on <a href="https://hulycommunity.slack.com/join/shared_invite/zt-29kl7zmwz-2b3RRVTiWhhtAwzHjBm3Wg#/shared-invite/email" target="_blank" rel="noopener noreferrer">Slack</a> to see how others are using the platform, get support and share your own experiences.
 	</Card>
 	<Card title="Share how your team is using Huly" icon="x.com">
-		Join the conversation on [Twitter/X](https://twitter.com/huly_io) by sharing how your team is using Huly for better workflow management!
+		Join the conversation on <a href="https://twitter.com/huly_io" target="_blank" rel="noopener noreferrer">Twitter/X</a> by sharing how your team is using Huly for better workflow management!
 	</Card>
 	<Card title="Read the docs" icon="open-book">
 		Learn more about Huly in the [Huly Docs](../../getting-started/introduction).
 	</Card>
 	<Card title="Give Huly a star!" icon="github">
-		Give us a star on [GitHub](https://github.com/hcengineering/platform) -- our team appreciates it!
+		Give us a star on <a href="https://github.com/hcengineering/platform" target="_blank" rel="noopener noreferrer">GitHub</a> -- our team appreciates it!
 	</Card>
 </CardGrid>
