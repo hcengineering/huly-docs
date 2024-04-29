@@ -5,11 +5,16 @@ description: Learn how to integrate Huly with Google Calendar.
 
 Huly integrates seamlessly with Google Calendar for two-way synchronization of event and task scheduling. 
 
-### Integrating with Google Calendar
+### Syncing your Google Calendar with Huly
 
-Click on your user profile icon at the bottom of the left sidebar and select `Integrations`. Below "Calendar", click `Add`.
-
-Click `Connect`. Select the account you would like to connect and click `Continue`. On the next screen, check the box that says `Select all` to provide Huly with the necessary permissions to connect with Google Calendar. Then, click Continue. 
+To sync your Google Calendar with Huly:
+* Click on your user profile icon at the bottom of the left sidebar.
+* Select `Integrations`. 
+* Below "Calendar", click `Add`.
+* Click `Connect`. 
+* Select the account you would like to connect and click `Continue`. 
+* On the next screen, check the box that says `Select all` to provide Huly with the necessary permissions to connect with Google Calendar. 
+* Click `Continue`. 
 
 ### Configuring your calendars
 
@@ -19,10 +24,14 @@ On the Integrations view, click `Configure` under Calendar. Here, you can toggle
 
 After syncing Huly with your Google Calendar, all events from your Google Calendar will be visible on your Huly Planner. 
 
-Events that were created in your Huly Planner before syncing will not automatically appear in your Google Calendar. In order to add an event from Huly to your Google Calendar, click on the event and select the calendar to add it to. Click `Save` to save your settings.
+Events that were created in your Huly Planner before syncing will not automatically appear in your Google Calendar. In order to add an event from Huly to your Google Calendar (whether creating a new event or editing an existing one), select which calendar you'd like to add it to on the event details dialog and click `Save` to save your settings.
 
-When creating a new event in your Huly planner, select your Google Calendar in settings to sync.
+When you create a new event in your Google Calendar, it will appear automatically in your Huly Planner. See below for more on event visibility.
 
 ### Privacy and visibility
 
-Privacy settings for events are also synchronized between 
+Privacy settings for events are also synchronized between your Huly Planner. This means that events on your Google Calendar with visibility set to "Public" will also appear in your Huly Planner as "Visible to everyone". The following visibility settings are available for events:
+
+* **Visible to everyone** - displays title and time slot on the Team Planner; appears as "Public" in Google Calendar
+* **FreeBusy** - displays only the time slot on the Team Planner with the title "Busy"
+* **Only visible to you** - does not display on the Team Planner; appears as "Private" in Google Calendar
