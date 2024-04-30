@@ -25,7 +25,7 @@ Click `Create`.
 
 There are two ways to create a document:
 * Click the `+ Create a document` button at the top of the Documents sidebar. This opens a dialog with the option to select a teamspace for your Document; the default parent will be the most recently selected teamspace or Document. Enter a title for your Document and click `Create`.
-* Hover over the a teamspace name or any other Document and click the `+` button that appears. The new Document will automatically be nested within the Teamspace or Document you selected.
+* Hover over a teamspace name or any other Document and click the `+` button that appears. The new Document will automatically be nested within the Teamspace or Document you selected.
 
 ### Formatting Document content
 
@@ -40,10 +40,10 @@ Images, tables and separator lines are also available by hovering over text and 
 ### Mentions, Todos and collaboration
 
 ##### Mentions
-Mention a team member by using @mention syntax. The member will recieve a notification that they have been mentioned in the Document.
+Mention a team member by using @mention syntax. The member will receive a notification that they have been mentioned in the Document.
 
 ##### Creating Todos
-Create a Todo item by typing `[]` then `space` on a new line. An empty checkbox will appear. As you begin typing, a profile icon will appear to the left of the checkbox. Click this icon to select a team member to assign the task to. That team member will recieve a notification that they have been assigned a Todo, and they'll be able to schedule the Todo in their Planner.
+Create a Todo item by typing `[]` then `space` on a new line. An empty checkbox will appear. As you begin typing, a profile icon will appear to the left of the checkbox. Click this icon to select a team member to assign the task to. That team member will receive a notification that they have been assigned a Todo, and they'll be able to schedule the Todo in their Planner.
 
 Assign a Todo item any time by hovering over the checkbox and clicking the profile icon.
 
