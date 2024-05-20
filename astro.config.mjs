@@ -57,10 +57,11 @@ export default defineConfig({
       label: 'Integrations',
       items: [
       // Each item here is one entry in the navigation menu.
+      {
+        label: 'Google Calendar',
+        link: '/integrations/google-calendar/'
+      }, 
       // {
-      //   label: 'Google Calendar',
-      //   link: '/integrations/google-calendar/'
-      // }, {
       //   label: 'Gmail',
       //   link: '/integrations/gmail/'
       // }, 
