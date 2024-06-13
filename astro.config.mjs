@@ -52,6 +52,10 @@ export default defineConfig({
         label: 'Virtual office',
         link: '/team-workflows/virtual-office/'
       },
+      {
+        label: 'Drive',
+        link: '/team-workflows/drive/'
+      },
     ]
     }, {
       label: 'Integrations',
