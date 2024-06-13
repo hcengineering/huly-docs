@@ -5,7 +5,7 @@ description: Learn more about creating, viewing and editing Issues.
 
 ### What are Issues?
 
-Issues represent specific tasks that need to be completed. Because Issues are assigned to one member at a time, they should be small in scope. Issues are organized into Projects, which define larger portions of work that a team needs to complete.
+Issues represent specific tasks that need to be completed. Issues can be broken down into sub-issues, representing smaller tasks that need to be done to accomplish the parent Issue. Issues are organized into Projects, which define larger portions of work that a team needs to complete.
 
 Whenever an issue is created with a status of "Todo" and is assigned to a team member, the system automatically generates a [Todo](../../team-workflows/todos) in that member's Planner, allowing them to add it to their own schedule.
 
@@ -46,6 +46,11 @@ Click the blue `+ New Issue` button at the stop of the side panel. This will ope
 ##### List and Kanban Views
 The default view for Issues is the List view, where Issues are listed in order of their status. Huly also offers the option for a Kanban view, which displays Issues in a column format. To toggle between the two views, click either the List or Kanban icon in the top right corner of the window.
 
+#### Issue peek & shortcuts
+Press the `space` bar while hovering over any Issue to "peek" at that Issue's details. From this view, you can use the up and down arrows on your keyboard to scroll through your Issues.
+
+Press `C` on your keyboard to create a new Issue from any view.
+
 ##### Sorting, filtering and searching
 Options for sorting and filtering issues can also be found in the top right corner. The `View` button allows for configuration of some viewing settings as well as options for sorting how issues are grouped and ordered on the page. The `Show` button displays toggles for showing and hiding Issue details. 
 
@@ -73,6 +78,6 @@ Click on any Issue to view and edit its details. There are several options for e
 
 There are so many ways to customize Issues to suit the needs of your specific projects and workflows! However, there are a few tips to keep in mind as you create Issues for your team.
 
-- Issues should be small in scope, representing a task assigned to just one person.
+- Issues should be small in scope, representing a task assigned to just one person. For larger tasks, use sub-issues to break them down further.
 - All new Issues should have a status of "Todo" to trigger the system to create a Todo for the assigned team member.
-- In keeping with best practices, an Issue status should never need to be manually changed from "Todo" to "In Progress" or "Done". Rather, the status of an Issue should automatically be determined by the assigned team member's Todo status. For more on how this process is automated, read more about Todos here.
+- In keeping with best practices, an Issue status should never need to be manually changed from "Todo" to "In Progress" or "Done". Rather, the status of an Issue should automatically be determined by the assigned team member's Todo status. For more on how this process is automated, read more about Todos <a href="https://huly.blog/huly-todos" target="_blank">here</a>.
