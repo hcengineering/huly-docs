@@ -32,10 +32,10 @@ export default defineConfig({
       items: [
         {
           label: 'Issues',
-          link: '/team-workflows/issues/'
+          link: '/task-tracking/issues/'
         }, {
           label: 'Todos',
-          link: '/team-workflows/todos/'
+          link: '/task-tracking/todos/'
         },
       ]
     }, {
@@ -43,10 +43,10 @@ export default defineConfig({
       items: [
         {
           label: 'Documents',
-          link: '/team-workflows/documents/'
+          link: '/knowledge-management/documents/'
         },  {
           label: 'Drive',
-          link: '/team-workflows/drive/'
+          link: '/knowledge-management/drive/'
         },
       ]
     }, {
@@ -54,13 +54,13 @@ export default defineConfig({
       items: [
         {
           label: 'Chat',
-          link: '/team-workflows/chat/'
+          link: '/communication/chat/'
         }, {
           label: 'Inbox',
-          link: '/team-workflows/inbox/'
+          link: '/communication/inbox/'
         }, {
           label: 'Virtual office',
-          link: '/team-workflows/virtual-office/'
+          link: '/communication/virtual-office/'
         },
       ]
     }, {
