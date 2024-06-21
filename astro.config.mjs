@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mdx from "@astrojs/mdx";
 
-// https://astro.build/config
 export default defineConfig({
   integrations: [starlight({
     customCss: ['./src/styles.css'],
@@ -14,65 +13,67 @@ export default defineConfig({
     sidebar: [{
       label: 'Getting Started',
       items: [
-      // Each item here is one entry in the navigation menu.
-      {
-        label: 'What is Huly?',
-        link: '/getting-started/introduction/'
-      }, {
-        label: 'Workspace setup',
-        link: '/getting-started/workspace-setup/'
-      }, {
-        label: 'Create a Project',
-        link: '/getting-started/create-project/'
-      }, {
-        label: 'Create an Issue',
-        link: '/getting-started/create-issue/'
-      }, 
-    ]
+        {
+          label: 'What is Huly?',
+          link: '/getting-started/introduction/'
+        }, {
+          label: 'Workspace setup',
+          link: '/getting-started/workspace-setup/'
+        }, {
+          label: 'Create a Project',
+          link: '/getting-started/create-project/'
+        }, {
+          label: 'Create an Issue',
+          link: '/getting-started/create-issue/'
+        }, 
+      ]
     }, {
-      label: 'Team Workflows',
+      label: 'Task Tracking',
       items: [
-      // Each item here is one entry in the navigation menu.
-      {
-        label: 'Issues',
-        link: '/team-workflows/issues/'
-      }, {
-        label: 'Todos',
-        link: '/team-workflows/todos/'
-      }, {
-        label: 'Chat',
-        link: '/team-workflows/chat/'
-      }, {
-        label: 'Inbox',
-        link: '/team-workflows/inbox/'
-      }, {
-        label: 'Documents',
-        link: '/team-workflows/documents/'
-      }, {
-        label: 'Virtual office',
-        link: '/team-workflows/virtual-office/'
-      },
-      {
-        label: 'Drive',
-        link: '/team-workflows/drive/'
-      },
-    ]
+        {
+          label: 'Issues',
+          link: '/team-workflows/issues/'
+        }, {
+          label: 'Todos',
+          link: '/team-workflows/todos/'
+        },
+      ]
+    }, {
+      label: 'Knowledge Management',
+      items: [
+        {
+          label: 'Documents',
+          link: '/team-workflows/documents/'
+        },  {
+          label: 'Drive',
+          link: '/team-workflows/drive/'
+        },
+      ]
+    }, {
+      label: 'Communication',
+      items: [
+        {
+          label: 'Chat',
+          link: '/team-workflows/chat/'
+        }, {
+          label: 'Inbox',
+          link: '/team-workflows/inbox/'
+        }, {
+          label: 'Virtual office',
+          link: '/team-workflows/virtual-office/'
+        },
+      ]
     }, {
       label: 'Integrations',
       items: [
-      // Each item here is one entry in the navigation menu.
-      {
-        label: 'Google Calendar',
-        link: '/integrations/google-calendar/'
-      }, 
-      // {
-      //   label: 'Gmail',
-      //   link: '/integrations/gmail/'
-      // }, 
-      {
-        label: 'GitHub',
-        link: '/integrations/github/'
-      }]
+        {
+          label: 'GitHub',
+          link: '/integrations/github/'
+        }, {
+          label: 'Google Calendar',
+          link: '/integrations/google-calendar/'
+        },
+      ]
     }
   ]
   })],
