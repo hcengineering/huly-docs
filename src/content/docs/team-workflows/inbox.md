@@ -9,7 +9,7 @@ Your Inbox displays all of your messages, Document mentions and  Issue assignmen
 
 ### Direct messages
 
-New messages appear here when they are recieved. You can open, read and reply to messages in your Inbox without leaving the page, but all of your conversations can also be found in the [Chat](../../team-workflows/chat) view, accessed by the speech bubble icon in the left sidebar.
+New messages appear here when they are received. You can open, read and reply to messages in your Inbox without leaving the page, but all of your conversations can also be found in the [Chat](../../team-workflows/chat) view, accessed by the speech bubble icon in the left sidebar.
 
 Hovering over a message will reveal a few options:
 * **Emoji** - reply to a message with an emoji
