@@ -11,7 +11,7 @@ export default defineConfig({
     },
     favicon: '/favicon.ico',
     sidebar: [{
-      label: 'Getting Started',
+      label: 'Getting started',
       items: [
         {
           label: 'What is Huly?',
@@ -20,37 +20,49 @@ export default defineConfig({
           label: 'Workspace setup',
           link: '/getting-started/workspace-setup/'
         }, {
-          label: 'Create a Project',
-          link: '/getting-started/create-project/'
-        }, {
-          label: 'Create an Issue',
-          link: '/getting-started/create-issue/'
-        }, 
+          label: 'Support',
+          link: '/getting-started/support/'
+        }
       ]
     }, {
-      label: 'Task Tracking',
+      label: 'Task tracking',
       items: [
         {
-          label: 'Issues',
-          link: '/task-tracking/issues/'
+          label: 'Creating projects',
+          link: '/task-tracking/creating-projects/'
         }, {
-          label: 'Todos',
-          link: '/task-tracking/todos/'
+          label: 'Creating issues',
+          link: '/task-tracking/creating-issues/'
+        }, {
+          label: 'Viewing and sorting issues',
+          link: '/task-tracking/viewing-issues/'
+        }, {
+          label: 'Creating action items',
+          link: '/task-tracking/creating-action-items/'
+        }, {
+          label: 'Scheduling action items',
+          link: '/task-tracking/scheduling-action-items/'
         },
       ]
     }, {
-      label: 'Knowledge Management',
+      label: 'Knowledge management',
       items: [
         {
           label: 'Documents',
           link: '/knowledge-management/documents/'
+        },  {
+          label: 'Collaborative editing',
+          link: '/knowledge-management/collaborative-editing/'
+        },  {
+          label: 'Action items in documents',
+          link: '/knowledge-management/documents-action-items/'
         },  {
           label: 'Drive',
           link: '/knowledge-management/drive/'
         },
       ]
     }, {
-      label: 'Communication',
+      label: 'Team communication',
       items: [
         {
           label: 'Chat',

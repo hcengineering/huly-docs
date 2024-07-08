@@ -1,0 +1,59 @@
+---
+title: Creating issues
+description: Learn how to create an issue in your Huly workspace.
+---
+
+import { Image } from 'astro:assets';
+import createIssue from '../../../assets/screenshots/create-issue.png';
+
+### What are issues?
+
+Issues represent specific tasks that need to be completed. Issues can be broken down into sub-issues, representing smaller tasks that need to be done to accomplish the parent issue. Issues are organized into projects, which define larger portions of work that a team needs to complete.
+
+Whenever an issue is created with a status of "Todo" and is assigned to a team member, the system automatically generates an [action item](../creating-action-items) in that member's Planner, allowing them to add it to their own schedule.
+
+### Creating an issue
+
+Select the Tracker view by clicking the checkbox icon on the left sidebar, and ensure the side panel is open by clicking the horizontal lines at the top left.
+
+Click the blue `+ New issue` button at the stop of the side panel. This will open a dialog where you can enter some initial settings for your issue. After entering your desired settings, click `Create issue`.
+
+<Image 
+src={createIssue} 
+alt='Create issue' 
+width={900}
+/>
+
+### Issue settings
+
+**Project**: In the top left corner of the dialog, you will see the project that this Issue is associated with. Click on the name of the project to see a dropdown where you can choose to select a different project to associate with this issue.
+
+**Issue title**: A title for your issue.  
+
+**Description**: A description of your issue. Descriptions may be formatted with markdown formatting, including headers, codeblocks, links and more.
+
+**Issue status**: It is recommended to set your issue status to "Todo" when it's first created.  
+
+**Priority**: Choose from No priority, Low, Medium, High or Urgent.
+
+**Assignee**: Select a member to assign this issue to. When you create an issue assigned to a member, that member will recieve an [action item](../../task-tracking/creating-action-items) in their Planner that will allow them to add it to their own schedule.
+
+**Default Issue status**: Select the status all new issues should default to when they are created.
+
+**Labels**: Add labels for this issue or add new ones. This is optional, but can be helpful for sorting issues later.
+
+**Estimation**: Add an estimation for how long this issue will take to complete. This is optional, but is a helpful tool for workflow tracking and scheduling.
+
+**Due date**: Select a due date for this issue. This is also optional, and its usefulness will depend on your team's specific use case.
+
+**Set parent Issue**: Make this issue the sub-issue of an existing issue.
+
+**Attach**: Attach a file, image or other media to this issue.
+
+### Tips for creating effective issues
+
+There are so many ways to customize issues to suit the needs of your specific projects and workflows! However, there are a few tips to keep in mind as you create issues for your team.
+
+- Issues should be small in scope, representing a task assigned to just one person. For larger tasks, use sub-issues to break them down further.
+- Unless they are in backlog, all new issues should have a status of "Todo" to trigger the system to create an action item for the assigned team member.
+- In keeping with best practices, an issue status should never need to be manually changed from "Todo" to "In Progress" or "Done". Rather, the status of an issue should automatically be determined by the assigned team member's action item status. For more on how this process is automated, read more about action items (previously called "Todos") <a href="https://huly.blog/huly-todos" target="_blank">here</a>.
