@@ -65,11 +65,17 @@ export default defineConfig({
       label: 'Team communication',
       items: [
         {
-          label: 'Chat',
+          label: 'Chat messaging',
           link: '/communication/chat/'
+        }, {
+          label: 'Activity tracking in chat',
+          link: '/communication/chat-activity/'
         }, {
           label: 'Inbox',
           link: '/communication/inbox/'
+        }, {
+          label: 'Notifications',
+          link: '/communication/notifications/'
         }, {
           label: 'Virtual office',
           link: '/communication/virtual-office/'
