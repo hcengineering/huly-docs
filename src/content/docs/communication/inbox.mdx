@@ -3,19 +3,30 @@ title: Inbox
 description: Learn how to read and filter messages in your inbox.
 ---
 
+import { Image } from 'astro:assets';
+import inboxPeek from '../../../assets/screenshots/inbox-peek.png';
+
 Access your inbox by clicking on the bell icon in the left sidebar. A red dot at the corner of the bell icon indicates unread notifications.
 
 Several kinds of notifications can be found in your inbox, and you can sort these notificiations by selecting from the following categories in the top menu:
-* **Channels** - Messages from chat channels you are a member of.
-* **Issues** - Tasks that have been assigned to you, and their corresponding action items created in your planner.
-* **Persons** - Updates to people in your workspace.
+* **Direct messages** - Messages received in the chat.
 * **Documents** - Documents you've been mentioned in, and action items assigned to you from within a document.
+* **Issues** - Tasks that have been assigned to you, and their corresponding action items created in your planner.
+* **Messages** - Chat channels that you're a member OfflineAudioCompletionEvent.
 
 Hover over any message in your inbox for the following options:
 * **Emoji** - reply to a message with an emoji
 * **Bookmark** - save a message (adds the message to your saved messages in the chat view)
 * **Pin** - pins the message to the top of the chat
 * **Speech bubble** - reply to the message in a thread
+
+Hovering over a chat message will allow you to peek at the message without marking it as "Read" in your inbox.
+
+<Image 
+src={inboxPeek} 
+alt='Create issue' 
+width={900}
+/>
 
 ### Organizing your inbox
 
