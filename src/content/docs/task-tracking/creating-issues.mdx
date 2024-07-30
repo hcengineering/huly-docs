@@ -9,9 +9,9 @@ import createIssue from '../../../assets/screenshots/create-issue.png';
 
 ### What are issues?
 
-Issues represent specific tasks that need to be completed. Issues can be broken down into sub-issues, representing smaller tasks that need to be done to accomplish the parent issue. Issues are organized into projects, which define larger portions of work that a team needs to complete.
+Issues represent specific tasks that need to be completed. Issues can be broken down into sub-issues for smaller tasks that need to be completed to accomplish the parent issue. Issues are organized into projects, which define distinct spaces that contain your tasks.
 
-Whenever an issue is created with a status of "Todo" and is assigned to a team member, the system automatically generates a [todo](../creating-todos) in that member's Planner, allowing them to add it to their own schedule.
+> **_Note:_** Whenever an issue is created with a status of "Todo" and is assigned to a team member, the system automatically generates a [todo](../creating-todos) in that member's Planner, allowing them to add it to their own schedule.
 
 ### Creating an issue
 
@@ -27,27 +27,27 @@ width={900}
 
 ### Issue settings
 
-**Project**: In the top left corner of the dialog, you will see the project that this Issue is associated with. Click on the name of the project to see a dropdown where you can choose to select a different project to associate with this issue.
+When creating or editing an issue, you can configure the following settings:
+
+**Project**: In the top left corner of the dialog, you will see the project that this issue is associated with. Click on the name of the project to see a dropdown where you can choose to select a different project to associate with this issue.
 
 **Issue title**: A title for your issue.  
 
 **Description**: A description of your issue. Descriptions may be formatted with markdown formatting, including headers, codeblocks, links and more.
 
-**Issue status**: It is recommended to set your issue status to "Todo" when it's first created.  
+**Issue status**: Setting the issue status to 'Todo' (and adding an assignee) will automatically generate a [todo](../creating-todos) in that member's Planner 
 
 **Priority**: Choose from No priority, Low, Medium, High or Urgent.
 
-**Assignee**: Select a member to assign this issue to. When you create an issue assigned to a member, that member will recieve a [todo](../../task-tracking/creating-todos) in their Planner that will allow them to add it to their own schedule.
-
-**Default Issue status**: Select the status all new issues should default to when they are created.
+**Assignee**: Select a member to assign this issue to.
 
 **Labels**: Add labels for this issue or add new ones. This is optional, but can be helpful for sorting issues later.
 
 **Estimation**: Add an estimation for how long this issue will take to complete. This is optional, but is a helpful tool for workflow tracking and scheduling.
 
-**Due date**: Select a due date for this issue. This is also optional, and its usefulness will depend on your team's specific use case.
+**Due date**: Select a due date for this issue. This is also optional.
 
-**Set parent Issue**: Make this issue the sub-issue of an existing issue.
+**Set parent issue**: Make this issue the sub-issue of an existing issue.
 
 **Attach**: Attach a file, image or other media to this issue.
 
@@ -57,7 +57,7 @@ There are so many ways to customize issues to suit the needs of your specific pr
 
 - Issues should be small in scope, representing a task assigned to just one person. For larger tasks, use sub-issues to break them down further.
 - Unless they are in backlog, all new issues should have a status of "Todo" to trigger the system to create a todo for the assigned team member.
-- In keeping with best practices, an issue status should never need to be manually changed from "Todo" to "In Progress" or "Done". Rather, the status of an issue should automatically be determined by the assigned team member's todo status. For more on how this process is automated, read more about todos <a href="https://huly.blog/huly-todos" target="_blank">here</a>.
+- In keeping with best practices, an issue status should not need to be manually changed from "Todo" to "In Progress" or "Done". The status of an issue can be automatically be determined by the assigned team member's todo status. For more on how this process is automated (and why), read more about todos <a href="https://huly.blog/huly-todos" target="_blank">here</a>.
 
 ### Dive deeper with our video tutorial
 
