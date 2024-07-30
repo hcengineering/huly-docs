@@ -2,7 +2,6 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mdx from "@astrojs/mdx";
 
-// https://astro.build/config
 export default defineConfig({
   integrations: [starlight({
     customCss: ['./src/styles.css'],
@@ -12,67 +11,87 @@ export default defineConfig({
     },
     favicon: '/favicon.ico',
     sidebar: [{
-      label: 'Getting Started',
+      label: 'Getting started',
       items: [
-      // Each item here is one entry in the navigation menu.
-      {
-        label: 'What is Huly?',
-        link: '/getting-started/introduction/'
-      }, {
-        label: 'Workspace setup',
-        link: '/getting-started/workspace-setup/'
-      }, {
-        label: 'Create a Project',
-        link: '/getting-started/create-project/'
-      }, {
-        label: 'Create an Issue',
-        link: '/getting-started/create-issue/'
-      }, 
-    ]
+        {
+          label: 'What is Huly?',
+          link: '/getting-started/introduction/'
+        }, {
+          label: 'Workspace setup',
+          link: '/getting-started/workspace-setup/'
+        }, {
+          label: 'Support',
+          link: '/getting-started/support/'
+        }
+      ]
     }, {
-      label: 'Team Workflows',
+      label: 'Task tracking',
       items: [
-      // Each item here is one entry in the navigation menu.
-      {
-        label: 'Issues',
-        link: '/team-workflows/issues/'
-      }, {
-        label: 'Todos',
-        link: '/team-workflows/todos/'
-      }, {
-        label: 'Chat',
-        link: '/team-workflows/chat/'
-      }, {
-        label: 'Inbox',
-        link: '/team-workflows/inbox/'
-      }, {
-        label: 'Documents',
-        link: '/team-workflows/documents/'
-      }, {
-        label: 'Virtual office',
-        link: '/team-workflows/virtual-office/'
-      },
-      {
-        label: 'Drive',
-        link: '/team-workflows/drive/'
-      },
-    ]
+        {
+          label: 'Creating projects',
+          link: '/task-tracking/creating-projects/'
+        }, {
+          label: 'Creating issues',
+          link: '/task-tracking/creating-issues/'
+        }, {
+          label: 'Viewing and sorting issues',
+          link: '/task-tracking/viewing-issues/'
+        }, {
+          label: 'Creating todos',
+          link: '/task-tracking/creating-todos/'
+        }, {
+          label: 'Scheduling todos',
+          link: '/task-tracking/scheduling-todos/'
+        },
+      ]
+    }, {
+      label: 'Knowledge management',
+      items: [
+        {
+          label: 'Documents',
+          link: '/knowledge-management/documents/'
+        },  {
+          label: 'Collaborative editing',
+          link: '/knowledge-management/collaborative-editing/'
+        },  {
+          label: 'Todos in documents',
+          link: '/knowledge-management/documents-todos/'
+        },  {
+          label: 'Drive',
+          link: '/knowledge-management/drive/'
+        },
+      ]
+    }, {
+      label: 'Team communication',
+      items: [
+        {
+          label: 'Chat messaging',
+          link: '/communication/chat/'
+        }, {
+          label: 'Activity tracking in chat',
+          link: '/communication/chat-activity/'
+        }, {
+          label: 'Inbox',
+          link: '/communication/inbox/'
+        }, {
+          label: 'Notifications',
+          link: '/communication/notifications/'
+        }, {
+          label: 'Virtual office',
+          link: '/communication/virtual-office/'
+        },
+      ]
     }, {
       label: 'Integrations',
       items: [
-      // Each item here is one entry in the navigation menu.
-      {
-        label: 'Google Calendar',
-        link: '/integrations/google-calendar/'
-      }, 
-      // {
-      //   label: 'Gmail',
-      //   link: '/integrations/gmail/'
-      // }, 
-      {
-        label: 'GitHub',
-        link: '/integrations/github/'
-      }]
+        {
+          label: 'GitHub',
+          link: '/integrations/github/'
+        }, {
+          label: 'Google Calendar',
+          link: '/integrations/google-calendar/'
+        },
+      ]
     }
   ]
   })],

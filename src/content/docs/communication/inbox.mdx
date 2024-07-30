@@ -1,0 +1,37 @@
+---
+title: Inbox
+description: Learn how to read and filter messages in your inbox.
+---
+
+import { Image } from 'astro:assets';
+import inboxPeek from '../../../assets/screenshots/inbox-peek.png';
+
+Access your inbox by clicking on the bell icon in the left sidebar. A red dot at the corner of the bell icon indicates unread notifications.
+
+Several kinds of notifications can be found in your inbox, and you can sort these notificiations by selecting from the following categories in the top menu:
+* **Direct messages** - Messages received in the chat.
+* **Documents** - Documents you've been mentioned in, and todos assigned to you from within a document.
+* **Issues** - Tasks that have been assigned to you, and their corresponding todos created in your planner.
+* **Messages** - Chat channels that you're a member of.
+
+Hover over any message in your inbox for the following options:
+* **Emoji** - reply to a message with an emoji
+* **Bookmark** - save a message (adds the message to your saved messages in the chat view)
+* **Pin** - pins the message to the top of the chat
+* **Speech bubble** - reply to the message in a thread
+
+Hovering over a chat message will allow you to peek at the message without marking it as "Read" in your inbox.
+
+<Image 
+src={inboxPeek} 
+alt='Create issue' 
+width={900}
+/>
+
+### Organizing your inbox
+
+Selecting the settings icon on the top right of the inbox sidebar opens a dialog for toggling `Unreads` and `Archived`, allowing you to filter messages in your inbox by only unread or archived messages.
+
+The next icon with the three dots opens a dialog for bulk actions, allowing you to mark all messages as read or unread, or archive all of your messages.
+
+You can also click the circular checkbox next to any message to archive it. Additionally, you can click the three vertical dots to open a dialog with options to mark it as unread, archive it or unsubscribe from notifications about that thread, document or issue.

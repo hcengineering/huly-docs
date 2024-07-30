@@ -1,0 +1,76 @@
+---
+title: Documents
+description: Learn how to use documents to collaborate with teammates and organize information.
+---
+
+import { Image } from 'astro:assets';
+import { YouTube } from 'astro-embed';
+import documentMention from '../../../assets/screenshots/document-mention.png';
+
+There are many uses for documents on the Huly platform, including sharing reference materials among team members, collaborating on plans and roadmaps, saving meeting notes and assigning todos. This guide will walk you through the basics of creating and formatting documents, as well as some of the options available for managing your documents. For more advanced document features, see the following guides:
+
+* [Collaborative editing](/knowledge-management/collaborative-editing)
+* [Todos in documents](/knowledge-management/documents-todos)
+
+### Creating a teamspace
+
+Documents are organized into teamspaces, which can be used to model your team's specific needs. For example, you may choose to organize your documents into teamspaces called "Features", "Marketing", "Style Guides" etc.
+
+To create a teamspace, click the `+` that appears when hovering over the word "Teamspaces" in the sidebar, or by clicking the dropdown arrow next to  the `+ Create a document` button and selecting `Create teamspace`.
+
+From here, you can enter the following details:
+* **Space type** - Currently defaults to settings optimal for the Huly platform
+* **Teamspace title** - A title for your teamspace
+* **Description** - A description of your teamspace
+* **Icon** - Choose an icon to represent your teamspace, either from a default icon with a custom color, or an emoji
+* **Make private** - Toggles whether the teamspace is visible to people outside of the selected members
+* **Members** - Select which members are a part of this teamspace
+
+Click `Create`.
+
+### Creating a document
+
+There are two ways to create a document:
+* Click the `+ Create a document` button at the top of the documents sidebar. This opens a dialog with the option to select a teamspace for your document; the default parent will be the most recently selected teamspace or document. Enter a title for your document and click `Create`.
+* Hover over a teamspace name or any other document and click the `+` button that appears. The new document will automatically be nested within the teamspace or document you selected.
+
+### Formatting document content
+
+Documents support markdown formatting. There are a few ways to access formatting options for your text:
+* Type markdown syntax directly into your document.
+* Use the floating toolbar that appears when text is selected on the page. 
+
+Formatting options include headers, text emphasis, links, blockquotes, numbered and bulleted lists, and code blocks.
+
+Images, tables and separator lines are also available by hovering over text and clicking the `+` icon that appears on the left side.
+
+### @mentions
+Mention a team member by using @mention syntax. The member will receive a notification that they have been mentioned in the document.
+
+Use `@` to tag any issue or document in Huly. Soon, all objects in Huly will be available to tag anywhere, including Drive files, teamspaces and more - keep an eye out for updates on this feature!
+
+<Image 
+src={documentMention} 
+alt='Document mention' 
+width={900}
+/>
+
+### Assigning todos
+When working on projects together, it may be helpful to assign small todos that aren't necessarily connected to any particular issue in the Tracker. Check out our guide on [assigning todos in documents](/knowledge-management/documents-todos) to learn more about this feature!
+
+### Options for documents
+
+A number of additional options for documents are available using the toolbar at the top right of the document:
+
+* **Settings icon** - Opens a dialog with options to create a new document, copy the URL, move the Document to a different parent, generate a public link or delete the document.
+* **Clipboard icon** - Copies the document link.
+* **Star icon** - Marks the document as a favorite.
+* **Paper clip icon** - Displays backlinks (any other documents that contain references to this one)
+* **Clock icon** - Shows any history of snapshots taken of the document (this feature is still in development).
+* **Expand icon** - Expands to document to a larger view.
+
+### Dive deeper with our video tutorial
+
+Check out our tutorial on documents in Huly for a step-by-step guide on creating documents, assigning todos and collaborating with teammates.
+
+<YouTube id='cspdJ5TjFNQ' />
