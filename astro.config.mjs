@@ -82,6 +82,20 @@ export default defineConfig({
         },
       ]
     }, {
+      label: 'People and contacts',
+      items: [
+        {
+          label: 'Managing contacts',
+          link: '/people-contacts/managing-contacts/'
+        }, {
+          label: 'Employees',
+          link: '/people-contacts/employees/'
+        }, {
+          label: 'Connecting tasks',
+          link: '/people-contacts/connecting-tasks/'
+        }
+      ]
+    }, {
       label: 'Integrations',
       items: [
         {
@@ -92,7 +106,7 @@ export default defineConfig({
           link: '/integrations/google-calendar/'
         },
       ]
-    }
+    }, 
   ]
   })],
   image: {
