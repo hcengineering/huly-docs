@@ -37,11 +37,11 @@ export default defineConfig({
           label: 'Viewing and sorting issues',
           link: '/task-tracking/viewing-issues/'
         }, {
-          label: 'Creating action items',
-          link: '/task-tracking/creating-action-items/'
+          label: 'Creating todos',
+          link: '/task-tracking/creating-todos/'
         }, {
-          label: 'Scheduling action items',
-          link: '/task-tracking/scheduling-action-items/'
+          label: 'Scheduling todos',
+          link: '/task-tracking/scheduling-todos/'
         },
       ]
     }, {
@@ -54,8 +54,8 @@ export default defineConfig({
           label: 'Collaborative editing',
           link: '/knowledge-management/collaborative-editing/'
         },  {
-          label: 'Action items in documents',
-          link: '/knowledge-management/documents-action-items/'
+          label: 'Todos in documents',
+          link: '/knowledge-management/documents-todos/'
         },  {
           label: 'Drive',
           link: '/knowledge-management/drive/'
