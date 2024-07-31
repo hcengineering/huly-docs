@@ -65,11 +65,11 @@ export default defineConfig({
       label: 'Team communication',
       items: [
         {
-          label: 'Chat messaging',
-          link: '/communication/chat/'
-        }, {
           label: 'Activity tracking in chat',
           link: '/communication/chat-activity/'
+        }, {
+          label: 'Sending messages',
+          link: '/communication/sending-messages/'
         }, {
           label: 'Inbox',
           link: '/communication/inbox/'
