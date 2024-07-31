@@ -3,6 +3,9 @@ title: Drive
 description: Learn how to use Drive for file storage and sharing.
 ---
 
+import { Image } from 'astro:assets';
+import drivePreview from '../../../assets/screenshots/drive-preview.png';
+
 Drive is a robust and versatile file storage system fully customizable to your team's needs. Store any type of file directly within your workspace and keep everything organized with customizable folders and privacy settings. Files stored in Drive are easily accessible for viewing, printing and downloading, allowing teams to efficiently share resources and promote collaboration. Teams can add members to specific Drive spaces, ensuring everyone has access to the files they need without compromising security.
 
 ### Creating your Drive
@@ -15,12 +18,24 @@ To create a Drive, click the dropdown arrow next to the `+ Upload File` button a
 
 You can further organize your Drives into folders containing files. To create a new folder, click the breadcrumb icon that appears when hovering over the name of your Drive in the left sidebar. Alternatively, click the dropdown arrow next to the `+ Upload File` button and select `Create Folder`. Enter a name for your folder and click `Create`.
 
-### Uploading files
-To upload a file to your Drive, click the `+ Upload File` button at the top of the Drive sidebar. Select the file or multiple files you'd like to upload from your computer. Once the files have been uploaded, they will appear listed in your Drive.
+### Uploading files and folders
 
-To view a file, click on the file name in your Drive. A preview of will open, where you can expand to view larger, print, or download the file. To download a file, click the download icon in the top right corner of the preview.
+To upload a file or folder to your Drive, click the `+ Upload File` button at the top of the Drive sidebar. Select the file or multiple files you'd like to upload from your computer, or drag and drop them into the upload area. Once the files have been uploaded, they will appear listed in your Drive.
 
----
+To view a file, click on the file name in your Drive. Several options are available for files in drive:
 
-#### Coming soon!
-The upcoming version of Huly will bring several significant improvements to Drive! Keep an eye out for updates on these changes, including drag-and-drop uploading, folder uploads, grid view, and the ability to add comments and attachments to your files.
+* **Rename your file** - open the right sidebar and click on the file name to rename it.
+* **Download** - click the download icon to download the file to your computer.
+* **Move**  - open the settings menu and select `Move` to change the parent folder or Drive for your file.
+
+### Adding comments
+
+<Image 
+src={drivePreview} 
+alt='Preview of a file in Drive' 
+width={900}
+/>
+
+You can add comments on files in the Activity section below the file preview. Just like anywhere else in the Huly platform, comments support markdown formatting, attachments, mentions, emojis and text templates. Comments can be used to provide feedback, ask questions, or discuss the contents of the file. Just like other objects in the Huly platform, activity related to files can be accessed from Chat as well, allowing you to keep track of discussions and changes all in one place.
+
+See our guide on [activity tracking in Chat](../../communication/chat-activity) to learn more about how comments on your Drive files are connected to the rest of your workspace.
