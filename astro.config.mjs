@@ -37,6 +37,9 @@ export default defineConfig({
           label: 'Viewing and sorting issues',
           link: '/task-tracking/viewing-issues/'
         }, {
+          label: 'Related issues',
+          link: '/task-tracking/related-issues/'
+        }, {
           label: 'Creating action items',
           link: '/task-tracking/creating-action-items/'
         }, {
