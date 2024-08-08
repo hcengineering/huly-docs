@@ -1,0 +1,54 @@
+---
+title: Related and blocking issues
+description: Learn how to create an issue in your Huly workspace.
+---
+
+import { Image } from 'astro:assets';
+import relatedIssue from '../../../assets/screenshots/related-issue.png';
+import filteredIssues from '../../../assets/screenshots/filtered-issues.png';
+
+### What are related issues?
+
+While it's possible to connect multiple issues together by creating sub-issues, sometimes you may want to connect two issues that don't have a direct parent-child relationship. For example, two issues may deal with a similar component, or one issue might be blocking another. In these cases, you can use issue relations to connect them in your task tracker.
+
+There are a few options available for connecting related issues in Huly:
+
+* Referencing an issue that already exists in your tracker
+* Creating a new issue that will be related to an existing issue
+* Marking issues as "Blocked by"
+
+### Referencing an existing issue
+
+On the details page for any issue, open the dropdown menu and select `Relations`, then `Reference another issue`. From here, you can select an any issue from the list of suggestions, or search for a specific issue by typing in the search bar. After you've selected an issue, you'll see it appear in the "Related to" field in the issue details, where you can click to navigate directly to the related issue.
+
+> **Note:** You can also choose to reference other objects in Huly, like people or documents. These features will be covered separately in a future guide.
+
+<Image 
+src={relatedIssue} 
+alt='Related issue' 
+width={900}
+/>
+
+### Creating a new related issue
+
+If you've created an issue and you already know you'd like to create a new issue that's related to the first one, you can create a new issue directly from the dropdown menu by selecting `New related issue`.
+
+This will open a dialog where you can fill out the details for the new issue. Once you've created the new issue, it will be automatically linked as a related issue.
+
+### Blocking issues
+
+There may be cases where one issue is dependent on another, and you want to indicate that one issue should be resolved before the other one is completed. In these cases, you can mark one issue as "blocking" the other.
+
+Open the dropdown menu on any issue detail page and select `Relations`, then choose `Mark as blocked by`. Then, select the blocking issue from the menu. This will add the issue to the "Blocked by" field in the issue details.
+
+> **Note:** The current implementation does not actually prevent a blocked issue from being marked as complete before the blocking issue, but future versions of Huly will include a more complete development of this feature. In the meantime, you can use this feature as a visual indicator of dependencies between issues. Just like any other issue property, blocking can also be used when sorting issues in your tracker (see below).
+
+### Viewing related and blocked issues
+
+In your tracker, you can filter issues by their related or blocking status by opening the `Filter` menu and selecting either "Related to" or "Blocked by". This will display only the issues that are related to or blocked by the selected issue. For example, below I've filtered all issues in the tracker by those related to an issue for checking color contrast:
+
+<Image 
+src={filteredIssues} 
+alt='Issues filtered by related status' 
+width={900}
+/>
