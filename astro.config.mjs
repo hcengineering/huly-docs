@@ -6,10 +6,11 @@ export default defineConfig({
   integrations: [starlight({
     customCss: ['./src/styles.css'],
     title: 'Huly Docs',
-    social: {
-      github: 'https://github.com/hcengineering/platform'
-    },
     favicon: '/favicon.ico',
+    components: {
+      // override default 'SocialIcons' component
+      SocialIcons: './src/components/CustomSocialIcons.astro'
+    },
     sidebar: [{
       label: 'Getting started',
       items: [
