@@ -110,6 +110,17 @@ export default defineConfig({
           link: '/integrations/google-calendar/'
         },
       ]
+    }, {
+      label: 'TraceX eQMS',
+      items: [
+        {
+          label: 'What is TraceX?',
+          link: '/eqms/introduction/'
+        }, {
+          label: 'Roles and permissions',
+          link: '/eqms/roles/'
+        }
+      ]
     }, 
   ]
   })],
