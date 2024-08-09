@@ -1,0 +1,29 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+import { Icon } from '@astrojs/starlight/components';
+
+---
+
+<Default {...Astro.props}><slot /></Default>
+<div class="custom-social-icons">
+    <a href="https://huly.io" target="_blank" rel="noreferrer">Huly.io</a>
+    <a href="https://github.com/hcengineering/platform" target="_blank" rel="noreferrer">
+        <Icon name="github" color="var(--sl-color-accent-high)" size="1.2rem" />
+    </a>
+</div>
+
+<style>
+    .custom-social-icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    a {
+        display: flex;
+        align-items: center;
+        color: var(--sl-color-accent-high);
+        text-decoration: none;
+        font-weight: 400;
+    }
+</style>
