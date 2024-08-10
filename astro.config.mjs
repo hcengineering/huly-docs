@@ -27,6 +27,7 @@ export default defineConfig({
       ]
     }, {
       label: 'Task tracking',
+      collapsed: true,
       items: [
         {
           label: 'Creating projects',
@@ -50,6 +51,7 @@ export default defineConfig({
       ]
     }, {
       label: 'Knowledge management',
+      collapsed: true,
       items: [
         {
           label: 'Documents',
@@ -67,6 +69,7 @@ export default defineConfig({
       ]
     }, {
       label: 'Team communication',
+      collapsed: true,
       items: [
         {
           label: 'Activity tracking in chat',
@@ -87,6 +90,7 @@ export default defineConfig({
       ]
     }, {
       label: 'People and contacts',
+      collapsed: true,
       items: [
         {
           label: 'Managing contacts',
@@ -101,6 +105,7 @@ export default defineConfig({
       ]
     }, {
       label: 'Integrations',
+      collapsed: true,
       items: [
         {
           label: 'GitHub',
@@ -112,6 +117,7 @@ export default defineConfig({
       ]
     }, {
       label: 'TraceX eQMS',
+      collapsed: true,
       items: [
         {
           label: 'What is TraceX?',
@@ -119,6 +125,9 @@ export default defineConfig({
         }, {
           label: 'Roles and permissions',
           link: '/eqms/roles/'
+        }, {
+          label: 'Products',
+          link: '/eqms/products/'
         }, {
           label: 'Documents',
           items: [
@@ -131,6 +140,9 @@ export default defineConfig({
             }, {
               label: 'Quality documents',
               link: '/eqms/quality-documents/'
+            }, {
+              label: 'Technical documentation',
+              link: '/eqms/technical-documentation/'
             }
           ]
         }
