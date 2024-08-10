@@ -119,6 +119,9 @@ export default defineConfig({
         }, {
           label: 'Roles and permissions',
           link: '/eqms/roles/'
+        }, {
+          label: 'Templates',
+          link: '/eqms/templates/'
         }
       ]
     }, 
