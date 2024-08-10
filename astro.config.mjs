@@ -120,11 +120,19 @@ export default defineConfig({
           label: 'Roles and permissions',
           link: '/eqms/roles/'
         }, {
-          label: 'Templates',
-          link: '/eqms/templates/'
-        }, {
-          label: 'Quality documents',
-          link: '/eqms/quality-documents/'
+          label: 'Documents',
+          items: [
+            {
+              label: 'Controlled documents',
+              link: '/eqms/controlled-documents/'
+            }, {
+              label: 'Templates',
+              link: '/eqms/templates/'
+            }, {
+              label: 'Quality documents',
+              link: '/eqms/quality-documents/'
+            }
+          ]
         }
       ]
     }, 
