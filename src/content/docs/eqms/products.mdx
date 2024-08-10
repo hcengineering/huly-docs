@@ -3,6 +3,10 @@ title: Products
 description: Learn how to create and manage products.
 ---
 
+import { Image } from 'astro:assets';
+import createProduct from '../../../assets/screenshots/eqms/create-product.png';
+import createProductVersion from '../../../assets/screenshots/eqms/create-product-version.png';
+
 New products can be created within the Products module. Products are used to represent physical or digital products that your organization produces, and can be linked to other objects in TraceX.
 
 ### Creating a product
@@ -10,6 +14,13 @@ New products can be created within the Products module. Products are used to rep
 To create a product, click the `+ Product` button in the Products module.
 
 Provide a title and description, and select members and roles as needed. Then, click `Create`.
+
+<Image 
+src={createProduct} 
+alt='Creating a new product' 
+inferSize
+quality='max'
+/>
 
 ### Creating a product version
 
@@ -20,6 +31,13 @@ To create a new version of a product from within the Products module, open the d
 From here, you'll be able to provide a name and description for the new version, and select if the change is substantial or not (minor or major). You'll also be able to select your Change Control document from the dropdown menu.
 
 After providing the necessary details, click `Create`. The new version will be added to the product's version history.
+
+<Image 
+src={createProductVersion} 
+alt='Creating a new product version' 
+inferSize
+quality='max'
+/>
 
 ### Technical product documentation
 

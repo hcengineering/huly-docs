@@ -3,6 +3,12 @@ title: Technical Documentation
 description: Learn how to create and manage technical documentation.
 ---
 
+import { Image } from 'astro:assets';
+import newTechnicalDoc1 from '../../../assets/screenshots/eqms/new-technical-doc-1.png';
+import newTechnicalDoc2 from '../../../assets/screenshots/eqms/new-technical-doc-2.png';
+import newTechnicalDoc3 from '../../../assets/screenshots/eqms/new-technical-doc-3.png';
+import newTechnicalDoc4 from '../../../assets/screenshots/eqms/new-technical-doc-4.png';
+
 Technical documentation is part of the Controlled Documents module and is used for managing product development records, such as test reports and requirement documents.
 
 ### Creating a technical document
@@ -13,13 +19,41 @@ To create a new technical document, open the settings menu next to any product s
 
 Proceed through the following steps to create the document:
 
-* **Step 1:** Select a space (folder) and parent. A document can be the direct child of the space itself (at the top level of the space), or it can be a child of a document within that space.
+**Step 1:** Select a space and parent for your document. The space defines the roles and permissions that will apply; the parent simply determines where the document will be stored. A document can be the direct child of the space itself (at the top level of the space), or it can be a child of a document within that space.
 
-* **Step 2:** Select a template for your document. See our guide on eQMS [templates](../templates) for more information about how to create reusable templates for controlled documents.
+<Image 
+src={newTechnicalDoc1} 
+alt='Step 1 for creating a new technical document' 
+inferSize
+quality='max'
+/>
 
-* **Step 3:** Provide details for your document, including a title, description, and reason for creation.
+**Step 2:** Select a template for your document. See our guide on eQMS [templates](../templates) for more information about how to create reusable templates for controlled documents.
 
-* **Step 4:** Select team members that will be working on the document, including Co-Authors, Reviewers, and Approvers.
+<Image 
+src={newTechnicalDoc2} 
+alt='Step 2 for creating a new technical document' 
+inferSize
+quality='max'
+/>
+
+**Step 3:** Provide details for your document, including a title, description, and reason for creation.
+
+<Image 
+src={newTechnicalDoc3} 
+alt='Step 3 for creating a new technical document' 
+inferSize
+quality='max'
+/>
+
+**Step 4:** Select team members that will be working on the document, including Co-Authors, Reviewers, and Approvers.
+
+<Image 
+src={newTechnicalDoc4} 
+alt='Step 4 for creating a new technical document' 
+inferSize
+quality='max'
+/>
 
 After proceeding through the above steps, click `Create Draft`.
 

@@ -3,23 +3,65 @@ title: Quality Documents
 description: Learn how to create and manage quality documents.
 ---
 
+import { Image } from 'astro:assets';
+import createNewQualityDoc from '../../../assets/screenshots/eqms/create-new-quality-doc.png';
+import newQualityDocument1 from '../../../assets/screenshots/eqms/new-quality-doc-1.png';
+import newQualityDocument2 from '../../../assets/screenshots/eqms/new-quality-doc-2.png';
+import newQualityDocument3 from '../../../assets/screenshots/eqms/new-quality-doc-3.png';
+import newQualityDocument4 from '../../../assets/screenshots/eqms/new-quality-doc-4.png';
+
 Quality documents are a part of the Controlled Documents module and are used for managing quality-related documents, such as standard operating procedures and work instructions.
 
 ### Creating a quality document
 
-To create a quality document, open the settings menu next to `QUALITY DOCUMENTS` in the left sidebar and select `Create new document`.
+To create a quality document, open the settings menu next to `QUALITY DOCUMENTS` in the left sidebar and select `Create new document`. 
 
-> **Note:** A new document can also be created as a child of any existing document.
+<Image 
+src={createNewQualityDoc} 
+alt='Dropdown menu to create a new quality document' 
+inferSize
+quality='max'
+/>
+
+It's also possible to create a quality document by clicking the blue `+ New document` button in the top left corner of the Controlled Documents module and then selecting `Quality documents` as the space.
 
 Proceed through the following steps to create the document:
 
-* **Step 1:** Select a space (folder) and parent. A document can be the direct child of the space itself (at the top level of the space), or it can be a child of a document within that space.
+**Step 1:** Select a space and parent for your document. The space defines the roles and permissions that will apply; the parent simply determines where the document will be stored. A document can be the direct child of the space itself (at the top level of the space), or it can be a child of a document within that space.
 
-* **Step 2:** Select a template for your document. See our guide on eQMS [templates](../templates) for more information about how to create reusable templates for controlled documents.
+<Image 
+src={newQualityDocument1} 
+alt='Step 1 for creating a new quality document' 
+inferSize
+quality='max'
+/>
 
-* **Step 3:** Provide details for your document, including a title, description, and reason for document creation.
+**Step 2:** Select a template for your document. See our guide on [templates](../templates) for more information about how to create reusable templates for controlled documents.
 
-* **Step 4:** Select team members that will be working on the document, including Co-Authors, Reviewers, and Approvers.
+<Image 
+src={newQualityDocument2} 
+alt='Step 2 for creating a new quality document' 
+inferSize
+quality='max'
+/>
+
+**Step 3:** Provide details for your document, including a title, description, and reason for document creation.
+
+<Image 
+src={newQualityDocument3} 
+alt='Step 3 for creating a new quality document' 
+inferSize
+quality='max'
+/>
+
+**Step 4:** Select team members that will be working on the document, including Co-Authors, Reviewers, and Approvers.
+
+<Image 
+src={newQualityDocument4} 
+alt='Step 4 for creating a new quality document' 
+inferSize
+quality='max'
+/>
 
 After proceeding through the above steps, click `Create Draft`.
 
