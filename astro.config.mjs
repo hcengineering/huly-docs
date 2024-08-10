@@ -122,6 +122,9 @@ export default defineConfig({
         }, {
           label: 'Templates',
           link: '/eqms/templates/'
+        }, {
+          label: 'Quality documents',
+          link: '/eqms/quality-documents/'
         }
       ]
     }, 
