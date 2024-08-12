@@ -1,0 +1,127 @@
+---
+title: Controlled Documents
+description: Learn about controlled documents in eQMS.
+---
+
+import { Image } from 'astro:assets';
+import { YouTube } from 'astro-embed';
+import documentComment from '../../../assets/screenshots/eqms/comment.png';
+import addSection from '../../../assets/screenshots/eqms/add-section.png';
+import documentGuidance from '../../../assets/screenshots/eqms/guidance-1.png';
+import sendForReview from '../../../assets/screenshots/eqms/send-for-review.png';
+import filteredView from '../../../assets/screenshots/eqms/filtered-view.png';
+
+<YouTube id='4u4dwolgBFs' posterQuality='max' />
+
+Controlled documents are any kind of documents that are formally managed and maintained under a defined and regulated process to ensure integrity, accuracy, and availability throughout its lifecycle. These documents, used for version control, approvals and change management, will be reviewed by auditors.
+
+There are 3 types of controlled documents in TraceX:
+
+1. **[Templates](../templates):** Reusable document structures that can be used to create new documents quickly and consistently. Templates can be used for creating any other kind of controlled document.
+
+2. **[Quality documents](../quality-documents):** Used for managing quality-related documents, such as standard operating procedures and work instructions.
+
+3. **[Technical documentation](../technical-documentation):** Used for managing product development records, such as test reports and requirement documents.
+
+Controlled documents are organized into spaces, each of which can have its own customized [roles and permissions](../roles). Spaces can contain any number of documents, and documents can be organized into folders within a space.
+
+Check out the guides above for specific instructions on setting up templates, quality documents and technical documentation.
+
+### Editing and formatting
+
+While each type of controlled document is created through slightly different steps, all controlled documents have the same options available for editing and formatting.
+
+Just like any other document in your workspace, you can use tags, attachments, images, tables, and other markdown formatting to customize your document. The following features are also available:
+
+**Comments:** Highlight text and select the speech bubble icon. Comments can be viewed together in the right side panel, where they can be filtered and sorted.
+
+<Image 
+src={documentComment} 
+alt='Adding a comment' 
+inferSize
+quality='max'
+/>
+
+**Sections:** Open the `...` menu beside the section title and choose to add a new section above or below, or delete or duplicate the current section.
+
+<Image 
+src={addSection} 
+alt='Adding a new section' 
+inferSize
+quality='max'
+/>
+
+**Description:** Also accessible from the `...` menu next to each section, you can add a short description that will help guide users on what to include in that section. Descriptions appear highlighted in green just below the section title.
+
+**Guidance:** Like the description, guidance provides further details on what should be included in a section. Instead of being displayed under the section title, guidance can be hidden or displayed by clicking on the `i` icon beside the section title. This makes it a useful tool for adding longer reference information that may need to be reviewed when writing the document.
+
+<Image 
+src={documentGuidance} 
+alt='Adding roles for a product' 
+inferSize
+quality='max'
+/>
+
+**Export to PDF:** From the settings menu in the top right corner, select `Print to PDF`. PDFs are 21 CFR Part 11 compliant.
+
+### Additional document settings
+
+There are several settings available for controlled documents, found in the navigational tabs at the top of the document as well as in the right side panel. These settings are the same for all types of controlled documents, including templates, quality documents and technical documentation.
+
+* **Reason & Impact:** Under the `Reason & Impact` tab, you can provide information on changes. This section is used to explain why the document was created or changed, and what impact it will have.The `Description` and `Reason` fields will be included in the `History` section of the document.
+
+* **Team:** Under the `Team` tab, you can add or remove team members as Co-Authors, Reviewers, and Approvers.
+
+* **Release details:** Under the `Release` tab, you can provide information on the release of the document, including the severity of the release (decimal change for minor updates; whole number change for major updates), and the effective date.
+
+* **Trainings:** Also under the `Release` tab is the option to add a training.
+
+* **History:** Under the `History` tab, you can view a log of changes made to the document, including the date and description of each change.
+
+### Reviewing & approving
+
+To send a document for review, click `Send for review` and select the members that will be reviewing the document. This menu will automatically populate with the reviewers selected when creating or editing the document, but you can add additional reviewers here as well. Then, click `Send`.
+
+<Image 
+src={sendForReview} 
+alt='Sending a document for review' 
+inferSize
+quality='max'
+/>
+
+After the document has been reviewed, any further edits will be recorded for comparison. Selecting the `Comparing` option will allow you to view the edits to the document, using red and green highlights to show deletions and additions.
+
+To send a document for approval, click `Send for approval` and select the members that will approve the document.
+
+> **Note:** All comments need to be resolved before sending a document for approval. If unresolved comments remain, the `Send for approval` button will be disabled.
+
+Once sent, the approvers can approve or reject the document.
+
+### Creating a new document version
+
+As a document owner, you can create a new version of your document by selecting `Draft new version`. With the draft open, you can make any necessary changes to the content, provide information about the new version in under the `Reason & Impact` tab, and update team members and release info.
+
+Selecting `Comparing` from the top right corner allows you to compare changes across document versions, displaying additions highlighted in green and deletions in red.
+
+Once the approval process for a document is completed, you'll have a version 0.2 Effective document, with the `History` section auto-populated with the information you entered in `Reason & Impact`.
+
+### Ownership vs. authorship
+
+A document `Author` is the one who creates and signs the document, who will be listed on the PDF at export. The `Owner`, on the other hand, is the person who is responsible for drafting and managing the document throughout its lifecycle. In most cases, the same user will act as both the `Author` and the `Owner` of a document, but there may be times at which you need to transfer ownership to someone else.
+
+The `Owner` can be changed from the `...` menu in the top right corner, or by selecting the current owner's name in the right side panel and clicking `Select new owner`.
+
+### Filtering documents
+
+To create a filtered view of your documents, navigate to the `Library` sub-menu of the Controlled Documents module. From here, click the `Filter` button at the top toolbar and select the criteria you'd like to filter by. For example, you may wish to create a view of documents created by a specific person, or documents created within a certain date range.
+
+After setting your filters, click the `Save as` button in the top right corner. Give your filtered view a name, decide if you'd like your view to be private or public, and click `Save`.
+
+Saved filtered views are accessible from the left sidebar.
+
+<Image 
+src={filteredView} 
+alt='Creating a filtered view' 
+inferSize
+quality='max'
+/>
