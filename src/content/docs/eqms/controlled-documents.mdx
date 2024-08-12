@@ -9,6 +9,7 @@ import documentComment from '../../../assets/screenshots/eqms/comment.png';
 import addSection from '../../../assets/screenshots/eqms/add-section.png';
 import documentGuidance from '../../../assets/screenshots/eqms/guidance-1.png';
 import sendForReview from '../../../assets/screenshots/eqms/send-for-review.png';
+import filteredView from '../../../assets/screenshots/eqms/filtered-view.png';
 
 <YouTube id='4u4dwolgBFs' posterQuality='max' />
 
@@ -24,13 +25,13 @@ There are 3 types of controlled documents in TraceX:
 
 Controlled documents are organized into spaces, each of which can have its own customized [roles and permissions](../roles). Spaces can contain any number of documents, and documents can be organized into folders within a space.
 
+Check out the guides above for specific instructions on setting up templates, quality documents and technical documentation.
+
 ### Editing and formatting
 
 While each type of controlled document is created through slightly different steps, all controlled documents have the same options available for editing and formatting.
 
-Just like any other document in your workspace, you can use tags, attachments, images, tables, and other markdown formatting to customize your document.
-
-The following options are available for further customization:
+Just like any other document in your workspace, you can use tags, attachments, images, tables, and other markdown formatting to customize your document. The following features are also available:
 
 **Comments:** Highlight text and select the speech bubble icon. Comments can be viewed together in the right side panel, where they can be filtered and sorted.
 
@@ -41,7 +42,7 @@ inferSize
 quality='max'
 />
 
-**Sections:** Open the `...` menu beside the section title and choose to add a new section above or below.
+**Sections:** Open the `...` menu beside the section title and choose to add a new section above or below, or delete or duplicate the current section.
 
 <Image 
 src={addSection} 
@@ -50,9 +51,9 @@ inferSize
 quality='max'
 />
 
-**Descriptions:** Each section can have a short description that will help guide users on what to include in that section.
+**Description:** Also accessible from the `...` menu next to each section, you can add a short description that will help guide users on what to include in that section. Descriptions appear highlighted in green just below the section title.
 
-**Guidance:** Like the description, guidance provides further details on what should be included in a section. Guidance is used for longer descriptions, and can be hidden or displayed when clicking on the `i` icon beside the section title.
+**Guidance:** Like the description, guidance provides further details on what should be included in a section. Instead of being displayed under the section title, guidance can be hidden or displayed by clicking on the `i` icon beside the section title. This makes it a useful tool for adding longer reference information that may need to be reviewed when writing the document.
 
 <Image 
 src={documentGuidance} 
@@ -60,6 +61,8 @@ alt='Adding roles for a product'
 inferSize
 quality='max'
 />
+
+**Export to PDF:** From the settings menu in the top right corner, select `Print to PDF`. PDFs are 21 CFR Part 11 compliant.
 
 ### Additional document settings
 
@@ -94,10 +97,31 @@ To send a document for approval, click `Send for approval` and select the member
 
 Once sent, the approvers can approve or reject the document.
 
-### Controlled document guides
+### Creating a new document version
 
-For more information on specific types of controlled documents, see the following guides:
+As a document owner, you can create a new version of your document by selecting `Draft new version`. With the draft open, you can make any necessary changes to the content, provide information about the new version in under the `Reason & Impact` tab, and update team members and release info.
 
-* [Templates](../templates)
-* [Quality documents](../quality-documents)
-* [Technical documentation](../technical-documentation)
+Selecting `Comparing` from the top right corner allows you to compare changes across document versions, displaying additions highlighted in green and deletions in red.
+
+Once the approval process for a document is completed, you'll have a version 0.2 Effective document, with the `History` section auto-populated with the information you entered in `Reason & Impact`.
+
+### Ownership vs. authorship
+
+A document `Author` is the one who creates and signs the document, who will be listed on the PDF at export. The `Owner`, on the other hand, is the person who is responsible for drafting and managing the document throughout its lifecycle. In most cases, the same user will act as both the `Author` and the `Owner` of a document, but there may be times at which you need to transfer ownership to someone else.
+
+The `Owner` can be changed from the `...` menu in the top right corner, or by selecting the current owner's name in the right side panel and clicking `Select new owner`.
+
+### Filtering documents
+
+To create a filtered view of your documents, navigate to the `Library` sub-menu of the Controlled Documents module. From here, click the `Filter` button at the top toolbar and select the criteria you'd like to filter by. For example, you may wish to create a view of documents created by a specific person, or documents created within a certain date range.
+
+After setting your filters, click the `Save as` button in the top right corner. Give your filtered view a name, decide if you'd like your view to be private or public, and click `Save`.
+
+Saved filtered views are accessible from the left sidebar.
+
+<Image 
+src={filteredView} 
+alt='Creating a filtered view' 
+inferSize
+quality='max'
+/>
