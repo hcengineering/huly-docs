@@ -129,6 +129,9 @@ export default defineConfig({
           label: 'Products',
           link: '/eqms/products/'
         }, {
+          label: 'Trainings',
+          link: '/eqms/trainings/'
+        }, {
           label: 'Documents',
           items: [
             {

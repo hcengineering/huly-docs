@@ -1,0 +1,62 @@
+---
+title: Trainings
+description: Learn how to create and manage trainings.
+---
+
+import { Image } from 'astro:assets';
+import trainingQuestions from '../../../assets/screenshots/eqms/training-questions.png';
+import assignTraining from '../../../assets/screenshots/eqms/assign-training.png';
+
+Trainings can be created from the Trainings module, or from the `Training` tab of any controlled document, where they can be attached directly to that document. Trainings consist of custom questions and answers that can be used to assess the knowledge of employees on a specific topic, and can be assigned to individuals or groups.
+
+### Creating a training
+
+To create a training, open the `My trainings` sub-menu in the Trainings module and click the `+ Training` button in the top right corner. Enter a name for your training and click `Create`.
+
+Once your training is created, you'll have access to additional settings and customizations. You can add a description of your training and add any supporting attachments needed, such as videos or presentations.
+
+##### Adding questions
+
+Navigate to the `Questions` tab of your training and click the `+` button to begin adding questions. You can add single-choice, multiple-choice and ordering questions. Select the correct answers for each question.
+
+##### Setting a passing score
+
+Click on the green score bar at the top of your questions to set a passing score for your training, indicating the number of questions the trainee must answer correctly to pass.
+
+<Image 
+src={trainingQuestions} 
+alt='Creating training questions and setting a passing score' 
+inferSize
+quality='max'
+/>
+
+##### Releasing a training
+
+Once you've finished creating questions, setting the passing score, and adding any description or supporting attachments needed, click `Release` in the top right corner to finalize your training. Trainings cannot be assigned until they are released.
+
+### Assigning a training
+
+Trainings can be assigned on their own from the Trainings module, or attached to a controlled document.
+
+##### From the Trainings module
+
+Click `Assign request`. From here, you'll be able to select which roles and members to assign the training to, as well as a due date and maximum number of attempts allowed.
+
+<Image 
+src={assignTraining} 
+alt='Assigning a training' 
+inferSize
+quality='max'
+/>
+
+##### From a controlled document
+
+Navigate to the document you'd like to attach the training to and open the `Trainings` tab. Toggle the Training setting and select the training you'd like to attach. From here, you can select the roles and members to assign the training to, and set the due date and maximum number of attempts allowed.
+
+Once the document approval process has been completed and the document status is `Effective`, the training requests will be sent to the trainees. For more on this approval process, see our guide on [controlled documents](../controlled-documents).
+
+### Taking a training
+
+Assignees will receive training requests in their email and Huly inbox. Assigned training requests can also be found in the Trainings module under the `My requests` sub-menu. Begin taking a training by clicking on it to open.
+
+> **Note:** If a trainee fails the max attempts allowed, a new training request will need to be sent.
