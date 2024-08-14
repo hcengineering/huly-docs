@@ -16,7 +16,10 @@ export default defineConfig({
       items: [
         {
           label: 'What is Huly?',
-          link: '/getting-started/introduction/'
+          link: '/getting-started/introduction-huly/'
+        }, {
+          label: 'What is TraceX?',
+          link: '/getting-started/introduction-tracex/'
         }, {
           label: 'Workspace setup',
           link: '/getting-started/workspace-setup/'
@@ -116,16 +119,9 @@ export default defineConfig({
         },
       ]
     }, {
-      label: 'TraceX eQMS',
+      label: 'TraceX eQMS specific modules',
       collapsed: true,
-      items: [
-        {
-          label: 'What is TraceX?',
-          link: '/eqms/introduction/'
-        }, {
-          label: 'Support',
-          link: '/eqms/support/'
-        }, {
+      items: [{
           label: 'Roles and permissions',
           link: '/eqms/roles/'
         }, {
