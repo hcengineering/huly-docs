@@ -6,8 +6,9 @@ description: Learn how to create and manage trainings.
 import { Image } from 'astro:assets';
 import trainingQuestions from '../../../assets/screenshots/eqms/training-questions.png';
 import assignTraining from '../../../assets/screenshots/eqms/assign-training.png';
+import attachTraining from '../../../assets/screenshots/eqms/attach-training.png';
 
-Trainings can be created from the Trainings module, or from the `Training` tab of any controlled document, where they can be attached directly to that document. Trainings consist of custom questions and answers that can be used to assess the knowledge of employees on a specific topic, and can be assigned to individuals or groups.
+Trainings can be created from the Trainings module, and existing trainings can be attached to a controlled document from the Training section of the `Release` tab. Trainings consist of custom questions and answers that can be used to assess the knowledge of employees on a specific topic, and can be assigned to individuals or groups.
 
 ### Creating a training
 
@@ -51,12 +52,19 @@ quality='max'
 
 ##### From a controlled document
 
-Navigate to the document you'd like to attach the training to and open the `Trainings` tab. Toggle the Training setting and select the training you'd like to attach. From here, you can select the roles and members to assign the training to, and set the due date and maximum number of attempts allowed.
+Navigate to the document you'd like to attach the training to and open the `Release` tab. Toggle the Training setting and select the training you'd like to attach. From here, you can select the roles and members to assign the training to, and set the due date and maximum number of attempts allowed.
+
+<Image 
+src={attachTraining} 
+alt='Attaching a training to a document' 
+inferSize
+quality='max'
+/>
 
 Once the document approval process has been completed and the document status is `Effective`, the training requests will be sent to the trainees. For more on this approval process, see our guide on [controlled documents](../controlled-documents).
 
 ### Taking a training
 
-Assignees will receive training requests in their email and Huly inbox. Assigned training requests can also be found in the Trainings module under the `My requests` sub-menu. Begin taking a training by clicking on it to open.
+Assignees will receive training requests in their email and inbox. Assigned training requests can also be found in the Trainings module under the `My requests` sub-menu. Begin taking a training by clicking on it to open.
 
 > **Note:** If a trainee fails the max attempts allowed, a new training request will need to be sent.

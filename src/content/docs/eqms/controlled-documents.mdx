@@ -10,8 +10,8 @@ import addSection from '../../../assets/screenshots/eqms/add-section.png';
 import documentGuidance from '../../../assets/screenshots/eqms/guidance-1.png';
 import sendForReview from '../../../assets/screenshots/eqms/send-for-review.png';
 import filteredView from '../../../assets/screenshots/eqms/filtered-view.png';
-
-<YouTube id='4u4dwolgBFs' posterQuality='max' />
+import commentSidebar from '../../../assets/screenshots/eqms/comment-sidebar.png';
+import printPDF from '../../../assets/screenshots/eqms/print-pdf.png';
 
 Controlled documents are any kind of documents that are formally managed and maintained under a defined and regulated process to ensure integrity, accuracy, and availability throughout its lifecycle. These documents, used for version control, approvals and change management, will be reviewed by auditors.
 
@@ -41,6 +41,12 @@ alt='Adding a comment'
 inferSize
 quality='max'
 />
+<Image 
+src={commentSidebar} 
+alt='Comments in sidebar' 
+inferSize
+quality='max'
+/>
 
 **Sections:** Open the `...` menu beside the section title and choose to add a new section above or below, or delete or duplicate the current section.
 
@@ -64,11 +70,18 @@ quality='max'
 
 **Export to PDF:** From the settings menu in the top right corner, select `Print to PDF`. PDFs are 21 CFR Part 11 compliant.
 
+<Image 
+src={printPDF} 
+alt='Printing document to PDF' 
+inferSize
+quality='max'
+/>
+
 ### Additional document settings
 
 There are several settings available for controlled documents, found in the navigational tabs at the top of the document as well as in the right side panel. These settings are the same for all types of controlled documents, including templates, quality documents and technical documentation.
 
-* **Reason & Impact:** Under the `Reason & Impact` tab, you can provide information on changes. This section is used to explain why the document was created or changed, and what impact it will have.The `Description` and `Reason` fields will be included in the `History` section of the document.
+* **Reason & Impact:** Under the `Reason & Impact` tab, you can provide information on changes. This section is used to explain why the document was created or changed, and what impact it will have.The `Description` and `Reason` fields will be automatically populated in the `History` section of the document.
 
 * **Team:** Under the `Team` tab, you can add or remove team members as Co-Authors, Reviewers, and Approvers.
 
