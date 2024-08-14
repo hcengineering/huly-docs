@@ -123,6 +123,9 @@ export default defineConfig({
           label: 'What is TraceX?',
           link: '/eqms/introduction/'
         }, {
+          label: 'Support',
+          link: '/eqms/support/'
+        }, {
           label: 'Roles and permissions',
           link: '/eqms/roles/'
         }, {
