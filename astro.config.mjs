@@ -137,6 +137,9 @@ export default defineConfig({
               label: 'Controlled documents',
               link: '/eqms/controlled-documents/'
             }, {
+              label: 'Electronic signatures',
+              link: '/eqms/electronic-signatures/'
+            }, {
               label: 'Templates',
               link: '/eqms/templates/'
             }, {
