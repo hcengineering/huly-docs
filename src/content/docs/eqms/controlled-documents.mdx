@@ -5,7 +5,6 @@ description: Learn about controlled documents in eQMS.
 
 import { Image } from 'astro:assets';
 import { YouTube } from 'astro-embed';
-import documentComment from '../../../assets/screenshots/eqms/comment.png';
 import addSection from '../../../assets/screenshots/eqms/add-section.png';
 import documentGuidance from '../../../assets/screenshots/eqms/guidance-1.png';
 import filteredView from '../../../assets/screenshots/eqms/filtered-view.png';
@@ -34,12 +33,9 @@ Just like any other document in your workspace, you can use tags, attachments, i
 
 **Comments:** Highlight text and select the speech bubble icon. 
 
-<Image 
-src={documentComment} 
-alt='Adding a comment' 
-inferSize
-quality='max'
-/>
+<video controls>
+  <source src="/src/assets/videos/eqms/docs-comment.mp4" type="video/mp4" />
+</video>
 
 Comments can be viewed together in the right side panel, where they can be filtered and sorted.
 
@@ -65,7 +61,7 @@ quality='max'
 
 <Image 
 src={documentGuidance} 
-alt='Adding roles for a product' 
+alt='Document guidance' 
 inferSize
 quality='max'
 />
@@ -103,6 +99,10 @@ As a document owner, you can create a new version of your document by selecting 
 
 Selecting `Comparing` from the top right corner allows you to compare changes across document versions, displaying additions highlighted in green and deletions in red.
 
+<video controls>
+  <source src="/src/assets/videos/eqms/docs-comparing.mp4" type="video/mp4" />
+</video>
+
 Once the approval process for a document is completed, you'll have a version 0.2 Effective document, with the `History` section auto-populated with the information you entered in `Reason & Impact`.
 
 ### Ownership vs. authorship
@@ -119,9 +119,6 @@ After setting your filters, click the `Save as` button in the top right corner. 
 
 Saved filtered views are accessible from the left sidebar.
 
-<Image 
-src={filteredView} 
-alt='Creating a filtered view' 
-inferSize
-quality='max'
-/>
+<video controls>
+  <source src="/src/assets/videos/eqms/docs-filtering.mp4" type="video/mp4" />
+</video>
