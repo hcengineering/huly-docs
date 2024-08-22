@@ -1,0 +1,58 @@
+---
+title: Editing and formatting
+description: Learn how to edit and format document content.
+---
+
+import { Image } from 'astro:assets';
+import commentSidebar from '../../../assets/screenshots/eqms/comment-sidebar.png';
+import addSection from '../../../assets/screenshots/eqms/add-section.png';
+import documentGuidance from '../../../assets/screenshots/eqms/guidance-1.png';
+import printPDF from '../../../assets/screenshots/eqms/print-pdf.png';
+
+While each type of controlled document is created through slightly different steps, all controlled documents have the same options available for editing and formatting.
+
+Just like any other document in your workspace, you can use tags, attachments, images, tables, and other markdown formatting to customize your document. The following features are also available:
+
+**Comments:** Highlight text and select the speech bubble icon. 
+
+<video controls>
+  <source src="/src/assets/videos/eqms/docs-comment.mp4" type="video/mp4" />
+</video>
+
+Comments can be viewed together in the right side panel, where they can be filtered and sorted.
+
+<Image 
+src={commentSidebar} 
+alt='Comments in sidebar' 
+inferSize
+quality='max'
+/>
+
+**Sections:** Open the `...` menu beside the section title and choose to add a new section above or below, or delete or duplicate the current section.
+
+<Image 
+src={addSection} 
+alt='Adding a new section' 
+inferSize
+quality='max'
+/>
+
+**Description:** Also accessible from the `...` menu next to each section, you can add a short description that will help guide users on what to include in that section. Descriptions appear highlighted in green just below the section title.
+
+**Guidance:** Like the description, guidance provides further details on what should be included in a section. Instead of being displayed under the section title, guidance can be hidden or displayed by clicking on the `i` icon beside the section title. This makes it a useful tool for adding longer reference information that may need to be reviewed when writing the document.
+
+<Image 
+src={documentGuidance} 
+alt='Document guidance' 
+inferSize
+quality='max'
+/>
+
+**Export to PDF:** From the settings menu in the top right corner, select `Print to PDF`. PDFs are 21 CFR Part 11 compliant.
+
+<Image 
+src={printPDF} 
+alt='Printing document to PDF' 
+inferSize
+quality='max'
+/>

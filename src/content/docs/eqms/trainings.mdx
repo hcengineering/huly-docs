@@ -3,11 +3,6 @@ title: Trainings
 description: Learn how to create and manage trainings.
 ---
 
-import { Image } from 'astro:assets';
-import trainingQuestions from '../../../assets/screenshots/eqms/training-questions.png';
-import assignTraining from '../../../assets/screenshots/eqms/assign-training.png';
-import attachTraining from '../../../assets/screenshots/eqms/attach-training.png';
-
 Trainings can be created from the Trainings module, and existing trainings can be attached to a controlled document from the Training section of the `Release` tab. Trainings consist of custom questions and answers that can be used to assess the knowledge of employees on a specific topic, and can be assigned to individuals or groups.
 
 ### Creating a training
@@ -16,6 +11,10 @@ To create a training, open the `My trainings` sub-menu in the Trainings module a
 
 Once your training is created, you'll have access to additional settings and customizations. You can add a description of your training and add any supporting attachments needed, such as videos or presentations.
 
+<video controls>
+  <source src="/src/assets/videos/eqms/trainings-create.mp4" type="video/mp4" />
+</video>
+
 ##### Adding questions
 
 Navigate to the `Questions` tab of your training and click the `+` button to begin adding questions. You can add single-choice, multiple-choice and ordering questions. Select the correct answers for each question.
@@ -23,13 +22,6 @@ Navigate to the `Questions` tab of your training and click the `+` button to beg
 ##### Setting a passing score
 
 Click on the green score bar at the top of your questions to set a passing score for your training, indicating the number of questions the trainee must answer correctly to pass.
-
-<Image 
-src={trainingQuestions} 
-alt='Creating training questions and setting a passing score' 
-inferSize
-quality='max'
-/>
 
 ##### Releasing a training
 
@@ -43,23 +35,17 @@ Trainings can be assigned on their own from the Trainings module, or attached to
 
 Click `Assign request`. From here, you'll be able to select which roles and members to assign the training to, as well as a due date and maximum number of attempts allowed.
 
-<Image 
-src={assignTraining} 
-alt='Assigning a training' 
-inferSize
-quality='max'
-/>
+<video controls>
+  <source src="/src/assets/videos/eqms/trainings-assign.mp4" type="video/mp4" />
+</video>
 
 ##### From a controlled document
 
 Navigate to the document you'd like to attach the training to and open the `Release` tab. Toggle the Training setting and select the training you'd like to attach. From here, you can select the roles and members to assign the training to, and set the due date and maximum number of attempts allowed.
 
-<Image 
-src={attachTraining} 
-alt='Attaching a training to a document' 
-inferSize
-quality='max'
-/>
+<video controls>
+  <source src="/src/assets/videos/eqms/trainings-attach.mp4" type="video/mp4" />
+</video>
 
 Once the document approval process has been completed and the document status is `Effective`, the training requests will be sent to the trainees. For more on this approval process, see our guide on [controlled documents](../controlled-documents).
 

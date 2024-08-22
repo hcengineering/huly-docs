@@ -119,8 +119,8 @@ export default defineConfig({
         },
       ]
     }, {
-      label: 'TraceX eQMS specific modules',
-      collapsed: true,
+      label: 'TraceX eQMS modules',
+      collapsed: false,
       items: [{
           label: 'Roles and permissions',
           link: '/eqms/roles/'
@@ -131,15 +131,9 @@ export default defineConfig({
           label: 'Trainings',
           link: '/eqms/trainings/'
         }, {
-          label: 'Documents',
+          label: 'Controlled doc: types',
           items: [
             {
-              label: 'Controlled documents',
-              link: '/eqms/controlled-documents/'
-            }, {
-              label: 'Electronic signatures',
-              link: '/eqms/electronic-signatures/'
-            }, {
               label: 'Templates',
               link: '/eqms/templates/'
             }, {
@@ -150,7 +144,30 @@ export default defineConfig({
               link: '/eqms/technical-documentation/'
             }
           ]
-        }
+        },  {
+          label: 'Controlled doc: authoring',
+          items: [
+            {
+              label: 'Editing and formatting',
+              link: '/eqms/editing-formatting/'
+            }, {
+              label: 'Additional document settings',
+              link: '/eqms/document-settings/'
+            }, {
+              label: 'Creating a new doc version',
+              link: '/eqms/document-versions/'
+            }, {
+              label: 'Ownership vs. authorship',
+              link: '/eqms/ownership-authorship/'
+            }
+          ]
+        }, {
+          label: 'Controlled doc: review & approval',
+          link: '/eqms/review-approval/'
+        }, {
+          label: 'Filtering documents',
+          link: '/eqms/document-filtering/'
+        }, 
       ]
     }, 
   ]

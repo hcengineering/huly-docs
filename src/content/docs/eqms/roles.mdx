@@ -1,14 +1,10 @@
 ---
-title: Roles and Permissions
+title: Roles and permissions
 description: Learn how to manage roles and permissions.
 ---
 
 import { Image } from 'astro:assets';
-import documentRoles from '../../../assets/screenshots/eqms/roles-document.png';
-import productRoles1 from '../../../assets/screenshots/eqms/roles-product-1.png';
-import productRoles2 from '../../../assets/screenshots/eqms/roles-product-2.png';
-import QARARoles from '../../../assets/screenshots/eqms/roles-qara.png';
-import customRoles from '../../../assets/screenshots/eqms/roles-custom.png';
+import productRoles from '../../../assets/screenshots/eqms/roles-product.png';
 import adminRoles from '../../../assets/screenshots/eqms/admin.png';
 import trainingRoles from '../../../assets/screenshots/eqms/roles-trainings.png';
 
@@ -26,17 +22,14 @@ How you choose to assign roles to your users will depend on the kind of module y
 
 **Controlled Documents:** Open the settings menu for any document space and select `Edit documents space`. From here, you can first add members to the space and then assign members to each of the available roles.
 
-<Image 
-src={documentRoles} 
-alt='Adding roles for a document' 
-inferSize
-quality='max'
-/>
+<video controls>
+  <source src="/src/assets/videos/eqms/roles-default.mp4" type="video/mp4" />
+</video>
 
 **Products:** Roles can be assigned when creating a product by selecting members from each role dropdown menu. 
 
 <Image 
-src={productRoles1} 
+src={productRoles} 
 alt='Adding roles for a product' 
 inferSize
 quality='max'
@@ -44,12 +37,9 @@ quality='max'
 
 To assign roles from a product that's already been created, use the right side panel to add members to each role.
 
-<Image 
-src={productRoles2} 
-alt='Adding roles for a product' 
-inferSize
-quality='max'
-/>
+<video controls>
+  <source src="/src/assets/videos/eqms/roles-product.mp4" type="video/mp4" />
+</video>
 
 **Trainings:** Open your workspace settings and select `Trainings`. From there, you can assign roles to team members using the dropdown menus. 
 
@@ -66,12 +56,9 @@ The default roles of Qualified User, Manager, and QARA can be customized for you
 
 From here, you can add or delete roles and edit their names, and add or remove permissions.
 
-<Image 
-src={QARARoles} 
-alt='Customizing roles for QARA' 
-inferSize
-quality='max'
-/>
+<video controls>
+  <source src="/src/assets/videos/eqms/roles-customize.mp4" type="video/mp4" />
+</video>
 
 ### Creating new roles & permissions
 
@@ -81,12 +68,9 @@ Navigate to your workspace settings, find `SPACE TYPES` in the left side menu, a
 
 In the example below, custom roles have been created for Engineers, Testers and Product Managers:
 
-<Image 
-src={customRoles} 
-alt='Adding custom roles' 
-inferSize
-quality='max'
-/>
+<video controls>
+  <source src="/src/assets/videos/eqms/roles-create.mp4" type="video/mp4" />
+</video>
 
 From here, you can add roles using the `+` button, and customize permissions for each role.
 
