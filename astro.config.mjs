@@ -120,7 +120,7 @@ export default defineConfig({
       ]
     }, {
       label: 'TraceX eQMS modules',
-      collapsed: true,
+      collapsed: false,
       items: [{
           label: 'Roles and permissions',
           link: '/eqms/roles/'
