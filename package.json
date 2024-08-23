@@ -13,8 +13,10 @@
     "@astrojs/check": "^0.5.10",
     "@astrojs/mdx": "^2.3.1",
     "@astrojs/starlight": "^0.21.5",
+    "@iconify-json/bi": "^1.1.24",
     "astro": "^4.3.5",
     "astro-embed": "^0.7.1",
+    "astro-icon": "^1.1.1",
     "sharp": "^0.32.5",
     "typescript": "^5.4.5"
   }

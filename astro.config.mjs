@@ -1,9 +1,9 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import mdx from "@astrojs/mdx";
+import icon from 'astro-icon';
 
 export default defineConfig({
-  integrations: [starlight({
+  integrations: [[starlight({
     customCss: ['./src/styles.css'],
     title: 'Huly Docs',
     favicon: '/favicon.ico',
@@ -171,7 +171,7 @@ export default defineConfig({
       ]
     }, 
   ]
-  })],
+  })], [icon()]],
   image: {
     service: {
       config: {

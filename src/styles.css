@@ -27,3 +27,23 @@
 	--sl-color-gray-7: #DDE4F6;
 	--sl-color-black: #ffffff;
 }
+
+[data-icon] {
+	font-size: 30px;
+	color: var(--sl-color-accent-high);
+}
+
+[data-icon]:hover {
+	cursor: pointer;
+	color: var(--sl-color-white);
+}
+
+.social-icons {
+	display: flex;
+	align-items: center;
+}
+
+.social-icons span {
+	display: inline-block;
+	padding: 0 7px;
+}
