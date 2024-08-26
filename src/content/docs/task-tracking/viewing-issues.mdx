@@ -4,12 +4,13 @@ description: Learn how to view and sort your issues.
 ---
 import { Image } from 'astro:assets';
 import issuePeek from '../../../assets/screenshots/tracker-issuepeek.png';
-import filterIssues from '../../../assets/screenshots/tracker-filter.png';
 
 ### List and kanban views
+
 The default view for issues is the list view, where issues are listed in order of their status. Huly also offers the option for a kanban view, which displays issues in a column format. To toggle between the two views, click either the list or kanban icon in the top right corner of the window.
 
 ### Issue peek
+
 Press the `space` bar while hovering over any issue to "peek" at that Issue's details. From this view, you can use the up and down arrows on your keyboard to scroll through your issues.
 
 Hovering over comments or due dates will also open a preview of these details.
@@ -22,18 +23,25 @@ quality='max'
 />
 
 ### Keyboard shortcut
+
 Press `C` on your keyboard to create a new issue from any view.
 
 ### Sorting, filtering and searching
+
 Options for sorting and filtering issues can also be found in the top right corner. The `View` button allows for configuration of some viewing settings as well as options for sorting how issues are grouped and ordered on the page. The `Show` button displays toggles for showing and hiding issue details. 
 
 The `Filter` button, next to the search bar, offers options for filtering issues. The search bar can be used to search for a specific issue by keyword.
 
 For quick sorting, select `Active`, `Backlog` or `All` from the menu above the search bar.
 
-<Image 
-src={filterIssues} 
-alt='Filter issues' 
-inferSize
-quality='max'
-/>
+<video controls>
+  <source src="/src/assets/videos/huly/tracker-filter-issues.mp4" type="video/mp4" />
+</video>
+
+### Download as PDF
+
+Issues can also be downloaded in PDF format:
+
+<video controls>
+  <source src="/src/assets/videos/huly/tracker-download-PDF.mp4" type="video/mp4" />
+</video>
