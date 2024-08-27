@@ -1,9 +1,9 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import mdx from "@astrojs/mdx";
+import icon from 'astro-icon';
 
 export default defineConfig({
-  integrations: [starlight({
+  integrations: [[starlight({
     customCss: ['./src/styles.css'],
     title: 'Huly Docs',
     favicon: '/favicon.ico',
@@ -35,6 +35,9 @@ export default defineConfig({
         {
           label: 'Creating projects',
           link: '/task-tracking/creating-projects/'
+        }, {
+          label: 'Milestones',
+          link: '/task-tracking/milestones/'
         }, {
           label: 'Creating issues',
           link: '/task-tracking/creating-issues/'
@@ -171,7 +174,7 @@ export default defineConfig({
       ]
     }, 
   ]
-  })],
+  })], [icon()]],
   image: {
     service: {
       config: {

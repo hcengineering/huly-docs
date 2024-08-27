@@ -4,7 +4,7 @@ description: Learn how to use Drive for file storage and sharing.
 ---
 
 import { Image } from 'astro:assets';
-import drivePreview from '../../../assets/screenshots/drive-preview.png';
+import drivePreview from '../../../assets/screenshots/huly/drive-preview.png';
 
 Drive is a robust and versatile file storage system fully customizable to your team's needs. Store any type of file directly within your workspace and keep everything organized with customizable folders and privacy settings. Files stored in Drive are easily accessible for viewing, printing and downloading, allowing teams to efficiently share resources and promote collaboration. Teams can add members to specific Drive spaces, ensuring everyone has access to the files they need without compromising security.
 
@@ -27,6 +27,14 @@ To view a file, click on the file name in your Drive. Several options are availa
 * **Rename your file** - open the right sidebar and click on the file name to rename it.
 * **Download** - click the download icon to download the file to your computer.
 * **Move**  - open the settings menu and select `Move` to change the parent folder or Drive for your file.
+
+### Creating file versions
+
+Huly automatically creates a record of a file versions when a new version is uploaded. After a file has been modified, it can be added to the original file as a new version using the upload button in the top right corner of any file preview. Each new version is listed under the original file for easy access:
+
+<video controls>
+  <source src="/src/assets/videos/huly/drive-versions.mp4" type="video/mp4" />
+</video>
 
 ### Adding comments
 
