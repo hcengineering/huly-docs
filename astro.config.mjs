@@ -36,6 +36,9 @@ export default defineConfig({
           label: 'Creating projects',
           link: '/task-tracking/creating-projects/'
         }, {
+          label: 'Milestones',
+          link: '/task-tracking/milestones/'
+        }, {
           label: 'Creating issues',
           link: '/task-tracking/creating-issues/'
         }, {
