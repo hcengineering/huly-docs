@@ -119,7 +119,10 @@ export default defineConfig({
         }, {
           label: 'Google Calendar',
           link: '/integrations/google-calendar/'
-        },
+        }, {
+          label: 'Telegram',
+          link: '/integrations/telegram/'
+        }, 
       ]
     }, {
       label: 'TraceX eQMS modules',
