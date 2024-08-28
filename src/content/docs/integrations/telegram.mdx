@@ -5,6 +5,7 @@ description: Learn how to integrate Huly with Telegram.
 
 import { Image } from 'astro:assets';
 import telegramShare from '../../../assets/screenshots/huly/telegram-share.png';
+import telegramNotifications from '../../../../public/telegram-notifications.mp4'
 
 Huly's Telegram integration provides the following functionality:
 
@@ -38,7 +39,7 @@ To respond to a message, right-click or reply directly to the message thread in 
 > **Note:** Simply replying in the Telegram chat will not send your message to Huly. You must reply directly to the Huly message thread.
 
 <video controls>
-  <source src="/src/assets/videos/huly/telegram-notifications.mp4" type="video/mp4" />
+  <source src={telegramNotifications} type="video/mp4" />
 </video>
 
 ### Communicating with external contacts
