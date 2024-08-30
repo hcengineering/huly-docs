@@ -128,6 +128,15 @@ export default defineConfig({
         }, 
       ]
     }, {
+      label: 'Advanced settings',
+      collapsed: true,
+      items: [
+        {
+          label: 'Task types',
+          link: '/advanced-settings/task-types/'
+        }, 
+      ]
+    }, {
       label: 'TraceX eQMS modules',
       collapsed: true,
       items: [{
