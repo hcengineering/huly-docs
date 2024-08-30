@@ -48,6 +48,9 @@ export default defineConfig({
           label: 'Related issues',
           link: '/task-tracking/related-issues/'
         }, {
+          label: 'Issue templates',
+          link: '/task-tracking/issue-templates/'
+        }, {
           label: 'Creating action items',
           link: '/task-tracking/creating-action-items/'
         }, {
