@@ -42,6 +42,9 @@ export default defineConfig({
           label: 'Creating issues',
           link: '/task-tracking/creating-issues/'
         }, {
+          label: 'Issue collaborators',
+          link: '/task-tracking/issue-collaborators/'
+        }, {
           label: 'Viewing and sorting issues',
           link: '/task-tracking/viewing-issues/'
         }, {

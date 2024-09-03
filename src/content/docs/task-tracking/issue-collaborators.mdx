@@ -1,0 +1,52 @@
+---
+title: Issue collaborators
+description: Learn how to add collaborators for issues and manage notifications as a collaborator.
+---
+
+import { Image } from 'astro:assets';
+import { YouTube } from 'astro-embed';
+import notificationsSettingsActivity from '../../../assets/screenshots/huly/settings-notifications-activity.png';
+import trackerSubscribed from '../../../assets/screenshots/huly/tracker-subscribed.png';
+
+
+Issues can only be assigned to one person, but you can add collaborators to keep other team members informed about issue activity. Collaborators will receive notifications for issue activity according to their own personal notifications settings.
+
+Check out our demo video for a quick overview:
+
+<YouTube id='1_bb3N2UT04' posterQuality='max' />
+
+### Adding collaborators to an issue
+
+To add a collaborator to an issue, open the details page for that issue and find the `Collaborators` section in the right sidebar. By default, the issue creator and assignee will be listed as collaborators. Select the person you'd like to add as a collaborator from the dropdown menu.
+
+You can also add yourself as a collaborator to issues you'd like to follow. This can be useful if you want to keep track of an issue that's assigned to someone else. Adding yourself as a collaborator follows the same process as adding any other collaborator.
+
+Collaborators will receive a notification in their inbox to let them know that they've been added to the issue. New collaborators will also be shown in the activity section for that issue, so anyone viewing the issue can see who has been added.
+
+### Managing notifications as a collaborator
+
+Collaborators will automatically receive notifications in their inbox for issue activity, such as comments, updates to issue status, and other changes. The specific acitivities that will trigger notifications in the inbox will depend on the user's own notifications settings.
+
+To manage your notifications, navigate to Settings and select `Notifications` from the left sidebar menu. Then, select `Issues`. Notifications settings for issues are the same regardless of whether you are the owner, assignee, or collaborator on the issue. From this settings menu, you can select which kinds of issue activity you'd like to receive notifications for. Push, email, and Telegram notifications can also be toggled on or off.
+
+<Image 
+    src={notificationsSettingsActivity} 
+    alt="Notifications settings for issue activity" 
+    inferSize 
+    quality="max" 
+/>
+
+### Viewing your subscribed issues
+
+Being a collaborator for an issue makes it easy to see all of the issues you're following in one place. 
+
+Navigate to your Tracker and select `My issues` from the left sidebar. Then, select `Subscribed` from the top right menu. This view will show you all of the issues you're either a collaborator, owner or assignee for.
+
+<Image 
+    src={trackerSubscribed} 
+    alt="Viewing subscribed issues in the Tracker" 
+    inferSize 
+    quality="max" 
+/>
+
+Just like any other view in your Tracker, you can filter and sort issues to find exactly what you need, and save custom views for easy access later. To learn more about customizing your Tracker, see our guide on [viewing and sorting issues](../viewing-issues).
