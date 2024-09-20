@@ -42,11 +42,17 @@ export default defineConfig({
           label: 'Creating issues',
           link: '/task-tracking/creating-issues/'
         }, {
+          label: 'Issue collaborators',
+          link: '/task-tracking/issue-collaborators/'
+        }, {
           label: 'Viewing and sorting issues',
           link: '/task-tracking/viewing-issues/'
         }, {
           label: 'Related issues',
           link: '/task-tracking/related-issues/'
+        }, {
+          label: 'Issue templates',
+          link: '/task-tracking/issue-templates/'
         }, {
           label: 'Creating action items',
           link: '/task-tracking/creating-action-items/'
@@ -122,6 +128,15 @@ export default defineConfig({
         }, {
           label: 'Telegram',
           link: '/integrations/telegram/'
+        }, 
+      ]
+    }, {
+      label: 'Advanced settings',
+      collapsed: true,
+      items: [
+        {
+          label: 'Task types',
+          link: '/advanced-settings/task-types/'
         }, 
       ]
     }, {

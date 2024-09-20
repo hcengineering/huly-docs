@@ -1,0 +1,53 @@
+---
+title: Issue templates
+description: Learn how to create reusable issue templates and use them when creating new issues.
+---
+
+import { Image } from 'astro:assets';
+import { YouTube } from 'astro-embed';
+import issueTemplate from '../../../assets/screenshots/huly/tracker-template.png';
+import templateDropdown from '../../../assets/screenshots/huly/tracker-template-dropdown.png';
+
+<YouTube id='EVmZr1Ybi8c' posterQuality='max' />
+
+Issue templates can be used to create similar issues that follow the same format. These templates are particularly useful for things like bug reports and feature requests, where the same information is needed each time a new issue is created.
+
+Templates are specific to each project in your Tracker -- so, for example, you could create a "Feature Request" template for each project, using different labels and assignees for each.
+
+### Creating a new template
+
+To create a new template, navigate to any project in your Tracker and select `Templates` from the left sidebar menu. Then, click the `+ New template` button in the top right corner.
+
+Creating a template looks similar to creating any other issue. Enter a title and content for your template, as well as any default settings, such as priority level, assignee, and labels. The settings you select here will automatically apply to any issue created using the template.
+
+When you're finished, click `Create`.
+
+> Below shows an example of a Bug Report template. This template has a default priority level "Urgent" and has a default assignee and labels. 
+
+<Image 
+    src={issueTemplate} 
+    alt="Template for bug reports" 
+    inferSize 
+    quality="max" 
+/>
+
+### Using a template
+
+When creating a new issue, select the desired template from the dropdown menu at the top of the dialog. 
+
+<Image 
+    src={templateDropdown} 
+    alt="Dropdown menu for selecting a template" 
+    inferSize 
+    quality="max" 
+/>
+
+The template will automatically populate the issue title, description, and any other default settings you've specified.
+
+From there, you can make any necessary changes and click `Create issue`.
+
+### Editing a template
+
+Templates can be changed at any time by opening the template page and editing any of the details. Just like any other issue in Huly, templates can be edited collaboratively, and any changes to the template will be recorded in the activity section of the template page.
+
+Users can also add comments to templates, utilizing @mentions, reactions and chat threads to discuss with other team members. Activity related to templates is linked to the Huly chat and inbox modules, so you can easily keep track of any changes or updates to your templates.

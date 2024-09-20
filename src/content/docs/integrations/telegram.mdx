@@ -3,9 +3,9 @@ title: Telegram
 description: Learn how to integrate Huly with Telegram.
 ---
 
-import { Image } from 'astro:assets';
-import telegramShare from '../../../assets/screenshots/huly/telegram-share.png';
-import telegramNotifications from '../../../../public/telegram-notifications.mp4'
+import { Image } from "astro:assets";
+import telegramShare from "../../../assets/screenshots/huly/telegram-share.png";
+import telegramNotifications from "../../../../public/telegram-notifications.mp4";
 
 Huly's Telegram integration provides the following functionality:
 
@@ -24,9 +24,9 @@ To connect your Telegram account to Huly, follow these steps:
 
 ### Telegram notifications settings
 
-After connecting with Telegram, you can customize your notifications settings. Navigate to Notifications in the left sidebar menu and ensure Telegram notifications are enabled under "General". 
+After connecting with Telegram, you can customize your notifications settings. Navigate to Notifications in the left sidebar menu and ensure Telegram notifications are enabled under "General".
 
-From the notifications settings menu, you can select which kinds of Huly notifications you'd like to receive in Telegram. 
+From the notifications settings menu, you can select which kinds of Huly notifications you'd like to receive in Telegram.
 
 For example, you could toggle notifications for Chat, allowing you to receive internal Huly messages in your Telegram account. You can also toggle notifications for Issues, Applications, GitHub and more.
 
@@ -38,9 +38,15 @@ To respond to a message, right-click or reply directly to the message thread in 
 
 > **Note:** Simply replying in the Telegram chat will not send your message to Huly. You must reply directly to the Huly message thread.
 
-<video controls>
-  <source src={telegramNotifications} type="video/mp4" />
-</video>
+<div style="position: relative; padding-top: 56.25%;">
+  <iframe
+    src="https://customer-davn16od7sue0s1k.cloudflarestream.com/e8c73dcf286fc285ab22ab6d99d087a6/iframe?poster=https%3A%2F%2Fcustomer-davn16od7sue0s1k.cloudflarestream.com%2Fe8c73dcf286fc285ab22ab6d99d087a6%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+    loading="lazy"
+    style="border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+    allowfullscreen="true"
+  ></iframe>
+</div>
 
 ### Communicating with external contacts
 
@@ -54,9 +60,15 @@ To connect with an external contact from Huly, follow these steps:
 
 After initiating contact through Telegram from Huly, any replies from that user will appear in both Telegram and Huly, and you can continue the conversation from either platform. You'll find your synced correspondence both in the contact's page and in your Huly Inbox.
 
-<video controls>
-  <source src="/src/assets/videos/huly/telegram-external.mp4" type="video/mp4" />
-</video>
+<div style="position: relative; padding-top: 56.25%;">
+  <iframe
+    src="https://customer-davn16od7sue0s1k.cloudflarestream.com/187f2fd5c708b591a2039d403698b39c/iframe?poster=https%3A%2F%2Fcustomer-davn16od7sue0s1k.cloudflarestream.com%2F187f2fd5c708b591a2039d403698b39c%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+    loading="lazy"
+    style="border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+    allowfullscreen="true"
+  ></iframe>
+</div>
 
 ### Sharing Telegram conversations with your team
 
@@ -64,11 +76,11 @@ In some cases, you may wish to share a conversation you have with a Telegram con
 
 There are several kinds of messages you might want to save to a contact's activity record. Here are a few examples:
 
-* Communication from a client about specific project details
-* Feedback received on a design or proposal
-* Answers to questions about a project or task
-* Scheduling or availability details for a job application candidate
-* Follow up conversations with a sales lead
+- Communication from a client about specific project details
+- Feedback received on a design or proposal
+- Answers to questions about a project or task
+- Scheduling or availability details for a job application candidate
+- Follow up conversations with a sales lead
 
 These are just a few ideas, but this feature can be used in any way you need depending on your own unique workflows.
 
@@ -78,11 +90,11 @@ To save a message to a contact's activity record, follow these steps:
 2. Click the share icon in the top right corner of the conversation.
 3. Select any messages you'd like to share and click `Publish selected`.
 
-<Image 
-    src={telegramShare} 
-    alt="Sharing a Telegram message" 
-    inferSize 
-    quality="max" 
+<Image
+  src={telegramShare}
+  alt="Sharing a Telegram message"
+  inferSize
+  quality="max"
 />
 
 Now on the contact's page, you'll see the shared messages in the activity feed.
