@@ -3,8 +3,8 @@ title: Telegram
 description: Learn how to integrate Huly with Telegram.
 ---
 
-import { Image } from 'astro:assets';
-import telegramShare from '../../../assets/screenshots/huly/telegram-share.png';
+import { Image } from "astro:assets";
+import telegramShare from "../../../assets/screenshots/huly/telegram-share.png";
 
 Huly's Telegram integration provides the following functionality:
 
@@ -23,9 +23,9 @@ To connect your Telegram account to Huly, follow these steps:
 
 ### Telegram notifications settings
 
-After connecting with Telegram, you can customize your notifications settings. Navigate to Notifications in the left sidebar menu and ensure Telegram notifications are enabled under "General". 
+After connecting with Telegram, you can customize your notifications settings. Navigate to Notifications in the left sidebar menu and ensure Telegram notifications are enabled under "General".
 
-From the notifications settings menu, you can select which kinds of Huly notifications you'd like to receive in Telegram. 
+From the notifications settings menu, you can select which kinds of Huly notifications you'd like to receive in Telegram.
 
 For example, you could toggle notifications for Chat, allowing you to receive internal Huly messages in your Telegram account. You can also toggle notifications for Issues, Applications, GitHub and more.
 
@@ -47,17 +47,29 @@ To respond to a message, right-click or reply directly to the message thread in 
   ></iframe>
 </div>
 
-### Communicating with external contacts
+### Responding to Huly activity in Telegram
 
-Huly's Telegram client allows you to add a Telegram account for any contact and communicate with them directly from Huly. This is useful for managing external conversations within the Huly workspace.
+After enabling Telegram notifications, you will begin to receive messages from Huly in your Telegram account.
 
-To connect with an external contact from Huly, follow these steps:
+To respond to a message, right-click or reply directly to the message thread in Telegram. Your response will be sent back to Huly and displayed in the appropriate chat or activity thread.
 
-1. Open the contact page for the person you'd like to connect with through Telegram. Click `Add social links` and select `Telegram`.
-2. Enter the contact's Telegram username or phone number and click the blue check icon.
-3. Click the Telegram icon and then the arrow to open a new Telegram conversation with the contact. From here, you can send messages directly to the contact from Huly.
+> **Note:** Simply replying in the Telegram chat will not send your message to Huly. You must reply directly to the Huly message thread.
 
-After initiating contact through Telegram from Huly, any replies from that user will appear in both Telegram and Huly, and you can continue the conversation from either platform. You'll find your synced correspondence both in the contact's page and in your Huly Inbox.
+<div style="position: relative; padding-top: 56.25%;">
+  <iframe
+    src="https://customer-davn16od7sue0s1k.cloudflarestream.com/e8c73dcf286fc285ab22ab6d99d087a6/iframe?poster=https%3A%2F%2Fcustomer-davn16od7sue0s1k.cloudflarestream.com%2Fe8c73dcf286fc285ab22ab6d99d087a6%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600"
+    loading="lazy"
+    style="border: none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+    allowfullscreen="true"
+  ></iframe>
+</div>
+
+### Coming Soon: Communicating with external contacts
+
+In the near future, Huly's Telegram client will allow you to add a Telegram account for any contact and communicate with them directly from Huly. This will be useful for managing external conversations within the Huly workspace.
+
+See below a sneak peek of this upcoming feature:
 
 <div style="position: relative; padding-top: 56.25%;">
   <iframe
@@ -69,31 +81,6 @@ After initiating contact through Telegram from Huly, any replies from that user 
   ></iframe>
 </div>
 
-### Sharing Telegram conversations with your team
+In some cases, you may wish to share a conversation you have with a Telegram contact with other members of your workspace. In an upcoming version of Huly, you'll be able to easily publish selected messages to a contact's activity record, making them visible to your team.
 
-In some cases, you may wish to share a conversation you have with a Telegram contact with other members of your workspace. With Huly's Telegram integration, you can easily publish selected messages to a contact's activity record, making them visible to your team.
-
-There are several kinds of messages you might want to save to a contact's activity record. Here are a few examples:
-
-* Communication from a client about specific project details
-* Feedback received on a design or proposal
-* Answers to questions about a project or task
-* Scheduling or availability details for a job application candidate
-* Follow up conversations with a sales lead
-
-These are just a few ideas, but this feature can be used in any way you need depending on your own unique workflows.
-
-To save a message to a contact's activity record, follow these steps:
-
-1. Open the Telegram conversation between you and your contact in Huly, either from the contact's page or from your Huly Inbox.
-2. Click the share icon in the top right corner of the conversation.
-3. Select any messages you'd like to share and click `Publish selected`.
-
-<Image 
-    src={telegramShare} 
-    alt="Sharing a Telegram message" 
-    inferSize 
-    quality="max" 
-/>
-
-Now on the contact's page, you'll see the shared messages in the activity feed.
+Stay tuned for more updates to our Telegram integration in the near future!
