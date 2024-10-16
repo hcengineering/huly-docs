@@ -1,0 +1,28 @@
+---
+title: Roles
+description: Learn how to use roles for projects and teamspaces.
+---
+
+Roles determine the kinds of permissions users have in Huly. Roles can be set both at the workspace level and at the "space" level (see [Space types](/advanced-settings/space-types)).
+
+### Workspace owners and maintainers
+
+Navigate to Settings and select `Owners` from the `WORKSPACE SETTINGS` menu.
+
+From here, you can select a role for each team member:
+
+- **Owner** - The workspace owner has full control over the workspace. They can remove team members and manage workspace settings. A workspace can have multiple owners.
+- **Maintainer** - Maintainers have the same permissions as owners, except they cannot delete the workspace, remove owners, or remove team members. Maintainers can manage workspace settings.
+- **User** - Users cannot manage workspace settings or remove team members.
+
+### Global admins
+
+You can also set admins globally for all spaces within the workspace. Global admins have full permissions when it comes to spaces themselves, such as archiving and deleting projects, but they cannot delete the workspace, remove the workspace owner, or manage workspace settings (unless granted Owner or Maintainer permissions at the workspace level - see above).
+
+### Roles for space types
+
+Roles can also be set at the space level. In Settings under the `SPACE TYPES` menu, navigate to the space you'd like to manage and find the `Roles` section.
+
+Default space types do not include roles, but you can create them by clicking the `+` button. Enter a name for your role and click `Create`. Then, click on your role to select specific permissions. Currently, permissions available are "Update space", "Archive space" and "Forbid delete object".
+
+Once your roles have been created, you'll be able to assign roles to team members for spaces using that space type.
