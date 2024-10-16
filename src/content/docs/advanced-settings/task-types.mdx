@@ -3,31 +3,31 @@ title: Task types
 description: Learn how to customize your workspace with task types.
 ---
 
-import { YouTube } from 'astro-embed';
-import { Image } from 'astro:assets';
-import settingsProcessStates from '../../../assets/screenshots/huly/settings-process-states.png';
-import settingsCustomProcessStates from '../../../assets/screenshots/huly/settings-custom-process-states.png';
-import settingsCustomProjectType from '../../../assets/screenshots/huly/settings-custom-project-type.png';
+import { YouTube } from "astro-embed";
+import { Image } from "astro:assets";
+import settingsProcessStates from "../../../assets/screenshots/huly/settings-process-states.png";
+import settingsCustomProcessStates from "../../../assets/screenshots/huly/settings-custom-process-states.png";
+import settingsCustomProjectType from "../../../assets/screenshots/huly/settings-custom-project-type.png";
 
-<YouTube id='EVmZr1Ybi8c' posterQuality='max' />
+<YouTube id="EVmZr1Ybi8c" posterQuality="max" />
 
 Huly is designed to be highly configurable to any kind of workflow. While some customization features are still being developed, there are several options already available for you to configure your workspace to your specific needs.
 
 ### What are task types?
 
-Task types define the "shape" of tasks inside your projects. A task type can have its own special properties and process states.
+Task types define the kinds of tasks inside your projects. A task type can have its own special properties and process states.
 
-To take a look at the default task type used in your Tracker, navigate to Settings and select `Classic project` from the `SPACE TYPES` area in the left sidebar menu. `Classic project` is the default space type used in Huly.
+To take a look at the default task type used in your Tracker, navigate to Settings and select `Classic project` from the `SPACE TYPES` area in the left sidebar menu. `Classic project` is the default [space type](/advanced-settings/space-types) used in Huly.
 
 Notice in the `TASK TYPES` section that one task types are listed: `Issue`. Opening this task type will reveal its properties and process states.
 
 The `Issue` task type has process states of `Backlog`, `Todo`, `In Progress`, `Done` and `Canceled`.
 
-<Image 
-src={settingsProcessStates} 
-alt='Settings for process states' 
-inferSize
-quality='max'
+<Image
+  src={settingsProcessStates}
+  alt="Settings for process states"
+  inferSize
+  quality="max"
 />
 
 > **Note:** If you've already connected your workspace to GitHub, you'll also see a `Pull request` task type. These tasks are synced with GitHub, so they have their own unique properties and process states.
@@ -43,7 +43,7 @@ Even if you customize your process states to use different names (see below), th
 
 ### Creating custom task types
 
-The default settings of the `Classic project` cannot be directly modified. In order to use your own customized task types and process states, you'll need to create a new **space type**. This can only be done by the workspace owner or a user granted admin permissions.
+The default settings of the `Classic project` cannot be directly modified. In order to use your own customized task types and process states, you'll need to create a new [space type](/advanced-settings/space-types). This can only be done by the workspace owner or a user granted admin permissions.
 
 In settings, click the `+` button next to `SPACE TYPES` in the left sidebar menu.
 
@@ -61,11 +61,11 @@ Click on any process state to edit it. You can change the name of the state, the
 
 You can also create new process states. For example, within the "Active" status category, you may wish to add more states, such as "Started" "In progress", "Submitted for review" and "Under review". You might also want to add more specific states to the "Done status/lost" category, such as "Cancelled", "On hold" or "Blocked".
 
-<Image 
-src={settingsCustomProcessStates} 
-alt='Settings for custom process states' 
-inferSize
-quality='max'
+<Image
+  src={settingsCustomProcessStates}
+  alt="Settings for custom process states"
+  inferSize
+  quality="max"
 />
 
 ### Using your custom task types
@@ -74,11 +74,11 @@ In order to use your custom task types, you'll need to create a new project base
 
 When creating a new project, select your custom task types from the `Project type` dropdown menu.
 
-<Image 
-src={settingsCustomProjectType} 
-alt='Using a custom project type' 
-inferSize
-quality='max'
+<Image
+  src={settingsCustomProjectType}
+  alt="Using a custom project type"
+  inferSize
+  quality="max"
 />
 
 Now, when creating new issues within your project, you'll find all of your custom task types and process states available to use.

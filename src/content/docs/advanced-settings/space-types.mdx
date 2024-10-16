@@ -1,0 +1,52 @@
+---
+title: Space types
+description: Learn how to customize your workspace with space types.
+---
+
+import { Image } from "astro:assets";
+import settingsCustomProjectType from "../../../assets/screenshots/huly/settings-custom-project-type.png";
+
+### What are space types?
+
+Space types are the highest level of customization in Huly. They define the structure of your workspace by applying a shared set of roles and task types to all spaces created with that type.
+
+The tracker in Huly is based on the `Classic project` space type. This space type comes with no preset roles, and one task type (`Issue`) with process states of `Backlog`, `Todo`, `In Progress`, `Done` and `Canceled`. By default, new projects created in the tracker will use this space type.
+
+However, you may wish to create your own space types to model different types of processes that you'll be tracking in your workspace. For example, could might space types for "Client projects", "Internal projects" and "Bug tracking", each of which would have its own roles and [task types](/advanced-settings/task-types).
+
+### Customizing default space types
+
+You can find all of the settings for your space types under `Settings` in the left sidebar menu. Click on `SPACE TYPES` to see a list of all space types available in your workspace. Click on any space type to view and edit its settings.
+
+Some properties and attributes for spaces are not currently customizable. Settings in the first block cannot be changed.
+
+##### Creating roles
+
+Default space types do not include roles, but you can create them by clicking the `+` button in the `ROLES` section. Enter a name for your role and click `Create`. Then, click on your role to select specific permissions. Currently, permissions available are "Update space", "Archive space" and "Forbid delete object".
+
+Once your roles have been created, you'll be able to assign roles to team members for spaces using that space type. Further documentation on roles will be available soon.
+
+##### Creating task types
+
+Read an in-depth tutorial on updating and creating task types [here](/advanced-settings/task-types).
+
+### Creating custom space types
+
+To create a new space type, click the `+` button next to `SPACE TYPES` in the left sidebar menu of your settings.
+
+In the top left corner, select what kind of space you'd like to create a space type for. If you choose `Tracker`, you'll also have the option to base your space type on the `Classic project`.
+
+Once your custom space type has been created, you can add [task types](/advanced-settings/task-types) and roles.
+
+### Using your custom space type
+
+Custom space types cannot be used for existing projects. To use your custom space type, you'll need to create a new project and select your custom space type from the `Space type` dropdown menu.
+
+<Image
+  src={settingsCustomProjectType}
+  alt="Using a custom project type"
+  inferSize
+  quality="max"
+/>
+
+If you've added roles, you'll be able to add members to each role when you create your project.
