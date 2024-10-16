@@ -5,23 +5,21 @@ description: Learn how to use roles for projects and teamspaces.
 
 Roles determine the kinds of permissions users have in Huly. Roles can be set both at the workspace level and at the "space" level (see [Space types](/advanced-settings/space-types)).
 
-### Owners and maintainers
+### Workspace owners and maintainers
 
 Navigate to Settings and select `Owners` from the `WORKSPACE SETTINGS` menu.
 
 From here, you can select a role for each team member:
 
-- **Owner** - The workspace owner has full control over the workspace. They can remove team members, create and delete spaces, and manage workspace settings. A workspace can have multiple owners.
-- **Maintainer** - Maintainers have the same permissions as owners, except they cannot delete the workspace, remove the owner, or remove team members. Maintainers can create custom space types and task types, but can't delete spaces they aren't an owner of.
-- **User** - Users can create and manage spaces, but they cannot manage workspace settings or emove team members. Users cannot create custom space types or task types, and they cannot delete spaces that they aren't an owner of.
+- **Owner** - The workspace owner has full control over the workspace. They can remove team members and manage workspace settings. A workspace can have multiple owners.
+- **Maintainer** - Maintainers have the same permissions as owners, except they cannot delete the workspace, remove owners, or remove team members. Maintainers can manage workspace settings.
+- **User** - Users cannot manage workspace settings or remove team members.
 
-> **Note:** In order to enable workspace ownership for a second user, that user must also be added to the `Admin` role (see below).
+### Global admins
 
-### Admins
+You can also set admins globally for all spaces within the workspace. Global admins have full permissions when it comes to spaces themselves, such as archiving and deleting projects, but they cannot delete the workspace, remove the workspace owner, or manage workspace settings (unless granted Owner or Maintainer permissions at the workspace level - see above).
 
-You can also set admins for all spaces within the workspace. Admins have full permissions when it comes to spaces themselves, such as archiving and deleting projects, but they cannot delete the workspace, remove the workspace owner, or access any of the workspace settings.
-
-### Space-level roles
+### Roles for space types
 
 Roles can also be set at the space level. In Settings under the `SPACE TYPES` menu, navigate to the space you'd like to manage and find the `Roles` section.
 
