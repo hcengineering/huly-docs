@@ -75,9 +75,19 @@ export default defineConfig({
                 label: "Scheduling action items",
                 link: "/task-tracking/scheduling-action-items/",
               },
+            ],
+          },
+          {
+            label: "Team resources",
+            collapsed: true,
+            items: [
               {
                 label: "Team planner",
-                link: "/task-tracking/team-planner/",
+                link: "/team-resources/team-planner/",
+              },
+              {
+                label: "Human resources",
+                link: "/team-resources/human-resources/",
               },
             ],
           },
