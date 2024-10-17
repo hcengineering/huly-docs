@@ -1,0 +1,43 @@
+---
+title: Classes and enums
+description: Learn how to use classes and enums to manage object properties.
+---
+
+import { YouTube } from "astro-embed";
+
+Huly offers a high degree of configurability through Classes. A class is a set or category of things having some property in common. In other words, classes are a way to group objects together based on shared properties.
+
+To access class settings, navigate to settings and click `Classes` in the `WORKSPACE SETTINGS` menu. You'll see a list of all the classes in your workspace. Clicking on any class will display its properties.
+
+### Customizing class properties
+
+Currently, only the `Contact` and `Task` classes can be customized.
+
+To add a property, click the `+` button. Choose from the following property types:
+
+- URL
+- String - for single-line text
+- Boolean - select Yes, No, or N/A
+- Number
+- Date
+- Ref - (not yet implemented)
+- Array - (not yet implemented)
+- Enum - select from a list of options (see below)
+
+You'll see that your new property will now appear on any object belonging to that class.
+
+To remove a property, open the settings menu to the left of the property and click `Remove`. You can also hide a property here as well by clicking `Hide attribute`.
+
+### Enums
+
+Enums are a type of property that allows you to select from a list of options. For example, you could add a property called "How we met" to your contacts and use options like "Conference", "Mutual friend", "Cold call" etc.
+
+To create an enum, navigate to Settings > Enums and click the `+ Create enum` button. Add options and click `Save`.
+
+You can also create enums directly from the Classes settings. After creating a new property with the type `enum`, use the `+` button to create a new enum for that class.
+
+### Example use-case
+
+Check out this video to see an example of how classes and enums are used for managing contacts:
+
+<YouTube id="xCtiptham4o" posterQuality="max" />

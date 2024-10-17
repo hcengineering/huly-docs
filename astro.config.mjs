@@ -191,6 +191,10 @@ export default defineConfig({
                 label: "Task types",
                 link: "/advanced-settings/task-types/",
               },
+              {
+                label: "Classes and enums",
+                link: "/advanced-settings/classes-enums/",
+              },
             ],
           },
           {
