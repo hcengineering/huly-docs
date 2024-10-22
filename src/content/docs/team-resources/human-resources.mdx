@@ -3,6 +3,9 @@ title: Human resources
 description: Learn how to use the human resources module in Huly.
 ---
 
+import { Image } from "astro:assets";
+import humanResources from "../../../assets/screenshots/huly/human-resources.png";
+
 The human resources module in Huly allows you to manage scheduling and basic time tracking across your departments. This module is still in development, so some features are not yet complete. We welcome any feedback you have as we continue to improve our offerings in this area. For now, continue reading to learn how to get the most out of the human resources module in its current implementation!
 
 ### Setting up departments
@@ -16,6 +19,13 @@ Hover over any department, open the settings menu and click `Open` to view that 
 You can create as many departments as you like to reflect your organizational structure, including departments nested within other departments.
 
 ### Viewing the HR schedule
+
+<Image
+  src={humanResources}
+  alt="Human resources schedule"
+  inferSize
+  quality="max"
+/>
 
 You can view the HR schedule for the entire organization or for a specific department.
 
