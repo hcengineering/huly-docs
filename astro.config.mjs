@@ -30,6 +30,10 @@ export default defineConfig({
                 link: "/getting-started/workspace-setup/",
               },
               {
+                label: "Learn the basics",
+                link: "/getting-started/learn-the-basics/",
+              },
+              {
                 label: "Support",
                 link: "/getting-started/support/",
               },
