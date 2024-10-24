@@ -202,6 +202,16 @@ export default defineConfig({
             ],
           },
           {
+            label: "Self-hosting",
+            collapsed: true,
+            items: [
+              {
+                label: "FAQs and guides",
+                link: "/selfhost/faq-guides",
+              },
+            ],
+          },
+          {
             label: "TraceX eQMS modules",
             collapsed: true,
             items: [
