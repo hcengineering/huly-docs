@@ -1,0 +1,39 @@
+---
+title: Self-hosting Huly
+description: Learn how to self-host Huly on your own server.
+---
+
+Huly can be self-hosted on your own server. Setup instructions for self-hosting can be found in the `huly-selfhost` [README](https://github.com/hcengineering/huly-selfhost).
+
+This documentation supplements the README with answers to frequently asked questions and additional guides. You are welcome to join our [Slack community](https://huly.link/slack) to seek out additional support from other users who are self-hosting Huly.
+
+### Frequently Asked Questions
+
+##### Are all of the features of cloud Huly available for self-hosting?
+
+Everything is available as open source, so you can self-host everything you see in the cloud version. However, there are some features that aren't prepackaged into self-hosted distribution for various reasons. Some parts of cloud version rely on proprietary Cloudflare services, which we intentionally do not include into self-hosting packages to avoid any vendor lock-ins. Sources are available for all features, but some features may not be available out-of-the-box so you need to spend some effort to run them within your environment.
+
+See the following setup guides for more information:
+
+- [Virtual office](https://github.com/hcengineering/huly-selfhost/tree/main?tab=readme-ov-file#love-service-audio--video-calls)
+- [Email notifications](https://github.com/hcengineering/huly-selfhost/pull/38/files)
+
+##### Can I use Google OAuth with self-hosting?
+
+Yes. For Google OAuth2, use `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` environment variables in the account service.
+
+Note that Google cannot be used with `localhost` as the domain, so you'll need to have a hostname for your Huly instance. The redirect URI should always be `{huly_account_svc_exposed}/auth/google/callback` where `huly_account_svc_exposed` is the host of your account service accessible externally from the client/browser side (like localhost:3000 in the example setup).
+
+Please also see our guide on [OpenID Connect](https://github.com/hcengineering/huly-selfhost?tab=readme-ov-file#configure-openid-connect)
+
+##### How can I set up self-hosting using Kubernetes?
+
+We have a basic example of Kubernetes configuration [here](https://github.com/hcengineering/huly-selfhost/tree/main/kube).
+
+##### I see an error `Unknown error: Failed to fetch` when I try to sign up.
+
+This error indicates that your client (browser) cannot reach the accounts service on your deployment. Please check your configuration and make sure your `ACCOUNTS_URL` is set up properly in the front service and the account service is reachable from your client.
+
+##### How can I make sure my data isn't lost if I move to a new server?
+
+Back up your database to make sure you can restore your data when moving to a new server. Also, ensure that the new server will have the same or newer Huly version. If it's newer, the database will be upgraded automatically, but please avoid then switching back to older version. Using the same version on both the old and new servers is recommended.
