@@ -188,6 +188,16 @@ export default defineConfig({
             ],
           },
           {
+            label: "Additional modules",
+            collapsed: true,
+            items: [
+              {
+                label: "Test management",
+                link: "/additional-modules/test-management/",
+              }
+            ],
+          },
+          {
             label: "Advanced settings",
             collapsed: true,
             items: [
