@@ -112,6 +112,10 @@ export default defineConfig({
                 link: "/knowledge-management/documents-action-items/",
               },
               {
+                label: "Drawing board and scribbles",
+                link: "/knowledge-management/drawing-board/",
+              },
+              {
                 label: "Drive",
                 link: "/knowledge-management/drive/",
               },
