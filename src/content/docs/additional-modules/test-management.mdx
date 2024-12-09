@@ -1,0 +1,44 @@
+---
+title: Test management
+description: Learn how to create, manage and run tests in Huly.
+---
+
+import { Image } from 'astro:assets';
+import newTestRun from '../../../assets/screenshots/huly/test-management-new-test-run.png';
+import testRunResult from '../../../assets/screenshots/huly/test-management-test-run-result.png';
+
+Huly's test management module enables you to efficiently create, organize, and run tests within your workspace. With this module, you can track test statuses, view results, link tests to issues in the Tracker, and generate work tickets for assignees.
+
+### Setting up tests
+
+Click the `+` button in the left sidebar to start a new test project. For now, test projects are isolated within the test management module; however, there are plans to connect test management with other workspace projects in the near future.
+
+##### Creating a test suite
+Open the dropdown menu in the top left corner and select `Create test suite`. Provide a name and an optional description for your test suite.
+
+##### Creating a test case
+Within your test suite, add test cases by clicking `+ New test case`. Enter a name and optional description for your test case. Select a status (e.g., Ready, In Progress), and attach any relevant files or images. Then, click `Create`.
+
+### Running tests
+
+Use the checkboxes next to each test case to choose which ones to include in the test run. Then, click `Run`.
+
+Provide a title and description for your test run. Your test run can include details such as environment setup, execution instructions, and expected results.
+
+<Image 
+src={newTestRun} 
+alt='Dialog to enter details for new test run' 
+inferSize
+quality='max'
+/>
+
+Once the test has been run, you can change the status from `Untested` to `Passed`, `Failed` or `Blocked`, and add an assignee to review.
+
+<Image 
+src={testRunResult} 
+alt='Example test run result' 
+inferSize
+quality='max'
+/>
+
+You'll also see an Activity section where you can have discussions, link to isses and documents, and add attachments.
