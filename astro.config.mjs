@@ -141,6 +141,10 @@ export default defineConfig({
                 label: "Virtual office",
                 link: "/communication/virtual-office/",
               },
+              {
+                label: "Live transcription",
+                link: "/communication/live-transcription/",
+              },
             ],
           },
           {
