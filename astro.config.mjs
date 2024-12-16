@@ -207,7 +207,7 @@ export default defineConfig({
               },
               {
                 label: "Roles and permissions",
-                link: "/advanced-settings/roles-permissions/",
+                link: "/advanced-settings/roles/",
               },
               {
                 label: "Task types",
