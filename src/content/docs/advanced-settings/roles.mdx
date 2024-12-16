@@ -1,9 +1,18 @@
 ---
-title: Roles
-description: Learn how to use roles for projects and teamspaces.
+title: Roles and permissions
+description: Learn how to use roles and permissions for your workspace and projects.
 ---
 
-Roles determine the kinds of permissions users have in Huly. Roles can be set both at the workspace level and at the "space" level (see [Space types](/advanced-settings/space-types)).
+import { Image } from "astro:assets";
+import spacesMakePrivate from "../../../assets/screenshots/huly/spaces-make-private.png";
+
+Roles and permissions can be used to restrict access to spaces and allow additional permissions to select members. Permissions can be controlled at various levels:
+
+1. **Workspace owners and maintainers** - high-level control over who can make major changes like deleting the workspace and adding/removing team members. 
+2. **Global admins** - extended permissions for members to archive and delete projects in the workspace.
+3. **Space type roles** - specific roles that can be used to toggle update, archive and delete permissions for users, customized by space type.
+4. **Space members** - permissions for each individual space — simply add members and toggle privacy settings to determine exactly who can access which spaces in your workspace.
+
 
 ### Workspace owners and maintainers
 
@@ -29,9 +38,9 @@ You can also set admins globally for all spaces within the workspace. Global adm
   ></iframe>
 </div>
 
-### Roles for space types
+### Space type roles
 
-Roles can also be set at the space level. In Settings under the `SPACE TYPES` menu, navigate to the space you'd like to manage and find the `Roles` section.
+Roles can also be set for a space type. In Settings under the `SPACE TYPES` menu, navigate to the space type you'd like to manage and find the `Roles` section.
 
 Default space types do not include roles, but you can create them by clicking the `+` button. Enter a name for your role and click `Create`. Then, click on your role to select specific permissions. Currently, permissions available are "Update space", "Archive space" and "Forbid delete object".
 
@@ -46,3 +55,22 @@ Once your roles have been created, you'll be able to assign roles to team member
     allowfullscreen="true"
   ></iframe>
 </div>
+
+### Space members
+
+Permissions can also be set for individual spaces, such as projects, teamspaces, drives, and more.
+
+All spaces with a `Make private` toggle can be restricted to allow only members to view the space. This toggle can be set at the time of creating the space, or when editing the settings later.
+
+In order to restrict access to only members, ensure `Make private` is toggled on, and select the members you'd like to have access to the space.
+
+In the example below, you can see that this project space is set to private, and 7 members have been selected to have access to the space.
+
+<Image
+  src={spacesMakePrivate}
+  alt="Privacy settings for a space"
+  inferSize
+  quality="max"
+/>
+
+> **Note:** If `Auto join` is toggled on, new workspace members will be automatically added to your private space, even if you haven't specifically added them to the list of members. If you'd like to restrict access to only the members you've selected, ensure `Auto join` is toggled off. 

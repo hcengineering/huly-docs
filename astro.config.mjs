@@ -206,7 +206,7 @@ export default defineConfig({
                 link: "/advanced-settings/space-types/",
               },
               {
-                label: "Roles",
+                label: "Roles and permissions",
                 link: "/advanced-settings/roles/",
               },
               {
