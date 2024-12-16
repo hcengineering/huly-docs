@@ -206,8 +206,8 @@ export default defineConfig({
                 link: "/advanced-settings/space-types/",
               },
               {
-                label: "Roles",
-                link: "/advanced-settings/roles/",
+                label: "Roles and permissions",
+                link: "/advanced-settings/roles-permissions/",
               },
               {
                 label: "Task types",
