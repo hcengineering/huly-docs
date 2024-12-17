@@ -194,7 +194,11 @@ export default defineConfig({
               {
                 label: "Test management",
                 link: "/additional-modules/test-management/",
-              }
+              },
+              {
+                label: "Recruiting",
+                link: "/additional-modules/recruiting/",
+              },
             ],
           },
           {
