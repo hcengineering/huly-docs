@@ -35,8 +35,8 @@ The `Issue` task type has process states of `Backlog`, `Todo`, `In Progress`, `D
 
 Process states are the stages that a task goes through in its lifecycle. Each task type can have its own set of process states. The Huly system will automatically move tasks between these states based on user actions. The following actions will trigger automatic state changes:
 
-1. **Scheduling an action item** - When the issue assignee schedules an action item connected to that issue, the issue status will change from "Todo" to "In Progress".
-2. **Completing a scheduled action item** - When the issue assignee checks off an action item as complete (after scheduling it in their Planner), the issue status will change to "Done".
+1. **Scheduling an action item** - When the issue assignee schedules an [action item](/task-tracking/creating-action-items) connected to that issue, the issue status will change from "Todo" to "In Progress".
+2. **Completing a scheduled action item** - When the issue assignee checks off an [action item](/task-tracking/creating-action-items) as complete (after scheduling it in their Planner), the issue status will change to "Done".
 
 Even if you customize your process states to use different names (see below), the system will still recognize these actions based on the `Status category` of the process state. For example, you could change the name of the process state from "In Progress" to "Actively Working" and as long as the `Status category` is set to "Active", the system will still recognize this state as the one that triggers the automatic state change.
 
