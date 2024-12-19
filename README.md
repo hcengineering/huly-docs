@@ -4,8 +4,8 @@
 
 ## Submitting requests and feedback
 
-If there is a specific concept or feature you'd like to see covered in Huly Docs, the best way to let us know is to join our [Huly Community](https://huly.link/slack) on Slack to connect with other Huly users and communicate directly with our team. 
+If there is a specific concept or feature you'd like to see covered in Huly Docs, the best way to let us know is to join our [Huly Community](https://huly.link/slack) on Slack to connect with other Huly users and communicate directly with our team.
 
-Requests and feedback may also be submitted by email to [hey@huly.io](hey@huly.io). 
+Requests and feedback may also be submitted by email to [hey@huly.io](hey@huly.io).
 
-Your valuable input will guide which features we prioritise and help us create more thorough documentation for users!
+Your valuable input will guide which features we prioritize and help us create more thorough documentation for users!
