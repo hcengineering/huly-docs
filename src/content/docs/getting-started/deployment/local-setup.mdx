@@ -1,0 +1,108 @@
+---
+title: Local Development Setup
+description: Learn how to set up Huly Platform for local development.
+---
+
+### Prerequisites
+
+Before setting up Huly Platform locally, ensure you have the following tools installed:
+
+- Node.js 20 or later
+- npm 9.6.5 or later
+- pnpm 7.30.5 or later
+- Docker Desktop (for macOS) or Docker Engine (for Linux)
+- MongoDB
+
+### System Requirements
+
+> Note: These requirements ensure optimal performance for local development.
+
+- At least 8GB RAM
+- 20GB free disk space
+- Modern multi-core processor
+- Internet connection for package downloads
+
+### Installation Steps
+
+1. Clone the Repository
+```bash
+gh repo clone hcengineering/platform
+cd platform
+```
+
+2. Run the Automated Setup Script
+```bash
+./scripts/deployment/deploy.sh all my_workspace
+```
+
+The script will:
+- Clean your system of any conflicting installations
+- Check and install required dependencies
+- Prepare your development branch
+- Create your workspace
+
+### Configuration
+
+After installation, configure your development environment:
+
+1. Copy the default configuration:
+```bash
+cp config/default.conf config/local.conf
+```
+
+2. Edit `local.conf` to match your environment settings
+
+### Verify Installation
+
+Run the following checks to ensure everything is set up correctly:
+
+1. Check Node.js version:
+```bash
+node --version  # Should be 20.x or later
+```
+
+2. Verify pnpm installation:
+```bash
+pnpm --version  # Should be 7.30.5 or later
+```
+
+3. Confirm Docker is running:
+```bash
+docker ps  # Should show running containers
+```
+
+### Troubleshooting
+
+If you encounter issues during setup:
+
+1. Check the logs in `~/.huly/logs/`
+2. Ensure all prerequisites are installed
+3. Verify Docker is running properly
+4. Check MongoDB connection
+
+> Tip: Use `deploy.sh check` to verify your system meets all requirements.
+
+### Development Commands
+
+Common development commands:
+
+```bash
+# Full deployment
+./deploy.sh all my_workspace
+
+# Individual steps
+./deploy.sh clean          # Run system cleanup
+./deploy.sh check         # Check dependencies
+./deploy.sh prepare       # Prepare branch
+./deploy.sh workspace my_workspace  # Create workspace
+```
+
+### Getting Help
+
+If you need assistance:
+
+1. Check the troubleshooting section above
+2. Review the logs for specific error messages
+3. Contact the development team through appropriate channels
+
+> Note: Always ensure you're on the latest version of the platform repository before reporting issues.
