@@ -60,6 +60,10 @@ export default defineConfig({
                 link: "/task-tracking/issue-collaborators/",
               },
               {
+                label: "Labels",
+                link: "/task-tracking/labels/",
+              },
+              {
                 label: "Viewing and sorting issues",
                 link: "/task-tracking/viewing-issues/",
               },
@@ -114,6 +118,10 @@ export default defineConfig({
               {
                 label: "Drawing board and scribbles",
                 link: "/knowledge-management/drawing-board/",
+              },
+              {
+                label: "Mermaid diagrams",
+                link: "/knowledge-management/mermaid-diagrams/",
               },
               {
                 label: "Drive",
