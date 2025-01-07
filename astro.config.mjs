@@ -60,6 +60,10 @@ export default defineConfig({
                 link: "/task-tracking/issue-collaborators/",
               },
               {
+                label: "Labels",
+                link: "/task-tracking/labels/",
+              },
+              {
                 label: "Viewing and sorting issues",
                 link: "/task-tracking/viewing-issues/",
               },
