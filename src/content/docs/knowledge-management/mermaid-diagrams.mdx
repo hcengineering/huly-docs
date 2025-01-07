@@ -1,0 +1,28 @@
+---
+title: Mermaid diagrams
+description: Learn how to create diagrams with MermaidJS.
+---
+
+import { Image } from "astro:assets";
+import mermaid from "../../../assets/screenshots/huly/documents-mermaid.png";
+
+Huly supports the creation of diagrams using MermaidJS, a simple markdown-like language for generating diagrams and flowcharts. For specific syntax and examples of different kinds of diagrams you can create, see the [MermaidJS documentation](https://mermaid.js.org/intro/).
+
+<Image
+  src={mermaid}
+  alt="Diagram created with MermaidJS"
+  inferSize
+  quality="max"
+/>
+
+### Creating a diagram
+
+To create a diagram in a document, type `/` and select `Diagram`. This will open a dialog where you can enter your MermaidJS code.
+
+When valid MermaidJS code is entered, the diagram will automatically render in the space below. Collapsing the code editor will leave only the diagram visible on the page.
+
+### Editing a diagram
+
+To edit a diagram after it's been created, click the diagram to open the editor. This will allow you to make changes to the MermaidJS code, and you'll see the results in real time.
+
+> **Note:** Clicking on a diagram and pressing the delete key will remove the diagram from the document.

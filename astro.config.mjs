@@ -116,6 +116,10 @@ export default defineConfig({
                 link: "/knowledge-management/drawing-board/",
               },
               {
+                label: "Mermaid diagrams",
+                link: "/knowledge-management/mermaid-diagrams/",
+              },
+              {
                 label: "Drive",
                 link: "/knowledge-management/drive/",
               },
