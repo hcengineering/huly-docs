@@ -4,32 +4,34 @@ description: Learn how to integrate Huly with Telegram.
 ---
 
 import { Image } from "astro:assets";
-import telegramShare from "../../../assets/screenshots/huly/telegram-share.png";
+import telegramSync from "../../../assets/screenshots/huly/telegram-sync.png";
+import telegramSelectChannel from "../../../assets/screenshots/huly/telegram-select-channel.png";
 
 Huly's Telegram integration provides the following functionality:
 
-1. Receive and respond to Huly notifications from Telegram, including internal chat messages and workspace activity.
-2. Communicate with any external Telegram user directly from Huly, even if they are not a Huly user themselves (coming soon).
+1. Receive Huly inbox notifications in Telegram, including chat messages, mentions and other workspace activity.
+2. Send messages to Huly chat channels and DMs from Telegram.
+2. (coming soon) Communicate with any external Telegram user directly from Huly, even if they are not a Huly user themselves.
 
 Telegram provides a way for Huly users to stay connected with their workspace while on the go, ensuring that they never miss important updates or messages. In the near future, our Telegram client will also provide a means for managing external conversations within the Huly workspace, right alongside internal communications.
 
-### Telegram notifications: connect to the bot
+### Connect to the Telegram bot
 
 To connect with our Telegram bot, navigate to Settings > Notifications. Under "General", toggle on Telegram notifications. Then, click `Configure` to connect your Telegram account.
 
 Open the link to `hulyio_bot` and follow the prompts on the screen to enter the code and click `Ok`.
 
-From the notifications settings menu, you can also select which kinds of Huly notifications you'd like to receive in Telegram for different kinds of workspace activity.
+### Receiving Huly notifications in Telegram
+
+From the notifications settings menu, you can select which kinds of Huly notifications you'd like to receive in Telegram.
 
 For example, you could toggle notifications for Chat, allowing you to receive internal Huly messages in your Telegram account. You can also toggle notifications for Issues, Applications, GitHub and more.
 
-##### Responding to Huly activity in Telegram
-
 After enabling Telegram notifications, you will begin to receive messages from Huly in your Telegram account.
 
-To respond to a message, right-click or reply directly to the message thread in Telegram. Your response will be sent back to Huly and displayed in the appropriate chat or activity thread.
+### Responding to Huly notifications in Telegram
 
-> **Note:** Simply replying in the Telegram chat will not send your message to Huly. You must reply directly to the Huly message thread.
+You can respond to notifications by replying directly to the notification message (shown in the video below). In Huly, this will appear as a reply in the thread on that message or notification.
 
 <div style="position: relative; padding-top: 56.25%;">
   <iframe
@@ -40,6 +42,30 @@ To respond to a message, right-click or reply directly to the message thread in 
     allowfullscreen="true"
   ></iframe>
 </div>
+
+To reply to a chat channel or DM without creating a new thread, you'll need to sync your channels (see below).
+
+### Sending messages to Huly channels and DMs from Telegram
+
+Any time you add, update or remove channels and DMs in Huly (or if this is your first time connecting with the Telegram bot), you'll need to sync with Telegram.
+
+In Telegram, select `Menu` and then `Sync all channels`. This will sync all channels and DMs with your Huly account.
+
+<Image 
+    src={telegramSync} 
+    alt='Telegram bot menu options' 
+    inferSize
+    quality='max'
+/>
+
+After syncing, when you send a message in Telegram, you'll see a list of your channels to choose from. Select a channel or chat to send your message there.
+
+<Image 
+    src={telegramSelectChannel} 
+    alt='Select channel in Telegram' 
+    inferSize
+    quality='max'
+/>
 
 ### Coming soon: Use Telegram to connect with external contacts
 
