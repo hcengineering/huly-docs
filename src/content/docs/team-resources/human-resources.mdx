@@ -3,8 +3,11 @@ title: Human resources
 description: Learn how to use the human resources module in Huly.
 ---
 
+import { YouTube } from "astro-embed";
 import { Image } from "astro:assets";
 import humanResources from "../../../assets/screenshots/huly/human-resources.png";
+
+<YouTube id="VsM_VuYh2YA" posterQuality="max" />
 
 The human resources module in Huly allows you to manage scheduling and basic time tracking across your departments. This module is still in development, so some features are not yet complete. We welcome any feedback you have as we continue to improve our offerings in this area. For now, continue reading to learn how to get the most out of the human resources module in its current implementation!
 
@@ -41,10 +44,14 @@ The following items can be tracked on the schedule:
 
 By default, the schedule shows all tracked items for the current month next for each team member. Hovering over any block will reveal more details. It is also possible to view the schedule for the entire year by clicking `Year` in the top right corner. This view displays the total items tracked for each team member for each month. Hovering over any block reveals a list of that team member's tracked items for that month.
 
+> **Note:** Huly does not currently offer pre-defined workflows for manual approval of time off requests. This feature allows team members to record their time off and remote work for visibility, rather than being integrated into a formal tracking system.
+
 ### Adding an item to the schedule
 
 To add any of the items listed above, click anywhere in the row next to your name in the month view of the schedule. From here, you can select the kind of item you'd like to add. Enter a description and upload any attachments needed. Select the start and end date as applicable. Click `Create` and notice a block added to the schedule.
 
 ### Viewing the HR table
 
-Selecting the table view in the top left corner allows you to see reporting for each team member. This view shows totals for vacation days, sick days, PTO, overtime and remote days, as well as calculations based on the number of tasks completed. This early implementation of time tracking in Huly is still in development, so we suggest using this feature as a general guide rather than a precise tracking tool until the functionality is complete.
+Selecting the table view in the top left corner allows you to see reporting for each team member. This view shows totals for vacation days, sick days, PTO, overtime and remote days, as well as calculations based on the number of tasks completed. 
+
+> **Note:** This early implementation of time tracking in Huly is still in development, so we suggest using this feature as a general guide rather than a precise tracking tool until the functionality is complete.

@@ -34,6 +34,10 @@ export default defineConfig({
                 link: "/getting-started/learn-the-basics/",
               },
               {
+                label: "API & other tools",
+                link: "/getting-started/api-tools/",
+              },
+              {
                 label: "Support",
                 link: "/getting-started/support/",
               },
@@ -48,12 +52,16 @@ export default defineConfig({
                 link: "/task-tracking/creating-projects/",
               },
               {
-                label: "Milestones",
-                link: "/task-tracking/milestones/",
-              },
-              {
                 label: "Creating issues",
                 link: "/task-tracking/creating-issues/",
+              },
+              {
+                label: "Components",
+                link: "/task-tracking/components/",
+              },
+              {
+                label: "Milestones",
+                link: "/task-tracking/milestones/",
               },
               {
                 label: "Issue collaborators",
