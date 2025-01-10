@@ -34,6 +34,10 @@ export default defineConfig({
                 link: "/getting-started/learn-the-basics/",
               },
               {
+                label: "API & other tools",
+                link: "/getting-started/api-tools/",
+              },
+              {
                 label: "Support",
                 link: "/getting-started/support/",
               },
