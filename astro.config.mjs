@@ -48,12 +48,16 @@ export default defineConfig({
                 link: "/task-tracking/creating-projects/",
               },
               {
-                label: "Milestones",
-                link: "/task-tracking/milestones/",
-              },
-              {
                 label: "Creating issues",
                 link: "/task-tracking/creating-issues/",
+              },
+              {
+                label: "Components",
+                link: "/task-tracking/components/",
+              },
+              {
+                label: "Milestones",
+                link: "/task-tracking/milestones/",
               },
               {
                 label: "Issue collaborators",
