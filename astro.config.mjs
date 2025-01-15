@@ -241,6 +241,10 @@ export default defineConfig({
                 label: "Classes and enums",
                 link: "/advanced-settings/classes-enums/",
               },
+              {
+                label: "Text templates",
+                link: "/advanced-settings/text-templates/",
+              },
             ],
           },
           {
