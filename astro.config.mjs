@@ -150,6 +150,10 @@ export default defineConfig({
                 link: "/communication/sending-messages/",
               },
               {
+                label: "Inline comments",
+                link: "/communication/inline-comments/",
+              },
+              {
                 label: "Inbox",
                 link: "/communication/inbox/",
               },
