@@ -7,6 +7,7 @@ import { Image } from "astro:assets";
 import { YouTube } from "astro-embed";
 import documentMention from "../../../assets/screenshots/huly/documents-mention.png";
 import documentNote from "../../../assets/screenshots/huly/documents-note.png";
+import tableFormatting from "../../../assets/screenshots/huly/table-formatting.png";
 
 There are many uses for documents on the Huly platform, including sharing reference materials among team members, collaborating on plans and roadmaps, saving meeting notes and assigning action items. This guide will walk you through the basics of creating and formatting documents, as well as some of the options available for managing your documents. For more advanced document features, see the following guides:
 
@@ -79,7 +80,18 @@ When working on projects together, it may be helpful to assign small action item
 
 A table can be insterted into a document (or anywhere tables are supported) by typing `/` and selecting `Table`. This will open a dialog where you can specify the number of rows and columns for your table.
 
-Rows and columns can be deleted by right-clicking the settings menu that appears when hovering over the row or column. The entire table can be deleted by highlighting some text in any cell to reveal the floating toolbar, selecting the table icon, and clicking `Delete table`.
+To view options for table formatting, click on the 'Customize table' icon in the floating toolbar at the top right corner of the table. Here, you'll find options to add and delete rows and columns, merge and split cells, and delete the entire table.
+
+Also in the floating toolbar is the 'Set cell color' icon. Here, you can set a background color for specific table cells. The colors dynamically adapt to dark and light mode interfaces.
+
+You can also resize columns by clicking and dragging the lines between them.
+
+<Image
+  src={tableFormatting}
+  alt="Options for formatting tables"
+  inferSize
+  quality="max"
+/>
 
 ### Options for documents
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="EMPTY_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludePattern pattern="yarn-debug.log*" />
+      <excludePattern pattern="npm-debug.log*" />
+      <excludePattern pattern="yarn-error.log*" />
+      <excludePattern pattern=".env" />
+      <excludePattern pattern=".env.production" />
+      <excludePattern pattern=".DS_Store" />
+      <excludePattern pattern="pnpm-debug.log*" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
