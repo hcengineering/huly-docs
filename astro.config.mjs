@@ -150,6 +150,10 @@ export default defineConfig({
                 link: "/communication/sending-messages/",
               },
               {
+                label: "Inline comments",
+                link: "/communication/inline-comments/",
+              },
+              {
                 label: "Inbox",
                 link: "/communication/inbox/",
               },
@@ -236,6 +240,10 @@ export default defineConfig({
               {
                 label: "Classes and enums",
                 link: "/advanced-settings/classes-enums/",
+              },
+              {
+                label: "Text templates",
+                link: "/advanced-settings/text-templates/",
               },
             ],
           },
