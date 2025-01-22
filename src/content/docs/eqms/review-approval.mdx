@@ -5,6 +5,7 @@ description: Learn the process for reviewing and approving documents.
 
 import { Image } from 'astro:assets';
 import sendForReview from '../../../assets/screenshots/eqms/send-for-review.png';
+import reviewConfirmation from '../../../assets/screenshots/eqms/review-confirmation.png';
 
 TraceX includes electronic signatures (21 CFR part 11, FDA), which are used for reviewing and approving documents.
 
@@ -17,6 +18,13 @@ To send a document for review, click `Send for review` and select the members th
 <Image 
 src={sendForReview} 
 alt='Sending a document for review' 
+inferSize
+quality='max'
+/>
+
+<Image
+src={reviewConfirmation}
+alt='Confirming send for review'
 inferSize
 quality='max'
 />

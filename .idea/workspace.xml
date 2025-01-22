@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d48eea8-07c0-4366-af67-83f757d29636" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/screenshots/eqms/controlled-doc-transfer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/screenshots/eqms/review-confirmation.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/content/docs/eqms/document-settings.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/eqms/document-settings.mdx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/content/docs/eqms/review-approval.mdx" beforeDir="false" afterPath="$PROJECT_DIR$/src/content/docs/eqms/review-approval.mdx" afterDir="false" />
@@ -22,16 +24,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;update-documentation&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/abigaildawson/code/huly-docs&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "update-documentation",
+    "last_opened_file_path": "/Users/abigaildawson/code/huly-docs/src/assets/screenshots/eqms",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/content/docs/advanced-settings" />
