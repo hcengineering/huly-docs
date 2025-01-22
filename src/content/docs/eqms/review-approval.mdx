@@ -5,16 +5,26 @@ description: Learn the process for reviewing and approving documents.
 
 import { Image } from 'astro:assets';
 import sendForReview from '../../../assets/screenshots/eqms/send-for-review.png';
+import reviewConfirmation from '../../../assets/screenshots/eqms/review-confirmation.png';
 
 TraceX includes electronic signatures (21 CFR part 11, FDA), which are used for reviewing and approving documents.
 
+**Note:** As of January 2025, authors are now required to sign documents before sending them for review or approval, with corresponding timestamps included in the document. documents that have already been reviewed cannot skip the review step when sent for approval, maintaining the proper order of signatures (Author → Reviewer → Approver). This ensures consistency and helps avoid issues during audits. The exported PDF will reflect the correct signature order based on the review sequence, ensuring proper documentation for regulatory purposes.
+
 ### Reviewing a document
 
-To send a document for review, click `Send for review` and select the members that will be reviewing the document. This menu will automatically populate with the reviewers selected when creating or editing the document, but you can add additional reviewers here as well. Then, click `Send`.
+To send a document for review, click `Send for review` and select the members that will be reviewing the document. This menu will automatically populate with the reviewers selected when creating or editing the document, but you can add additional reviewers here as well. Confirm submission for review by entering your own electronic signature. Then, click `Send`.
 
 <Image 
 src={sendForReview} 
 alt='Sending a document for review' 
+inferSize
+quality='max'
+/>
+
+<Image
+src={reviewConfirmation}
+alt='Confirming send for review'
 inferSize
 quality='max'
 />
@@ -25,7 +35,7 @@ After the document has been reviewed, any further edits will be recorded for com
 
 ### Approving a document
 
-To send a document for approval, click `Send for approval` and select the members that will approve the document.
+To send a document for approval, click `Send for approval` and select the members that will approve the document. Any documents that have had changes after previously being reviewed must still be reviewed again before approval.
 
 > **Note:** All comments need to be resolved before sending a document for approval. If unresolved comments remain, the `Send for approval` button will be disabled.
 
