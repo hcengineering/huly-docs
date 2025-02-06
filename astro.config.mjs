@@ -138,7 +138,7 @@ export default defineConfig({
             ],
           },
           {
-            label: "Team communication",
+            label: "Communication",
             collapsed: true,
             items: [
               {
