@@ -292,7 +292,7 @@ export default defineConfig({
                     link: "/eqms/document-settings/",
                   },
                   {
-                    label: "Creating a new doc version",
+                    label: "Versions & obsolete documents",
                     link: "/eqms/document-versions/",
                   },
                   {
