@@ -1,0 +1,28 @@
+---
+title: Self-hosting Huly
+description: Learn how to get help with self-hosting Huly.
+---
+
+We offer the option to self-host the Huly platform on your own server. All of the documentation for setting up and maintaining a self-hosted instance of Huly is available on our <a href="https://github.com/hcengineering/huly-selfhost" target="_blank">huly-selfhost</a> GitHub repository. The main repository readme includes documentation on the following:
+
+* Cloning and configuring the repository
+* Setting up AWS SES email notifications
+* Setting up Love Service (Audio & Video calls)
+* Setting up AI Service
+* Configuring OpenID Connect
+* Configuring GitHub OAuth
+* Disabling Sign-up
+
+Everything you see in the cloud version can potentially be self-hosted; however, we may not "prepackage" some services for various reasons. Some integrations (like GitHub) may require you to install a separate app in GitHub or work with Google to enable an API, and we do not have extensive documentation to describe every case. Also, some parts of cloud version rely on proprietary Cloudflare services, which we intentionally do not include into self-hosting packages to avoid any vendor lock-ins. 
+
+## Migrating data between self-hosted and cloud
+
+We do not have a way for users to migrate data from a self-hosted Huly instance to our cloud version through the GUI, but there is still a way to manually export/import your self-hosted data to huly.io. Feel free to reach us out when you need to do this and we will provide you guidance and help.
+
+In the reverse direction (migrating from could to self-hosted), if you are an owner of the workspace, you can do this in the desktop app. In the menu we have `Backup` option that saves workspace backup to your filesystem. When you have the backup, you can restore it to the self-hosted version.
+
+## Support for self-hosting
+
+Support for self-hosting is community-driven, and the best way to get in touch with others who are self-hosting is through our <a href="https://huly.link/slack" target="_blank">Slack</a> community in the `#open-source` channel. Here, you can ask questions, share tips, and get help from others who are also self-hosting Huly. 
+
+Our team is also active in the community and we do our best to respond to as many questions as we can. However, due to the technical complexities of self-hosting and the wide range of factors that vary between individual setups, we may not be able to respond to every request for self-hosting support. For this reason, we encourage community members to support each other whenever possible, and of course we welcome any supplementary documentation provided by the community to add to our repository.
