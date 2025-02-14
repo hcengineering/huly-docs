@@ -38,6 +38,10 @@ export default defineConfig({
                 link: "/getting-started/api-tools/",
               },
               {
+                label: "Self-hosting",
+                link: "/getting-started/self-host/",
+              },
+              {
                 label: "Support",
                 link: "/getting-started/support/",
               },
