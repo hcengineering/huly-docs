@@ -223,6 +223,10 @@ export default defineConfig({
                 label: "Recruiting",
                 link: "/additional-modules/recruiting/",
               },
+              {
+                label: "Leads",
+                link: "/additional-modules/leads/",
+              },
             ],
           },
           {
