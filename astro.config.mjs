@@ -227,6 +227,10 @@ export default defineConfig({
                 label: "Leads",
                 link: "/additional-modules/leads/",
               },
+              {
+                label: "Surveys",
+                link: "/additional-modules/surveys/",
+              },
             ],
           },
           {
