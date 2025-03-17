@@ -37,11 +37,11 @@ Beyond the basic elements, Cards can also include:
 
 ### Example: Creating a Character Card
 
-Let’s walk through an example using our **game design** system.
+Let’s walk through an example using our **game design** system. **Types**, **Tags** and **Relations** are all covered in the following guides, but we'll take a peek at how they all appear on a `Character` Card:
 
-!! INSERT IMAGE: Hero Card
+!! INSERT IMAGE: Hero Card - shows all elements that are visible on the Card page
 
-This is a Card created from the `Character` Type, which is derived from `Game Component`. For more on how Types are derived, see [Creating a derived Type](/cards/types/create-a-type/#creating-derived-types).
+This is a Card created from the `Character` Type, which is derived from the `Game Component` Type. For more on how Types are derived, see [Creating a derived Type](/cards/types/create-a-type/#creating-derived-types).
 
 This Card also has `Movement` and `Health` [Tags](/cards/tags/tags-overview), which provide additional properties.
 
@@ -54,12 +54,12 @@ The `Character` Card also has several [Relations](/cards/relations/relations-ove
 
 A parent-child relationship structures Cards hierarchically:
 
-* A parent Card can have multiple child Cards.
-* A child Card can only belong to onw parent.
+* A **parent Card** can have multiple **child Cards**.
+* A **child Card** can only belong to one **parent Card**.
 
 It's best to use parent-child Cards when the child Cards are best understood in the context of their parent.
 
-In our **game design** example, we may want to create a parent `Environment` Card representing a fictional region that contains child `Environment` Cards representing fictional locations within that region.
+In our **game design** example, we may want to create an `Environment` parent Card representing a fictional region that contains `Environment` child Cards representing fictional locations within that region.
 
 !! INSERT IMAGE: Environment Card with child Cards
 
