@@ -1,0 +1,118 @@
+---
+title: Cards
+description: Learn how to leverage Cards for advanced knowledge management.
+---
+
+## Understanding the Cards system
+
+Cards are a flexible framework for structuring information efficiently. While our initial implementation of Cards is focused on knowledge management, Cards will also serve as the foundation for Process Management (in development), a highly configurable module for managing any kind of workflow or application. With Process Management, you'll be able to connect Cards with automations to build your own custom applications, such as a CRM, CMS, project management system and more.
+
+This guide explains the core components of the Cards system: **Types**, **Tags**, **Relations** and **Cards**. 
+
+#### **Let's build a game design system!** 🎮 
+Throughout this guide, we'll look at how to a game design system using Cards. Game designers need to store information about **systems**, **components**, **documents** and **assets**, keeping track of how everything is connected. We'll use this example to illustrate how the Cards system can be used at a high level. In the following guides, we'll walk through how to create the system in Huly.
+
+## Types
+Generally speaking, **Types** define the structure of information within the system. You can think of a Type like a blueprint with specific instructions for what details you'll need to store for each piece of information. 
+
+In our game design example, we have 4 core Types:
+1. **Game System** - major gameplay and technical systems in the game
+2. **Game Component** - physical or digital elements in the game world
+3. **Document** - written design, technical and narrative information
+4. **Asset** - digital files used in the game, such as images, sounds, textures and 3D models
+
+Each Type has a set of attributes that define the specific details we want to capture for each piece of information. 
+
+For example, the Type `Game Component` will have a "Name" and "Description" attribute:
+- **`Game Component`**
+  - Name
+  - Description
+
+Keep reading to see how we can create different kinds of components by deriving new Types from the Type `Game Component`.
+
+## Deriving Types
+Types can be derived from other Types to define variations that have their own unique attributes.
+
+For example, in our game design system, we can derive several new Types from the `Game Component` Type, each with their own set of attributes:
+
+- **`Game Component`**
+  - Name
+  - Description
+  - **`Character`**
+    - Role (player, enemy, NPC)
+  - **`Item`**
+    - Item type (weapon, consumable, key item)
+    - Effect
+    - Rarity (common, rare, legendary)
+  - **`Environment`**
+    - Size (small, medium, large)
+    - Interactive?
+  - **`UI Element`**
+    - Function
+
+In this example, we have derived several new Types from the `Game Component` Type, each with their own set of attributes. Each derived type _inherits_ from `Game Component` — so, rather than adding the attributes "Name" and "Description" to each kind of component, these are automatically included.
+
+## Tags
+
+Those familiar with object-oriented programming can understand **Tags** as mixins. However, this probably doesn't make much sense to the rest of us, so let's explore this from a different perspective.
+
+We've seen how we can create variations on a Type using derivated Types. But what if we want to define some kind of behavior or functionality that can be "mixed" into a Type? 
+
+Take a look at this an example in our game design system. Based on our `Character` Type, we may have some characters that move (players and enemies) and some that are static (NPCs). Some characters may have health stats, while others don't. We want to use Tags here to define these behaviors — next, we'll see how Tags can be applied to Cards (the actual characters we'll create!). 
+
+Let's define a `Movement` Tag could define some behavior for some characters:
+
+- **`Movement`**
+  - Speed
+  - Acceleration
+  - Jump height
+  - Mode (ground, air, water)
+
+We'll also define a `Health` Tag for characters that have health stats:
+
+- **`Health`**
+  - Max health
+  - Starting health
+  - Health regeneration rate
+  - Health effects
+  - Damage resistance
+  - Health modifier
+  - Resting recovery rate
+
+_**But wait,** couldn't I just create more Types for different kinds of Characters — ones that move, and ones that don't? --> Absolutely! You're the designer of your own system, and there are pros and cons to each approach. Try them both out and see what works best for you._
+
+Next, let's look at how all the pieces come together with Cards.
+
+## Cards
+
+Simply put, **a Card is an instance of a Type**. If that sentence alone doesn't make much sense to you, keep reading!
+
+Think about a Type like a blueprint for a house: from a single blueprint, you can create many houses that have the same exact structure. If your blueprint says that this house must have 4 windows and 1 door, then no matter what furniture you put in it or what color you paint the walls, all of these houses will have 4 windows and 1 door.
+
+Cards are like the houses you make from your blueprint. In our example above, we can create a `Client Contract` for as many clients we want — and while the content of each will vary, we know that every single contract will have a `Start date`, `End date` and `Value`, as well as a `Title` and `Description` (inherited from our `Document` class).
+
+## Relations
+Relations define **connections** between different Types, types, or tags. Relations can be:
+- **One-to-one (1:1)**: Each Card of one type is linked to only one of another type.
+- **One-to-many (1:N)**: A single Card can be linked to multiple Cards of another type.
+- **Many-to-many (N:N)**: Multiple Cards of one type can be linked to multiple Cards of another type.
+
+**Examples**
+- **Person ↔ Company (1:N)**: A person belongs to a single company, but a company can have many people.
+- **Person ↔ Document (N:N)**: A document can be associated with multiple people, and a person can be associated with multiple documents.
+- **Company ↔ Document (1:N)**: A company may have multiple documents, such as contracts and proposals.
+- **Person ↔ Contact note (1:N)**: A person can have many contact notes, but a contact note belongs to a single person.
+- **Process ↔ Process stage (1:N)**: A process contains multiple stages.
+
+## Parent-child Cards
+A parent-child relationship is used when one Card is **a subset of another** and should be structured **under** its parent. A parent can have multiple child Cards, and a child can have multiple parents.
+
+**Examples**
+- **Company → People (Employees, Client Contacts)**: Employees are structured under their company.
+- **Company → Documents (Contracts, Proposals, Case Studies)**: Documents belong to a specific company.
+- **Person → Contact Notes**: Notes are nested under the person they relate to.
+- **Process → Process Stages**: Each process contains multiple ordered stages.
+
+#### Choosing between parent-child and relations
+- Use **parent-child** when the child is **dependent** on the parent and logically belongs under it (e.g., Contact Notes under a Person, or Process Stages under a Process).
+- Use **relations** when both entities **exist independently** but should be **linked** (e.g., a Document related to multiple People).
