@@ -1,0 +1,26 @@
+---
+title: Creating Tags
+description: Learn how to create Tags in the Cards system.
+---
+
+In the previous guide, we learned about Tags and how they can be used to define behaviors or attributes that extend a Card’s functionality. Now, let's put that knowledge into practice and create some Tags our Types.
+
+## Creating a Tag
+
+Navigate to Settings and select the Type you want to add Tags to; then, click the `+` button in the Tags area. Add a name for your Tag and click `Create`.
+
+You'll notice that the Tag has inherited properties from its Type, which are listed in the top section. In our **game design** example, we've can see that the `Movement` Tag has inherited the "Role" property from the `Character` Type, as well as the "Name" and "Description" properties from the `Game Component` Type.
+
+!! INSERT IMAGE: Screenshot of Movement Tag in Settings
+
+## Adding Tag properties
+
+To add a property to a Tag, click the `+` button in the properties section. Adding properties to a Tag is the same as adding properties to a Type (see [this guide](/cards/types/creating-types/#adding-properties)). These properties will only be available on Cards using that Tag.
+
+In our **game design** example, we've added properties for "Speed", "Acceleration", "Jump height" and "Mode" to the `Movement` Tag. We can apply this Tag to any `Character` Type that requires movement capabilities, such as players and enemies.
+
+We'll also create a `Health` Tag with its own set of unique properties.
+
+!! INSERT IMAGE: Screenshot of Health Tag in Settings
+
+Check out the next guide on [Applying Tags](/cards/tags/applying-tags) to learn how to use the Tags we just created on our `Character` Cards.

@@ -1,0 +1,74 @@
+---
+title: Creating Cards
+description: Learn how to create Cards.
+---
+
+<div className="rounded-box">
+  <h5><strong>What is a Card?</strong></h5>
+  <p>A Card is an instance of a Type, representing a specific piece of structured information. It follows the properties defined by its Type and can include rich text, attachments, relations, and tags, making it a flexible building block for knowledge management.</p>
+</div>
+
+To use Cards effectively in Huly, it’s important to first understand their relationship with Types.
+
+Think of a **Type** as a blueprint and **Cards** as the structures built from that blueprint. If your blueprint defines a "house" as a structure with four windows and one door, then every house created from that blueprint will always have four windows and one door, regardless of color or furnishings.
+
+If you haven't already, check out our guide on [Creating Types](/cards/types/creating-types) — then return here to learn how to create Cards from the Types you've made.
+
+## Creating Cards
+
+Click `+ Create Card` in the top left corner of the Cards module.
+
+The following elements make up a Card:
+
+1. **Title** - a name for your Card
+2. **Type** - the Type that defines the properties of your Card (see [Creating Types](/cards/types/creating-types))
+4. **Properties** - the details of your Card, as defined by the Type
+5. **Rich text editor** - a collaborative text editing area that supports markdown formatting, images, tables and more
+6. **Children** - an area for adding child Cards (see [Parent-child Cards](/cards/creating-cards/#parent-child-cards))
+7. **Attachments** - an area for uploading files
+8. **Activity** - a log of all changes made to the Card and area for commenting
+
+> **Note:** Cards created from the `File` Type will have an additional area above the rich text editor for uploading files. To learn more about managing files with the `File` Type, see [File Types](/cards/types/file-types).
+
+Beyond the basic elements, Cards can also include:
+
+* **[Relations](/cards/relations/relations-overview)** - connections to other Cards
+* **[Tags](/cards/tags/tags-overview)** - optional properties that can be applied to Cards of different types
+
+### Example: Creating a Character Card
+
+Let’s walk through an example using our **game design** system.
+
+!! INSERT IMAGE: Hero Card
+
+This is a Card created from the `Character` Type, which is derived from `Game Component`. For more on how Types are derived, see [Creating a derived Type](/cards/types/create-a-type/#creating-derived-types).
+
+This Card also has `Movement` and `Health` [Tags](/cards/tags/tags-overview), which provide additional properties.
+
+The `Character` Card also has several [Relations](/cards/relations/relations-overview), defined on its Type:
+* **`Item`** - a `Character` possesses `Items`
+* **`Environment`** - a `Character` exists in an `Environment`
+* **`Image Asset`** - a `Character` is depicted by an `Image Asset`
+
+## Parent-child Cards
+
+A parent-child relationship structures Cards hierarchically:
+
+* A parent Card can have multiple child Cards.
+* A child Card can only belong to onw parent.
+
+It's best to use parent-child Cards when the child Cards are best understood in the context of their parent.
+
+In our **game design** example, we may want to create a parent `Environment` Card representing a fictional region that contains child `Environment` Cards representing fictional locations within that region.
+
+!! INSERT IMAGE: Environment Card with child Cards
+
+## Learn more
+
+To further explore working with Cards, check out these guides:
+
+ * [Relating Cards](/cards/relations/relating-cards) - Define structured relationships between Cards.
+* [File Types](/cards/types/file-types) - Manage images, videos, PDFs, and other media within Huly's default `File` Type.
+* [Tags](/cards/tags/tags-overview) - Apply additional attributes across different Types.
+
+By understanding and structuring Cards effectively, you can build a powerful and flexible knowledge management system in Huly.

@@ -1,0 +1,60 @@
+---
+title: File Types
+description: Learn how to manage Files using Types and Cards.
+---
+
+The Huly Cards system comes with a special default Type called `File`. This basic Type allows you to manage files, such as images, videos, PDFs and other media.
+
+The `File` Type behaves the same as any other Type, with a few key differences:
+
+1. The `File` Type **cannot be deleted**.
+2. Cards created from the `File` Type (or derivations of the `File` Type) include a designated area for uploading files.
+
+!! INSERT IMAGE: Screenshot of Asset files
+
+You can think of the `File` Type as the foundation for an advanced file drive system. Rather than uploading files to a single drive and organizing them into folders, you can create a Type for each category of files you want to manage and define their shared properties.
+
+## Deriving Types from `File`
+
+To create new Types derived from `File`, navigate to Settings, select `File` under `TYPES` in the left sidebar, and click the `+` button in the `Types` area.
+
+Creating a Type derived from `File` the same as creating any other derived Type (see steps for [creating derived Types](/cards/types/creating-types/#creating-derived-types)).
+
+In our game design example, we'll create two Types derived from `File` to manage different categories of game assets, each with their own properties:
+
+- **`File`**
+  - Name
+  - Description
+  - Formats
+  - **`🖼️ Image Asset`**
+    - Dimensions (px)
+    - Transparency
+  - **`🔊 Audio Asset`**
+    - Duration (s)
+    - Looping
+
+!! INSERT IMAGE: Video showing creating File types
+
+## Creating Cards from `File` Types
+
+Creating Cards from `File` Types is the same as creating Cards from any other Type (see our guide for [Creating Cards](/cards/creating-cards)) — when you create a Card from a `File` Type, however, you'll see a designated area for uploading files.
+
+Here, you can click the upload button or drop your files into the upload area.
+
+!! INSERT IMAGE: Video adding a file to a File Card
+
+## Tips for using the `File` Type
+
+The `File` Type is a powerful tool for managing files in your Huly workspace. Here are some tips for getting the most out of it:
+
+* **Create your custom file system** - Create different Types for various categories of files to ensure everything is neatly organized in one place.
+* **Collaborate on media assets** - Use the `File` Type to store media that you may need to discuss with the team or add context to within the editor.
+* **Leverage Relations** - Link your files to other Cards in your knowledge management system to establish connections between related resources.
+* **Track metadata** - Define useful properties for each Type, such as dimensions, duration, or format, to make it easier to filter and organize files based on their characteristics.
+
+## Other ways to connect files to Cards
+In addition to using the `File` Type, there are several other ways to link files and media to Cards. There are advantages to each method, so choose the combination that works best for you!
+
+* **Card attachments** - Attach files to any Card, regardless of its Type, by adding them directly to the Card’s interface (see [Creating Cards](/cards/creating-cards) for an example). This is a great way to quickly attach a file that doesn't need its own dedicated Card.
+* **Inline embeds** - Use the `/` shortcut in the collaborative editor to embed images directly within the content. This is useful for adding visual elements to text-based Cards.
+* **Comment attachments** - You can also attach files to specific comments within the activity section, which is handy when you need to send a resource or snapshot with your message.

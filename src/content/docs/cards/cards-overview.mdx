@@ -3,116 +3,41 @@ title: Cards
 description: Learn how to leverage Cards for advanced knowledge management.
 ---
 
-## Understanding the Cards system
+!! INSERT IMAGE: General image showing Cards interface
 
-Cards are a flexible framework for structuring information efficiently. While our initial implementation of Cards is focused on knowledge management, Cards will also serve as the foundation for Process Management (in development), a highly configurable module for managing any kind of workflow or application. With Process Management, you'll be able to connect Cards with automations to build your own custom applications, such as a CRM, CMS, project management system and more.
+## Understanding Cards
 
-This guide explains the core components of the Cards system: **Types**, **Tags**, **Relations** and **Cards**. 
+Cards are a flexible framework for structuring information efficiently. 
 
-#### **Let's build a game design system!** 🎮 
-Throughout this guide, we'll look at how to a game design system using Cards. Game designers need to store information about **systems**, **components**, **documents** and **assets**, keeping track of how everything is connected. We'll use this example to illustrate how the Cards system can be used at a high level. In the following guides, we'll walk through how to create the system in Huly.
+While our initial implementation of Cards is focused on knowledge management, Cards will also serve as the foundation for Process Management (in development), a highly configurable module for managing any kind of workflow or application. With Process Management, you'll be able to connect Cards with automations to build your own custom applications, such as a CRM, CMS, project management system and more.
 
-## Types
-Generally speaking, **Types** define the structure of information within the system. You can think of a Type like a blueprint with specific instructions for what details you'll need to store for each piece of information. 
+This guide explains the core components of the Cards system: **Types**, **Tags**, **Relations** and **Cards**, providing an overview of the entire system. We also have more in-depth guides on each element so you can learn how to use them in your own workspace, which are linked in the sections below.
 
-In our game design example, we have 4 core Types:
-1. **Game System** - major gameplay and technical systems in the game
-2. **Game Component** - physical or digital elements in the game world
-3. **Document** - written design, technical and narrative information
-4. **Asset** - digital files used in the game, such as images, sounds, textures and 3D models
+## Core elements of the Cards system
 
-Each Type has a set of attributes that define the specific details we want to capture for each piece of information. 
+The following elements make up the Cards system. Click on any guide to learn more:
 
-For example, the Type `Game Component` will have a "Name" and "Description" attribute:
-- **`Game Component`**
-  - Name
-  - Description
+* [**Types**](/cards/types/types-overview) define the structure of information within the system. You can think of a Type like a blueprint with specific instructions for what details you'll need to store for each piece of information. 
+* [**Tags**](/cards/tags/tags-overview) are used to add additional properties or behaviors to a Type. Tags allow you to define a specific set of properties that can be applied to multiple Types.
+* [**Cards**](/cards/creating-cards) are the actual "instances" of a Type — the real information that you're storing in your knowledge management system. Each Card is a unique piece of information that follows the structure defined by its Type.
+* [**Relations**](/cards/relations/relations-overview) define the connections between different Types and Tags, allowing you to link related information together.
 
-Keep reading to see how we can create different kinds of components by deriving new Types from the Type `Game Component`.
+<div style={{ height: "7px" }}></div>
 
-## Deriving Types
-Types can be derived from other Types to define variations that have their own unique attributes.
+<div className="rounded-box">
+  <h5><strong>Let's build a game design system with Cards! 🎮</strong></h5>
+  <p>In the following guides, we'll look at how to design an adventure game system using Cards. Game designers need to store information about **systems**, **components**, **documents** and **assets**, keeping track of how everything is connected. We'll use this example to illustrate how Cards can be used to create a comprehensive knowledge management system.</p>
+</div>
 
-For example, in our game design system, we can derive several new Types from the `Game Component` Type, each with their own set of attributes:
+## Using Cards for knowledge management
 
-- **`Game Component`**
-  - Name
-  - Description
-  - **`Character`**
-    - Role (player, enemy, NPC)
-  - **`Item`**
-    - Item type (weapon, consumable, key item)
-    - Effect
-    - Rarity (common, rare, legendary)
-  - **`Environment`**
-    - Size (small, medium, large)
-    - Interactive?
-  - **`UI Element`**
-    - Function
+Cards provide a structured and scalable way to organize knowledge. Unlike traditional document-based systems, where information can become scattered and difficult to navigate, Cards allow for dynamic connections, filtering, and categorization.
 
-In this example, we have derived several new Types from the `Game Component` Type, each with their own set of attributes. Each derived type _inherits_ from `Game Component` — so, rather than adding the attributes "Name" and "Description" to each kind of component, these are automatically included.
+This approach offers several advantages:
 
-## Tags
+* **Structured organization** - Each Card follows a defined Type, ensuring consistency across entries.
+* **Easy linking & navigation** - Relations between Cards create a web of interconnected knowledge, making it easy to find related information.
+* **Scalability** - The modular nature of Cards allows you to expand your system without losing clarity.
+* **Collaborative editing** - The rich text editor and activity tracking allow teams to work together seamlessly.
 
-Those familiar with object-oriented programming can understand **Tags** as mixins. However, this probably doesn't make much sense to the rest of us, so let's explore this from a different perspective.
-
-We've seen how we can create variations on a Type using derivated Types. But what if we want to define some kind of behavior or functionality that can be "mixed" into a Type? 
-
-Take a look at this an example in our game design system. Based on our `Character` Type, we may have some characters that move (players and enemies) and some that are static (NPCs). Some characters may have health stats, while others don't. We want to use Tags here to define these behaviors — next, we'll see how Tags can be applied to Cards (the actual characters we'll create!). 
-
-Let's define a `Movement` Tag could define some behavior for some characters:
-
-- **`Movement`**
-  - Speed
-  - Acceleration
-  - Jump height
-  - Mode (ground, air, water)
-
-We'll also define a `Health` Tag for characters that have health stats:
-
-- **`Health`**
-  - Max health
-  - Starting health
-  - Health regeneration rate
-  - Health effects
-  - Damage resistance
-  - Health modifier
-  - Resting recovery rate
-
-_**But wait,** couldn't I just create more Types for different kinds of Characters — ones that move, and ones that don't? --> Absolutely! You're the designer of your own system, and there are pros and cons to each approach. Try them both out and see what works best for you._
-
-Next, let's look at how all the pieces come together with Cards.
-
-## Cards
-
-Simply put, **a Card is an instance of a Type**. If that sentence alone doesn't make much sense to you, keep reading!
-
-Think about a Type like a blueprint for a house: from a single blueprint, you can create many houses that have the same exact structure. If your blueprint says that this house must have 4 windows and 1 door, then no matter what furniture you put in it or what color you paint the walls, all of these houses will have 4 windows and 1 door.
-
-Cards are like the houses you make from your blueprint. In our example above, we can create a `Client Contract` for as many clients we want — and while the content of each will vary, we know that every single contract will have a `Start date`, `End date` and `Value`, as well as a `Title` and `Description` (inherited from our `Document` class).
-
-## Relations
-Relations define **connections** between different Types, types, or tags. Relations can be:
-- **One-to-one (1:1)**: Each Card of one type is linked to only one of another type.
-- **One-to-many (1:N)**: A single Card can be linked to multiple Cards of another type.
-- **Many-to-many (N:N)**: Multiple Cards of one type can be linked to multiple Cards of another type.
-
-**Examples**
-- **Person ↔ Company (1:N)**: A person belongs to a single company, but a company can have many people.
-- **Person ↔ Document (N:N)**: A document can be associated with multiple people, and a person can be associated with multiple documents.
-- **Company ↔ Document (1:N)**: A company may have multiple documents, such as contracts and proposals.
-- **Person ↔ Contact note (1:N)**: A person can have many contact notes, but a contact note belongs to a single person.
-- **Process ↔ Process stage (1:N)**: A process contains multiple stages.
-
-## Parent-child Cards
-A parent-child relationship is used when one Card is **a subset of another** and should be structured **under** its parent. A parent can have multiple child Cards, and a child can have multiple parents.
-
-**Examples**
-- **Company → People (Employees, Client Contacts)**: Employees are structured under their company.
-- **Company → Documents (Contracts, Proposals, Case Studies)**: Documents belong to a specific company.
-- **Person → Contact Notes**: Notes are nested under the person they relate to.
-- **Process → Process Stages**: Each process contains multiple ordered stages.
-
-#### Choosing between parent-child and relations
-- Use **parent-child** when the child is **dependent** on the parent and logically belongs under it (e.g., Contact Notes under a Person, or Process Stages under a Process).
-- Use **relations** when both entities **exist independently** but should be **linked** (e.g., a Document related to multiple People).
+Continue through the guides to learn how to put these concepts into practice, creating your own knowledge management system with Cards.

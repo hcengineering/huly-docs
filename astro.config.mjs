@@ -56,28 +56,31 @@ export default defineConfig({
                 link: "/cards/cards-overview/",
               },
               {
+                label: "Creating Cards",
+                link: "/cards/creating-cards/",
+              },
+              {
                 label: "Types",
                 collapsed: false,
                 items: [
-                  {label: 'Overview', link: '/cards/types/types-overview/'},
+                  {label: 'What are Types?', link: '/cards/types/types-overview/'},
                   {label: 'Creating Types', link: '/cards/types/creating-types/'},
-                  {label: 'Editing Types', link: '/cards/types/editing-types/'},
-                ]
+                  {label: 'File Types', link: '/cards/types/file-types/'},                ]
               },
               {
                 label: "Tags",
                 collapsed: false,
                 items: [
-                  {label: 'Overview', link: '/cards/tags/tags-overview/'},
+                  {label: 'What are Tags?', link: '/cards/tags/tags-overview/'},
                   {label: 'Creating Tags', link: '/cards/tags/creating-tags/'},
-                  {label: 'Using Tags', link: '/cards/tags/using-tags/'},
+                  {label: 'Applying Tags to Cards', link: '/cards/tags/applying-tags/'},
                 ]
               },
               {
                 label: "Relations",
                 collapsed: false,
                 items: [
-                  {label: 'Overview', link: '/cards/types/relations-overview/'},
+                  {label: 'What are Relations?', link: '/cards/relations/relations-overview/'},
                   {label: 'Defining Relations', link: '/cards/relations/defining-relations/'},
                   {label: 'Relating Cards', link: '/cards/relations/relating-cards/'},
                 ]
