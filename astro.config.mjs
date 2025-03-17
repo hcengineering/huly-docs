@@ -48,6 +48,47 @@ export default defineConfig({
             ],
           },
           {
+            label: "Cards",
+            collapsed: false,
+            items: [
+              {
+                label: "Introduction to Cards",
+                link: "/cards/cards-overview/",
+              },
+              {
+                label: "Creating Cards",
+                link: "/cards/creating-cards/",
+              },
+              {
+                label: "Types",
+                collapsed: false,
+                items: [
+                  {label: 'What are Types?', link: '/cards/types/types-overview/'},
+                  {label: 'Creating Types', link: '/cards/types/creating-types/'},
+                  {label: 'File Types', link: '/cards/types/file-types/'},                ]
+              },
+              {
+                label: "Tags",
+                collapsed: false,
+                items: [
+                  {label: 'What are Tags?', link: '/cards/tags/tags-overview/'},
+                  {label: 'Creating Tags', link: '/cards/tags/creating-tags/'},
+                  {label: 'Applying Tags to Cards', link: '/cards/tags/applying-tags/'},
+                ]
+              },
+              {
+                label: "Relations",
+                collapsed: false,
+                items: [
+                  {label: 'What are Relations?', link: '/cards/relations/relations-overview/'},
+                  {label: 'Defining Relations', link: '/cards/relations/defining-relations/'},
+                  {label: 'Relating Cards', link: '/cards/relations/relating-cards/'},
+                ]
+              },
+              
+              ]
+            },
+          {
             label: "Task tracking",
             collapsed: true,
             items: [
