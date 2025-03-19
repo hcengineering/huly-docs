@@ -42,6 +42,10 @@ export default defineConfig({
                 link: "/getting-started/self-host/",
               },
               {
+                label: "Mobile access",
+                link: "/getting-started/mobile-access/",
+              },
+              {
                 label: "Support",
                 link: "/getting-started/support/",
               },
