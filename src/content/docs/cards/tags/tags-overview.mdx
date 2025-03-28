@@ -10,35 +10,23 @@ description: Learn about Tags in the Cards system.
 
 We've seen how we can [create variations of a Type](/cards/types/creating-types/#creating-derived-types). But what if we want to define some kind of behavior or functionality without altering the core structure of the Type itself? 
 
-For example, in our game design system, consider the `Character` Type. Some characters may move (such as **players** and **enemies**), while others may remain static (like **NPCs**). Additionally, some characters might have health stats, while others do not. Instead of creating separate Types for each variation (e.g., `Moving Character` vs. `Static Character`), we can use **Tags** to define these behaviors and apply them as needed.
+For example, in our game design system, consider the `NPC` Type, which is derived from `Character`. An NPC has several of its own attributes, affiliation and respawn. However, an NPC could be also have a role, such as a merhcant, guild member or rogue, and each of these roles has unique attributes. In this case, we can create **Tags** to define these sets of attributes:
 
-Let’s break it down with two examples:
+!! ADD REF ATTRIBUTE WHEN REFS ARE WORKING
 
-##### `Movement` Tag
-The `Movement` Tag defines attributes related to how a character moves. This Tag could be applied to characters that need movement capabilities, such as players and enemies:
-
-- **`Movement`**
-  - Speed
-  - Acceleration
-  - Jump height
-  - Mode (ground, air, water)
-
-##### `Health` Tag
-The Health Tag defines attributes for characters that have health stats. This Tag could be applied to characters that require health management (such as players or enemies) and include details like maximum health, regeneration rate, and damage resistance:
-
-- **`Health`**
-  - Max health
-  - Starting health
-  - Health regeneration rate
-  - Health effects
-  - Damage resistance
-  - Health modifier
-  - Resting recovery rate
+- **`Merchant`** Tag
+  - Gold Cup (number)
+  - Buy/Sell Stolen Items (checkbox)
+  - Inventory (Ref Items)
+- **`Guild member`** Tag
+  - Guild Role (text)
+- **`Rogue`** Tag
+  - Preferred weapons (multi-select)
 
 In our next guide, we'll learn how to create the Tags we just described and apply them to our `Character` Type. Check out [Creating Tags](/cards/tags/creating-tags) to get started!
 
 ## Tags vs. Types
-> *__But wait__, couldn't I just create separate Types for characters that move and those that don’t, or for characters with health and those without?*
+> *__But wait__, couldn't I just create separate Types for Merchants, Guild Members and Rogues?*
 
 **Yes, you absolutely can!** Creating separate Types for each variation is a valid approach. However, the benefit of using Tags is flexibility — you don’t need to create a new Type for every possible combination of behaviors or attributes. Instead, Tags allow you to mix and match properties based on the unique needs of each Card. On the other hand, creating new Types might be more appropriate if the differences between variations are fundamental to the design or behavior of the Card.
 

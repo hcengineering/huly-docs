@@ -26,11 +26,15 @@ In our example, we know that all Game Components will have a `Name` and `Descrip
 
 !! INSERT IMAGE: Video showing adding a property
 
+> **Note:** Properties can also be added directly to Cards — see [Creating Cards](/docs/cards/creating-cards).
+
 ##### Creating dropdown menus (enums)
 
 If you chose to add a property of type `Multi-select` or `Select`, you can create a dropdown menu with options. Click the `+` button to add a new select menu (called an "**enum**"). Enter a title and options for the menu and click `Save`. Then, select your menu from the `Select` dropdown to use it for this property.
 
-In our example, we've created a Type `Character` and added a property `Role` with a dropdown menu of options: `Player`, `Enemy`, and `NPC`:
+In our example, we've created a Type `Character` and added a property `???` with a dropdown menu of options: `???`, `???`, and `???`:
+
+!! EXAMPLE NEEDED
 
 !! INSERT IMAGE: Video showing creating a dropdown menu (enum)
 
@@ -46,13 +50,29 @@ To create a derived Type, find the `TYPES` section on the main Type page and cli
 
 From here, the steps for creating a derived Type are the same as creating any other Type. Note that the derived Type will automatically inherit all properties of the Type from which it was derived.
 
-In our example, we can derive several new Types from the `Game Component` Type, each with their own set of properties:
+In our example, we can derive several new Types from the `Game Component` Type, such as `Character`, `Item`, `Environment` and `UI Element`, each with their own set of properties. 
+
+We can create as many levels of derivation as is needed. In the example below, we've derived Types `Player`, `Enemy` and `NPC` from Type `Character`.
 
 - **`Game Component`**
   - Name
   - Description
-  - **`👤 Character`**
-    - Role (player, enemy, NPC)
+  - **`😶 Character`**
+    - Speed (m/s)
+    - Jump height (m)
+    - Movement modes (ground, air, water)
+    - Max health
+    - Health effects (poison, burn, bleed, etc.)
+    - Stamina
+    - **`🤺 Player`**
+      - Abilities (jump, attack, talk, etc.)
+      - XP
+    - **`👿 Enemy`**
+      - Attack patterns (claw swipe, fireball, charge attack)
+    - **`🧑 NPC`**
+      - Affiliation (friendly, neutral, hostile)
+      - Essential?
+      - Respawn?
   - **`🎒 Item`**
     - Item type (weapon, consumable, key item)
     - Effect
@@ -63,4 +83,8 @@ In our example, we can derive several new Types from the `Game Component` Type, 
   - **`🎨 UI Element`**
     - Function
 
-  !! INSERT IMAGE: Screenshot of Item attributes?
+  !! INSERT IMAGE: Screenshot TBD
+
+## Deleting a Type
+
+To delete a Type, navigate to the Type page in Settings and click the trash icon in the top right corner. Note that deleting a Type will also delete all Cards of that Type, and this action cannot be undone.

@@ -10,34 +10,12 @@ description: Learn about Types as part of the Cards system.
 
 Types define the structure of information within the system. Think of a Type as a blueprint that outlines the specific details you'll need to store for each piece of information.
 
-In our **game design** example, we have four core Types:
+In our **game design** example, we have three core Types:
 
-1. **`Game System`** - Major gameplay and technical systems in the game
 2. **`Game Component`** - Physical or digital elements in the game world
 3. **`Document`** - Written design, technical and narrative information
-4. **`Asset`** - Digital files used in the game, such as images, sounds, textures and 3D models. This Type is based on the default `File` Type (see [File Types](/docs/cards/types/file-types)).
+4. **`File`** - Digital files used in the game, such as images, sounds, textures and 3D models. This is a default system `File` Type (see [File Types](/docs/cards/types/file-types)).
 
-Each **Type** has a set of **properties** that define the specific details we want to capture for each piece of information. For instance, our `Game Component` Type has properties like "Name" and "Description":
+Each **Type** has a set of **properties** that define the specific details we want to capture for each piece of information.
 
-- **`Game Component`**
-  - Name
-  - Description
-
-We can also derive Types to define variations that have their own unique properties. For example, in our game design system, we may want to derive several new Types from the `Game Component` Type, each with their own set of properties:
-
-- **`Game Component`**
-  - Name
-  - Description
-  - **`👤 Character`**
-    - Role (player, enemy, NPC)
-  - **`🎒 Item`**
-    - Item type (weapon, consumable, key item)
-    - Effect
-    - Rarity (common, rare, legendary)
-  - **`🌎 Environment`**
-    - Size (small, medium, large)
-    - Interactive?
-  - **`🎨 UI Element`**
-    - Function
-
-To learn how to create this structure in practice, check out our next guide on [Creating Types](/docs/cards/types/create-a-type).
+We can also derive Types to define variations that have their own unique properties. To learn how to create Types and derived Types in practice, check out our next guide on [Creating Types](/docs/cards/types/create-a-type).

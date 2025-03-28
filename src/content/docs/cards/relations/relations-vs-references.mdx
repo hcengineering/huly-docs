@@ -1,0 +1,53 @@
+---
+title: Relations vs. References
+description: Learn the differences between Relations and References and best use cases for each.
+---
+
+In some cases, you may want to connect Cards together using References instead of Relations.
+
+Relations are bi-directional, meaning that a Relation will appear on both Cards involved the relationship. In our example of a `Character` possessing an `Item`, the Relation will appear on both the `Character` and the `Item` Card.
+
+!! INSERT IMAGE: Showing Character-Item Relation on two Cards
+
+References, on the other hand, are one-directional. A Reference will only appear on the ***Referring*** Card, and a Reference is a type of attribute. Instead of using a Relation to define the association between `Character` and `Item`, you can add a Reference attribute to the `Character` Type that references the `Item` Type. This can be a single-select or multi-select attribute, depending on your use case. In this case, the `Item` Card will not show which `Character` possesses it.
+
+!! INSERT IMAGE: Showing Character Reference to a list of Items
+
+## Deciding whether to use a Relation or Reference
+
+The decision to use a Relation or Reference depends on your use case and how you'd like to design your own system. Here are a few things to consider with regard to functionality and presentation of your data.
+
+> **Note:** We will diverge here from our game design example to illustrate the difference between Relations and References using a more general example of `Person` and `Meeting`. Soon, Persons in Huly will be replaced with Cards, allowing you to manage your contacts in a more robust and customized database system. The examples in this section demonstrate the differences between Relations and References on a large scale, considering a case of a team managing thousands of contacts and meetings.
+
+##### Visibility and navigation
+
+Relations are visible on both Cards, making it easy to navigate between related entities. This bi-directional visibility is useful when you want to maintain a clear and reciprocal connection between two entities. For example, if you have a `Person` that is related to a `Meeting`, both the `Person` Card and the `Meeting` Card will show this relationship, allowing easy navigation in both directions.
+
+##### Scalability
+
+As your system grows, consider how each option will scale. 
+
+For example, let's say you want to create Cards for **meeting minutes**. You may want to create a Relation:
+
+- `Meeting` N:N `Person`
+  * **Attended** (`Meeting`) - **Attendees** (`Person`)
+  * *Meaning: A Meeting has **attendees**; a Person **attended** Meetings.*
+
+This may seem convenient at first — you can see all of the attendees in the Relations section of each `Meeting` Card, and you can see which meetings everyone attended on the `Person` Cards.
+
+However, as the number of meetings grows, each `Person` may end up with an overwhelming number of meetings on their Card, making it difficult to navigate. In this case, a better solution might be to use a Reference attribute on the `Meeting` Type; for example:
+
+- **`Meeting Minutes`** (Type)
+  - Date
+  - Topic
+  - Attendees (Reference to `Person`)
+
+In this case, you can add many `Person` Cards to the `Meeting` Card without cluttering the `Person` Cards themselves.
+
+##### Sorting and filtering
+
+References are a type of attribute, so you can sort and filter your Cards based on the Reference value. If you might want to sort or filter your Cards by a specific attribute, consider using a Reference instead of a Relation. In our example of `Person` and `Meeting`, if `Person` is a Reference attribute on the `Meeting` Type, you can easily create filtered views for meetings attended by different groups of people.
+
+## Designing your own knowledge system
+
+Ultimately, how you design your system is up to you! There are advantages and disadvanteges to every kind of setup, and there's no "correct" way other than the way that works best for you.

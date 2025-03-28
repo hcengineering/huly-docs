@@ -5,10 +5,10 @@ description: Learn how to create Cards.
 
 <div className="rounded-box">
   <h5><strong>What is a Card?</strong></h5>
-  <p>A Card is an instance of a Type, representing a specific piece of structured information. It follows the properties defined by its Type and can include rich text, attachments, relations, and tags, making it a flexible building block for knowledge management.</p>
+  <p>A Card is an instance of a Type, representing a specific piece of structured information. It follows the properties defined by its Type and can include rich text, attachments, relations, and tags, making it a flexible building block.</p>
 </div>
 
-To use Cards effectively in Huly, it’s important to first understand their relationship with Types.
+To use Cards effectively in Huly, it’s important to first understand their relationship with Types. This is 
 
 Think of a **Type** as a blueprint and **Cards** as the structures built from that blueprint. If your blueprint defines a "house" as a structure with four windows and one door, then every house created from that blueprint will always have four windows and one door, regardless of color or furnishings.
 
@@ -30,25 +30,29 @@ The following elements make up a Card:
 
 > **Note:** Cards created from the `File` Type will have an additional area above the rich text editor for uploading files. To learn more about managing files with the `File` Type, see [File Types](/cards/types/file-types).
 
-Beyond the basic elements, Cards can also include:
+Beyond these basic elements, Cards can also include:
 
 * **[Relations](/cards/relations/relations-overview)** - connections to other Cards
 * **[Tags](/cards/tags/tags-overview)** - optional properties that can be applied to Cards of different types
 
-### Example: Creating a Character Card
+Relations and Tags are set at the Type level. In other words, when you want to create a new Relation or Tag for a Card, you'll need to define this on the Type in Settings. To see how, check out these guides on [Defining Relations](/cards/types/defining-relations) and [Creating Tags](/cards/tags/creating-tags).
 
-Let’s walk through an example using our **game design** system. **Types**, **Tags** and **Relations** are all covered in the following guides, but we'll take a peek at how they all appear on a `Character` Card:
+### Example: Creating an NPC Character Card
 
-!! INSERT IMAGE: Hero Card - shows all elements that are visible on the Card page
+Let’s walk through an example using our **game design** system. **Types**, **Tags** and **Relations** are all covered in the following guides, but we'll take a peek at how they all appear on an `NPC` (non-playable character) Card:
 
-This is a Card created from the `Character` Type, which is derived from the `Game Component` Type. For more on how Types are derived, see [Creating a derived Type](/cards/types/create-a-type/#creating-derived-types).
+!! INSERT IMAGE: NPC Card - shows all elements that are visible on the Card page
 
-This Card also has `Movement` and `Health` [Tags](/cards/tags/tags-overview), which provide additional properties.
+This is a Card created from the `NPC` Type, which is derived from the `Character` Type. This means that when we create the `NPC` Card, we have access to all of the properties available on the `Character` and `Game Component` Types as well. For more on how Types are derived, see [Creating a derived Type](/cards/types/create-a-type/#creating-derived-types).
 
-The `Character` Card also has several [Relations](/cards/relations/relations-overview), defined on its Type:
+The `NPC` Card also has several [Relations](/cards/relations/relations-overview), defined on the `Character` Type from which it was derived. These include:
 * **`Item`** - a `Character` possesses `Items`
 * **`Environment`** - a `Character` exists in an `Environment`
 * **`Image Asset`** - a `Character` is depicted by an `Image Asset`
+
+## Adding Card attribbutes
+
+To add an attribute to a Card, simply click the `+` icon next to the Type or Tag you want to add to. Adding a attribute on one Card will add the field to all existing Cards with that Type or Tag.
 
 ## Parent-child Cards
 

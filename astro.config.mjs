@@ -60,8 +60,13 @@ export default defineConfig({
                 link: "/cards/cards-overview/",
               },
               {
-                label: "Creating Cards",
-                link: "/cards/creating-cards/",
+                label: "Cards",
+                collapsed: false,
+                items: [
+                  {label: 'Creating Cards', link: '/cards/cards/creating-cards/'},
+                  {label: 'Parent-child Cards', link: '/cards/cards/parent-child-cards/'},     
+                  {label: 'View, sort and filter Cards', link: '/cards/cards/view-sort-filter-cards/'},     
+                ]
               },
               {
                 label: "Types",
@@ -87,6 +92,7 @@ export default defineConfig({
                   {label: 'What are Relations?', link: '/cards/relations/relations-overview/'},
                   {label: 'Defining Relations', link: '/cards/relations/defining-relations/'},
                   {label: 'Relating Cards', link: '/cards/relations/relating-cards/'},
+                  {label: 'Relations vs. References', link: '/cards/relations/relations-vs-references/'},
                 ]
               },
               
