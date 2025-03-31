@@ -210,6 +210,10 @@ export default defineConfig({
                 link: "/integrations/google-calendar/",
               },
               {
+                label: "Gmail",
+                link: "/integrations/gmail/",
+              },
+              {
                 label: "Telegram",
                 link: "/integrations/telegram/",
               },
