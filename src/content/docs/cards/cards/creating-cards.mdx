@@ -3,12 +3,15 @@ title: Creating Cards
 description: Learn how to create Cards.
 ---
 
+import { Image } from "astro:assets";
+import cardExampleNPC from "../../../../assets/screenshots/huly/cards/card-example-npc.png";
+
 <div className="rounded-box">
   <h5><strong>What is a Card?</strong></h5>
   <p>A Card is an instance of a Type, representing a specific piece of structured information. It follows the properties defined by its Type and can include rich text, attachments, relations, and tags, making it a flexible building block.</p>
 </div>
 
-To use Cards effectively in Huly, it’s important to first understand their relationship with Types. This is 
+To use Cards effectively in Huly, it’s important to first understand their relationship with Types. 
 
 Think of a **Type** as a blueprint and **Cards** as the structures built from that blueprint. If your blueprint defines a "house" as a structure with four windows and one door, then every house created from that blueprint will always have four windows and one door, regardless of color or furnishings.
 
@@ -39,33 +42,20 @@ Relations and Tags are set at the Type level. In other words, when you want to c
 
 ### Example: Creating an NPC Character Card
 
-Let’s walk through an example using our **game design** system. **Types**, **Tags** and **Relations** are all covered in the following guides, but we'll take a peek at how they all appear on an `NPC` (non-playable character) Card:
+To create a Card, first make sure you've selected the correct Type from the left side menu, then click the `+ Create Card` button. 
 
-!! INSERT IMAGE: NPC Card - shows all elements that are visible on the Card page
+From here, you can enter information in all of the attributes you [defined on your Type](/cards/types/creating-types). Below is an example of a Card for an NPC character in our **game design system**:
 
-This is a Card created from the `NPC` Type, which is derived from the `Character` Type. This means that when we create the `NPC` Card, we have access to all of the properties available on the `Character` and `Game Component` Types as well. For more on how Types are derived, see [Creating a derived Type](/cards/types/create-a-type/#creating-derived-types).
+<Image src={cardExampleNPC} alt="Example of an NPC Card" inferSize quality="max" />
 
-The `NPC` Card also has several [Relations](/cards/relations/relations-overview), defined on the `Character` Type from which it was derived. These include:
+Note that this `NPC` Card has several [Relations](/cards/relations/relations-overview), defined on the `Character` Type from which it was derived:
 * **`Item`** - a `Character` possesses `Items`
 * **`Environment`** - a `Character` exists in an `Environment`
-* **`Image Asset`** - a `Character` is depicted by an `Image Asset`
+* **`Game Narrative`** - a `Character` is included in a `Game Narrative`
 
 ## Adding Card attribbutes
 
 To add an attribute to a Card, simply click the `+` icon next to the Type or Tag you want to add to. Adding a attribute on one Card will add the field to all existing Cards with that Type or Tag.
-
-## Parent-child Cards
-
-A parent-child relationship structures Cards hierarchically:
-
-* A **parent Card** can have multiple **child Cards**.
-* A **child Card** can only belong to one **parent Card**.
-
-It's best to use parent-child Cards when the child Cards are best understood in the context of their parent.
-
-In our **game design** example, we may want to create an `Environment` parent Card representing a fictional region that contains `Environment` child Cards representing fictional locations within that region.
-
-!! INSERT IMAGE: Environment Card with child Cards
 
 ## Learn more
 

@@ -12,18 +12,15 @@ We've seen how we can [create variations of a Type](/cards/types/creating-types/
 
 For example, in our game design system, consider the `NPC` Type, which is derived from `Character`. An NPC has several of its own attributes, affiliation and respawn. However, an NPC could be also have a role, such as a merhcant, guild member or rogue, and each of these roles has unique attributes. In this case, we can create **Tags** to define these sets of attributes:
 
-!! ADD REF ATTRIBUTE WHEN REFS ARE WORKING
-
 - **`Merchant`** Tag
-  - Gold Cup (number)
-  - Buy/Sell Stolen Items (checkbox)
+  - Buy/Sell stolen items? (yes/no)
   - Inventory (Ref Items)
-- **`Guild member`** Tag
-  - Guild Role (text)
+- **`Guild Member`** Tag
+  - Guild role (text)
 - **`Rogue`** Tag
-  - Preferred weapons (multi-select)
+  - Weapons (Ref Items)
 
-In our next guide, we'll learn how to create the Tags we just described and apply them to our `Character` Type. Check out [Creating Tags](/cards/tags/creating-tags) to get started!
+In our next guide, we'll learn how to create the Tags we just described and apply them to our `NPC` Type. Check out [Creating Tags](/cards/tags/creating-tags) to get started!
 
 ## Tags vs. Types
 > *__But wait__, couldn't I just create separate Types for Merchants, Guild Members and Rogues?*

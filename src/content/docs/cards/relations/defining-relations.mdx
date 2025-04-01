@@ -3,9 +3,13 @@ title: Defining Relations
 description: Learn how to define Relations between Types.
 ---
 
+import { Image } from "astro:assets";
+import relationsDialog from "../../../../assets/screenshots/huly/cards/relations-dialog.png";
+import characterRelations from "../../../../assets/screenshots/huly/cards/character-relations.png";
+
 To define Relations between Types, navigate to Settings and open the Type you want to add a Relation to. Click the `+` button in the Relations area.
 
-!! INSERT IMAGE: Screenshot or video of opening relation dialog
+<Image src={relationsDialog} alt="Adding a Relation" inferSize quality="max" />
 
 ## Naming Relations
 
@@ -21,14 +25,16 @@ Let's look at some examples of Relations on our `Character` Type:
   * *Meaning: A Character **exists in** an Environment; an Environment is **inhabited by** a Character.*
  
    
-* **Included in** (`Game Narrative`) - **Features** (`Character`)
-  * *Meaning: A Game Narrative **features** a Character; a Character is **included in** a Game Narrative.*
+* **Features** (`Character`) - **Included in** (`Game Narrative`)
+  * *Meaning: A Character is **included in** a Game Narrative; a Game Narrative **features** a Character*
 
 These names describe how two Types are connected, allowing the system to establish their relationships clearly and logically.
 
-## Selecting types for Relations
+<Image src={characterRelations} alt="Relations on the Character Type" inferSize quality="max" />
 
-When creating a Relation, you must specify the type of relationship between the entities. There are three types to choose from:
+## Selecting the kind of Relation
+
+When creating a Relation, you must specify the kind of relationship between the entities. There are three kinds to choose from:
 
 #### 1:1 Relation
 **Definition**: One entity of the first type is related to exactly one entity of the second type.

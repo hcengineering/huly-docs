@@ -3,6 +3,9 @@ title: Relating Cards
 description: Learn how to connect Cards by Relations.
 ---
 
+import { Image } from "astro:assets";
+import characterRelationsCard from "../../../../assets/screenshots/huly/cards/character-relations-card.png";
+
 After setting up [Relations](/cards/relations/defining-relations), you can start relating Cards to each other.
 
 Navigate to any Card created from a Type that has Relations. Near the bottom of the Card, you'll find all of the Relations you defined in Settings.
@@ -11,11 +14,9 @@ Navigate to any Card created from a Type that has Relations. Near the bottom of 
 
 Click the `+` button to add a Card. You'll see a dropdown menu of all available Cards of the related Type. Select a Card to establish the connection.
 
-!! INSERT IMAGE: Video of relating a Card
+In our **game design** example, we've defined Relations between `Character`, `Item`, `Environment` and `Game Narrative` Types. Here, we can see the name of each Relation and all of its related Cards.
 
-In our **game design** example, we've defined Relations between `Character`, `Item` and `Environment` Type. Here, we can see the name of each Relation and all of its related Cards.
-
-!! INSERT IMAGE: Screenshot of relations on Hero Character Card
+<Image src={characterRelationsCard} alt="Relations on a Character Card" inferSize quality="max" />
 
 > **Note:** It is currently possible to create a relation to a Person or Company in your Huly workspace. Soon, Persons will be replaced with Cards, allowing you to seamlessly manage your contacts within the Cards system.
 

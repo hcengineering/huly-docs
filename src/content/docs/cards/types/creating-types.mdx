@@ -3,9 +3,14 @@ title: Creating Types
 description: Learn how to create Types.
 ---
 
+import { Image } from "astro:assets";
+import typesOverview from "../../../../assets/screenshots/huly/cards/types-overview.png";
+import createEnum from "../../../../assets/screenshots/huly/cards/create-enum.png";
+import derivedTypes from "../../../../assets/screenshots/huly/cards/derived-types.png";
+
 To create a Type, navigate to Settings, find `TYPES` in the left side menu, and click the `+` button that appears when hovering over the header. Enter a name for your Type and click `Create`.
 
-!! INSERT IMAGE: Video showing creating a Type
+<Image src={typesOverview} alt="Overview of Types settings" inferSize quality="max" />
 
 ## Adding properties
 
@@ -24,35 +29,31 @@ To add a property, click the `+` button in the properties section. Select from t
 
 In our example, we know that all Game Components will have a `Name` and `Description`, so we'll add these on the `Game Component` Type as `Text` properties.
 
-!! INSERT IMAGE: Video showing adding a property
-
 > **Note:** Properties can also be added directly to Cards — see [Creating Cards](/docs/cards/creating-cards).
 
 ##### Creating dropdown menus (enums)
 
-If you chose to add a property of type `Multi-select` or `Select`, you can create a dropdown menu with options. Click the `+` button to add a new select menu (called an "**enum**"). Enter a title and options for the menu and click `Save`. Then, select your menu from the `Select` dropdown to use it for this property.
+If you chose to add a property of type "Multi-select" or "Select", you can create a dropdown menu with options. Click the `+` button to add a new select menu (called an "**enum**"). Enter a title and options for the menu and click `Save`. Then, select your menu from the "Select" dropdown to use it for this property.
 
-In our example, we've created a Type `Character` and added a property `???` with a dropdown menu of options: `???`, `???`, and `???`:
+In our example, we've created a Type `Character` and added a "Multi-select" property `Movement modes` with a dropdown menu of options: `🏃 Ground`, `🦅 Air`, and `🌊 Water`:
 
-!! EXAMPLE NEEDED
-
-!! INSERT IMAGE: Video showing creating a dropdown menu (enum)
+<Image src={createEnum} alt="Creating an enum" inferSize quality="max" />
 
 ## Creating derived Types
 
 We mentioned that the `Game Component` Type will have a "Name" and "Description" property. But what if we want to create different kinds of `Game Components`, each with their own unique properties?
 
-Types can be derived from other Types to define variations that have their own unique properties. For example, we can create types `Character`, `Item`, `Environment` and `UI Element` to define different kinds of `Game Components`.
-
-!! INSERT IMAGE: Screenshot showing `Game Component` Type
-
-To create a derived Type, find the `TYPES` section on the main Type page and click the `+` button.
+Types can be derived from other Types to define variations that have their own unique properties. To create a derived Type, find the `TYPES` section on the main Type page and click the `+` button.
 
 From here, the steps for creating a derived Type are the same as creating any other Type. Note that the derived Type will automatically inherit all properties of the Type from which it was derived.
 
-In our example, we can derive several new Types from the `Game Component` Type, such as `Character`, `Item`, `Environment` and `UI Element`, each with their own set of properties. 
+In our example, we can derive several new Types from the `Game Component` Type, such as `Character`, `Item` and `Environment`, each with their own set of properties. 
 
 We can create as many levels of derivation as is needed. In the example below, we've derived Types `Player`, `Enemy` and `NPC` from Type `Character`.
+
+<Image src={derivedTypes} alt="Derived Types" inferSize quality="max" />
+
+We can define properties on each Type, like this:
 
 - **`Game Component`**
   - Name
@@ -62,7 +63,6 @@ We can create as many levels of derivation as is needed. In the example below, w
     - Jump height (m)
     - Movement modes (ground, air, water)
     - Max health
-    - Health effects (poison, burn, bleed, etc.)
     - Stamina
     - **`🤺 Player`**
       - Abilities (jump, attack, talk, etc.)
@@ -71,19 +71,15 @@ We can create as many levels of derivation as is needed. In the example below, w
       - Attack patterns (claw swipe, fireball, charge attack)
     - **`🧑 NPC`**
       - Affiliation (friendly, neutral, hostile)
-      - Essential?
-      - Respawn?
+      - Essential? (yes/no)
+      - Respawn? (yes/no)
   - **`🎒 Item`**
     - Item type (weapon, consumable, key item)
     - Effect
     - Rarity (common, rare, legendary)
   - **`🌎 Environment`**
     - Size (small, medium, large)
-    - Interactive?
-  - **`🎨 UI Element`**
-    - Function
-
-  !! INSERT IMAGE: Screenshot TBD
+    - Interactive? (yes/no)
 
 ## Deleting a Type
 
