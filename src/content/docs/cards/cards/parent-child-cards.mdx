@@ -5,6 +5,25 @@ description: Learn how to create parent-child Cards and their use cases.
 
 import { Image } from "astro:assets";
 import parentChildCards from "../../../../assets/screenshots/huly/cards/parent-child-cards.png";
+import setParent from "../../../../assets/screenshots/huly/cards/set-parent.png";
+
+Cards can be connected through a parent-child relationship, where the child Card is best understood in the context of its parent Card. This is useful for creating a hierarchical structure of knowledge and information.
+
+## Creating a child Card
+
+To create a new child Card, click the `+ Create child` button on the parent Card. A new blank Card will be opened, where you can enter any information you want. The child Card will automatically be linked to the parent Card.
+
+## Connecting existing Cards as parent-child
+
+To connect an existing Card to a parent, right-click on the Card in the list or table view, or open the settings menu on the Card's page. Select `Set parent` from the list, then select a Card for the parent.
+
+<Image src={setParent} alt="Setting a parent Card" inferSize quality="max" />
+
+## Disconnecting parent-child Cards
+
+Any child Card can be disconnected from its parent by right-clicking or opening the settings menu and selecting `Unset parent`.
+
+## Parent-child vs. Relations
 
 While both Relations and parent-child connections allow you to link Cards, they serve different purposes and are used in distinct scenarios.
 
@@ -12,6 +31,8 @@ Here are some general guidelines:
 
 * Use **parent-child** relationships when one entity (the "child") is dependent on another entity (the "parent") and logically belongs under it, or when a hierarchical structure is needed.
 
-* Use **Relations** when both entities exist independently but need to be linked to reflect their interaction or connection. Relations don't imply a hierarchical structure, just that the entities are related in some way.
+* Use **[Relations](/cards/relations/relations-overview)** when both entities exist independently but need to be linked to reflect their interaction or connection. Relations don't imply a hierarchical structure, just that the entities are related in some way.
 
 <Image src={parentChildCards} alt="Example of parent-child cards" inferSize quality="max" />
+
+

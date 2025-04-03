@@ -3,15 +3,33 @@ title: Relations vs. References
 description: Learn the differences between Relations and References and best use cases for each.
 ---
 
+import { Image } from "astro:assets";
+import characterItemRelation from "../../../../assets/screenshots/huly/cards/character-item-relation.png";
+import itemCharacterRelation from "../../../../assets/screenshots/huly/cards/item-character-relation.png";
+import characterItemRefSettings from "../../../../assets/screenshots/huly/cards/character-item-ref-settings.png";
+import characterItemRefCard from "../../../../assets/screenshots/huly/cards/character-item-ref-card.png";
+
 In some cases, you may want to connect Cards together using References instead of Relations.
 
 Relations are bi-directional, meaning that a Relation will appear on both Cards involved the relationship. In our example of a `Character` possessing an `Item`, the Relation will appear on both the `Character` and the `Item` Card.
 
-!! INSERT IMAGE: Showing Character-Item Relation on two Cards
+> **Below:** The `Item` is shown on the `Character` Card
+
+<Image src={characterItemRelation} alt="Character Card" inferSize quality="max" />
+
+> **Below:** The `Character` is shown on the `Item` Card
+
+<Image src={itemCharacterRelation} alt="Item Card" inferSize quality="max" />
 
 References, on the other hand, are one-directional. A Reference will only appear on the ***Referring*** Card, and a Reference is a type of attribute. Instead of using a Relation to define the association between `Character` and `Item`, you can add a Reference attribute to the `Character` Type that references the `Item` Type. This can be a single-select or multi-select attribute, depending on your use case. In this case, the `Item` Card will not show which `Character` possesses it.
 
-!! INSERT IMAGE: Showing Character Reference to a list of Items
+> **Below:** Add a reference attribute to the `Character` Type in Settings
+
+<Image src={characterItemRefSettings} alt="Setting a reference attribute on a Type" inferSize quality="max" />
+
+> **Below:** Select `Item` Cards on the `Character` Card using the Reference attribute
+
+<Image src={characterItemRefCard} alt="Using a reference attribute on a Card" inferSize quality="max" />
 
 ## Deciding whether to use a Relation or Reference
 

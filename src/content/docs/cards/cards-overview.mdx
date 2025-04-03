@@ -3,7 +3,8 @@ title: Introduction to Cards
 description: Learn how to leverage Cards for advanced knowledge management.
 ---
 
-!! INSERT IMAGE: General image showing Cards interface
+import { Image } from "astro:assets";
+import cards from "../../../assets/screenshots/huly/cards/cards.png";
 
 ## Understanding Cards
 
@@ -19,9 +20,9 @@ The following elements make up the Cards system. Click on any guide to learn mor
 
 * [**Types**](/cards/types/types-overview) define the structure of information within the system. You can think of a Type like a blueprint with specific instructions for what details you'll need to store for each piece of information. 
 * [**Tags**](/cards/tags/tags-overview) are used to add additional properties or behaviors to a Type. Tags allow you to define a specific set of properties that can be applied to multiple Types.
-* [**Cards**](/cards/creating-cards) are "instances" of a Type — the real information that you're storing in your knowledge management system. Each Card is a unique piece of information that follows the structure defined by its Type.
+* [**Cards**](/cards/cards/creating-cards) are "instances" of a Type — the real information that you're storing in your knowledge management system. Each Card is a unique piece of information that follows the structure defined by its Type.
 * [**Relations**](/cards/relations/relations-overview) define the connections between different Types and Tags, allowing you to link related information together with Cards.
-X
+
 ## Using Cards for knowledge management
 
 Cards provide a structured and scalable way to organize knowledge. Unlike traditional document-based systems, where information can become scattered and difficult to navigate, Cards allow for dynamic connections, filtering, and categorization.
@@ -41,3 +42,5 @@ Continue through the guides to learn how to put these concepts into practice, cr
   <h5><strong>Let's build a game design system with Cards! 🎮</strong></h5>
   <p>In the following guides, we'll look at how to design an adventure game system using Cards. Game designers need to store information about **game components**, **documents** and **files**, keeping track of how everything is connected. We'll use this example to illustrate how Cards can be used to create a comprehensive knowledge management system.</p>
 </div>
+
+<Image src={cards} alt="Cards sneak peek" inferSize quality="max" />
