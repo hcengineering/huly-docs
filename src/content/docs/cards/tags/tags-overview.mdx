@@ -3,6 +3,9 @@ title: What are Tags?
 description: Learn about Tags in the Cards system.
 ---
 
+import { Image } from "astro:assets";
+import tagsSettings from "../../../../assets/screenshots/huly/cards/tags-settings.png";
+
 <div className="rounded-box">
   <h5><strong>What is a Tag?</strong></h5>
   <p>A Tag is a set of additional properties that can be applied to a Card, allowing you to define behaviors or attributes that extend a Card’s functionality. Tags provide flexibility by enabling shared properties across different Types without requiring new Types.</p>
@@ -10,20 +13,14 @@ description: Learn about Tags in the Cards system.
 
 We've seen how we can [create variations of a Type](/cards/types/creating-types/#creating-derived-types). But what if we want to define some kind of behavior or functionality without altering the core structure of the Type itself? 
 
-For example, in our game design system, consider the `NPC` Type, which is derived from `Character`. An NPC has several of its own attributes, affiliation and respawn. However, an NPC could be also have a role, such as a merhcant, guild member or rogue, and each of these roles has unique attributes. In this case, we can create **Tags** to define these sets of attributes:
+Tags allow you to add multiple additional attributes to a single Card. In our game design example, we can create Tags like `Flying` and `Wizard` added to the `Character` Type, so any `Character` Card we create could have access to these attributes:
 
-- **`Merchant`** Tag
-  - Buy/Sell stolen items? (yes/no)
-  - Inventory (Ref Items)
-- **`Guild Member`** Tag
-  - Guild role (text)
-- **`Rogue`** Tag
-  - Weapons (Ref Items)
+<Image src={tagsSettings} alt="Tags Settings" inferSize quality="max" />
 
-In our next guide, we'll learn how to create the Tags we just described and apply them to our `NPC` Type. Check out [Creating Tags](/cards/tags/creating-tags) to get started!
+In our next guide, we'll learn how to create the Tags we just described. Check out [Creating Tags](/cards/tags/creating-tags) to get started!
 
 ## Tags vs. Types
-> *__But wait__, couldn't I just create separate Types for Merchants, Guild Members and Rogues?*
+> *__But wait__, couldn't I just create separate Types for Flying Characters and Wizards?*
 
 **Yes, you absolutely can!** Creating separate Types for each variation is a valid approach. However, the benefit of using Tags is flexibility — you don’t need to create a new Type for every possible combination of behaviors or attributes. Instead, Tags allow you to mix and match properties based on the unique needs of each Card. On the other hand, creating new Types might be more appropriate if the differences between variations are fundamental to the design or behavior of the Card.
 
