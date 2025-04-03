@@ -1,0 +1,65 @@
+---
+title: Defining Relations
+description: Learn how to define Relations between Types.
+---
+
+import { Image } from "astro:assets";
+import relationsDialog from "../../../../assets/screenshots/huly/cards/relations-dialog.png";
+import characterRelations from "../../../../assets/screenshots/huly/cards/character-relations.png";
+
+To define Relations between Types, navigate to Settings and open the Type you want to add a Relation to. Click the `+` button in the Relations area.
+
+<Image src={relationsDialog} alt="Adding a Relation" inferSize quality="max" />
+
+## Naming Relations
+
+When defining a Relation, you'll need to give it a clear and descriptive name on both sides. The names should be human-readable and indicate the nature of the relationship between the two entities.
+
+Let's look at some examples of Relations on our `Character` Type:
+
+* **Possessed by** (`Character`) - **Possesses** (`Item`)
+  * *Meaning: A Character **possesses** an Item; an Item is **possessed by** a Character.*
+ 
+ 
+* **Inhabited by** (`Character`) - **Exists in** (`Environment`)
+  * *Meaning: A Character **exists in** an Environment; an Environment is **inhabited by** a Character.*
+ 
+   
+* **Features** (`Character`) - **Included in** (`Game Narrative`)
+  * *Meaning: A Character is **included in** a Game Narrative; a Game Narrative **features** a Character*
+
+These names describe how two Types are connected, allowing the system to establish their relationships clearly and logically.
+
+<Image src={characterRelations} alt="Relations on the Character Type" inferSize quality="max" />
+
+## Selecting the kind of Relation
+
+When creating a Relation, you must specify the kind of relationship between the entities. There are three kinds to choose from:
+
+#### 1:1 Relation
+**Definition**: One entity of the first type is related to exactly one entity of the second type.
+
+**Example**: An `Item` has only one `Audio Asset`, and an `Audio Asset` is only used by one Item.
+
+**Use case**: This type of relation is ideal for cases where a single instance of one entity is paired with a single instance of another. For instance, each `Item` may have a unique `Audio Asset` associated with it.
+
+#### 1:N Relation
+**Definition**: One entity of the first type is related to multiple entities of the second type.
+
+**Example**: A `Quest` can have multiple `Objectives`, but each `Objective` belongs to only one `Quest`.
+
+**Use case**: This relation type is commonly used when a single entity (like a `Quest`) can be linked to multiple related entities (like `Objectives`), but each related entity (an `Objective`) is only connected to that one instance of the first entity.
+
+#### N:N Relation
+
+**Definition**: Multiple entities of the first type are related to multiple entities of the second type.
+
+**Example**: A `Character` can have multiple `Items`, and an `Item` can be used by multiple `Characters`.
+
+**Use case**: This relation type is useful when many instances of one entity (e.g., `Character`) can be associated with many instances of another entity (e.g., `Items`). It reflects a more dynamic, interconnected system, like a character inventory or shared assets.
+
+By defining clear and meaningful Relations between your Types, you can create a system where entities are connected in ways that mirror their real-world interactions. This adds depth to your data structure, making it easier to navigate, manage, and scale as your system grows.
+
+## Using Relations with Cards
+
+Check out our guide on [Relating Cards](/cards/relations/relating-cards) to learn how to connect Cards using the Relations you've defined.

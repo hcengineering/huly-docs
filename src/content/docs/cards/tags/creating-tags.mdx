@@ -1,0 +1,28 @@
+---
+title: Creating Tags
+description: Learn how to create Tags.
+---
+
+import { Image } from "astro:assets";
+import tagPropertiesFlying from "../../../../assets/screenshots/huly/cards/tag-properties-flying.png";
+import tagPropertiesWizard from "../../../../assets/screenshots/huly/cards/tag-properties-wizard.png";
+
+In the previous guide, we learned about Tags and how they can be used to define behaviors or attributes that extend a Card’s functionality. Now, let's put that knowledge into practice and create some Tags.
+
+## Creating a Tag
+
+Navigate to Settings and select the Type you want to add Tags to; then, click the `+` button in the Tags area. Add a name for your Tag and click `Create`.
+
+## Adding Tag properties
+
+Click on any Tag to open it. To add a property to a Tag, click the `+` button in the properties section. Adding properties to a Tag is the same as adding properties to a Type (see [this guide](/cards/types/creating-types/#adding-properties)). These properties will only be available on Cards using that Tag.
+
+In our **game design** example, we've added a custom property "Flying speed" that exists on the `Flying` Tag:
+
+<Image src={tagPropertiesFlying} alt="Tag properties" inferSize quality="max" />
+
+To the `Wizard` Tag, we've added a property "mana":
+
+<Image src={tagPropertiesWizard} alt="Tag properties" inferSize quality="max" />
+
+Check out the next guide on [Applying Tags](/cards/tags/applying-tags) to learn how to use this Tag on a Card.

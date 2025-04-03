@@ -1,0 +1,86 @@
+---
+title: Creating Types
+description: Learn how to create Types.
+---
+
+import { Image } from "astro:assets";
+import typesOverview from "../../../../assets/screenshots/huly/cards/types-overview.png";
+import createEnum from "../../../../assets/screenshots/huly/cards/create-enum.png";
+import derivedTypes from "../../../../assets/screenshots/huly/cards/derived-types.png";
+
+To create a Type, navigate to Settings, find `TYPES` in the left side menu, and click the `+` button that appears when hovering over the header. Enter a name for your Type and click `Create`.
+
+<Image src={typesOverview} alt="Overview of Types settings" inferSize quality="max" />
+
+## Adding properties
+
+Next, add some properties for your Type. **Properties** are anything that will be shared by all Cards of this Type.
+
+To add a property, click the `+` button in the properties section. Select from the following:
+
+* URL
+* Text
+* Checkbox
+* Number
+* Date
+* Reference (link to an Object in your workspace)
+* Multi-select (select multiple Objects or dropdown values)
+* Select (select one dropdown value)
+
+In our example, we know that all Game Components will have a `Name` and `Description`, so we'll add these on the `Game Component` Type as `Text` properties.
+
+> **Note:** Properties can also be added directly to Cards — see [Creating Cards](/cards/cards/creating-cards).
+
+##### Creating dropdown menus (enums)
+
+If you chose to add a property of type "Multi-select" or "Select", you can create a dropdown menu with options. Click the `+` button to add a new select menu (called an "**enum**"). Enter a title and options for the menu and click `Save`. Then, select your menu from the "Select" dropdown to use it for this property.
+
+In our example, we've created a Type `Character` and added a "Multi-select" property `Movement modes` with a dropdown menu of options: `🏃 Ground`, `🦅 Air`, and `🌊 Water`:
+
+<Image src={createEnum} alt="Creating an enum" inferSize quality="max" />
+
+## Creating derived Types
+
+We mentioned that the `Game Component` Type will have a "Name" and "Description" property. But what if we want to create different kinds of `Game Components`, each with their own unique properties?
+
+Types can be derived from other Types to define variations that have their own unique properties. To create a derived Type, find the `TYPES` section on the main Type page and click the `+` button.
+
+From here, the steps for creating a derived Type are the same as creating any other Type. Note that the derived Type will automatically inherit all properties of the Type from which it was derived.
+
+In our example, we can derive several new Types from the `Game Component` Type, such as `Character`, `Item` and `Environment`, each with their own set of properties. 
+
+We can create as many levels of derivation as is needed. In the example below, we've derived Types `Player`, `Enemy` and `NPC` from Type `Character`.
+
+<Image src={derivedTypes} alt="Derived Types" inferSize quality="max" />
+
+We can define properties on each Type, like this:
+
+- **`Game Component`**
+  - Name
+  - Description
+  - **`😶 Character`**
+    - Speed (m/s)
+    - Jump height (m)
+    - Movement modes (ground, air, water)
+    - Max health
+    - Stamina
+    - **`🤺 Player`**
+      - Abilities (jump, attack, talk, etc.)
+      - XP
+    - **`👿 Enemy`**
+      - Attack patterns (claw swipe, fireball, charge attack)
+    - **`🧑 NPC`**
+      - Affiliation (friendly, neutral, hostile)
+      - Essential? (yes/no)
+      - Respawn? (yes/no)
+  - **`🎒 Item`**
+    - Item type (weapon, consumable, key item)
+    - Effect
+    - Rarity (common, rare, legendary)
+  - **`🌎 Environment`**
+    - Size (small, medium, large)
+    - Interactive? (yes/no)
+
+## Deleting a Type
+
+To delete a Type, navigate to the Type page in Settings and click the trash icon in the top right corner. Note that deleting a Type will also delete all Cards of that Type, and this action cannot be undone.

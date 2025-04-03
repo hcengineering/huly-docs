@@ -52,6 +52,53 @@ export default defineConfig({
             ],
           },
           {
+            label: "Cards",
+            collapsed: false,
+            items: [
+              {
+                label: "Introduction to Cards",
+                link: "/cards/cards-overview/",
+              },
+              {
+                label: "Cards",
+                collapsed: false,
+                items: [
+                  {label: 'Creating Cards', link: '/cards/cards/creating-cards/'},
+                  {label: 'Parent-child Cards', link: '/cards/cards/parent-child-cards/'},     
+                  {label: 'View, sort and filter Cards', link: '/cards/cards/view-sort-filter-cards/'},     
+                ]
+              },
+              {
+                label: "Types",
+                collapsed: false,
+                items: [
+                  {label: 'What are Types?', link: '/cards/types/types-overview/'},
+                  {label: 'Creating Types', link: '/cards/types/creating-types/'},
+                  {label: 'File Types', link: '/cards/types/file-types/'},                ]
+              },
+              {
+                label: "Tags",
+                collapsed: false,
+                items: [
+                  {label: 'What are Tags?', link: '/cards/tags/tags-overview/'},
+                  {label: 'Creating Tags', link: '/cards/tags/creating-tags/'},
+                  {label: 'Applying Tags to Cards', link: '/cards/tags/applying-tags/'},
+                ]
+              },
+              {
+                label: "Relations",
+                collapsed: false,
+                items: [
+                  {label: 'What are Relations?', link: '/cards/relations/relations-overview/'},
+                  {label: 'Defining Relations', link: '/cards/relations/defining-relations/'},
+                  {label: 'Relating Cards', link: '/cards/relations/relating-cards/'},
+                  {label: 'Relations vs. References', link: '/cards/relations/relations-vs-references/'},
+                ]
+              },
+              
+              ]
+            },
+          {
             label: "Task tracking",
             collapsed: true,
             items: [
