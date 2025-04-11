@@ -1,0 +1,46 @@
+---
+title: Introduction to Cards
+description: Learn how to leverage Cards for advanced knowledge management.
+---
+
+import { Image } from "astro:assets";
+import cards from "../../../assets/screenshots/huly/cards/cards.png";
+
+## Understanding Cards
+
+Cards are a flexible framework for structuring information efficiently. 
+
+While our initial implementation of Cards is focused on knowledge management, Cards will also serve as the foundation for many other features on the platform, including process management and threads. With Cards, you'll be able to build your own custom applications within Huly, such as a CRM, CMS, project management system and more.
+
+This guide explains the core components of the Cards system: **Types**, **Tags**, **Relations** and **Cards**, providing an overview of the entire system. We also have more in-depth guides on each element so you can learn how to use them in your own workspace, which are linked in the sections below.
+
+## Core elements of the Cards system
+
+The following elements make up the Cards system. Click on any guide to learn more:
+
+* [**Types**](/cards/types/types-overview) define the structure of information within the system. You can think of a Type like a blueprint with specific instructions for what details you'll need to store for each piece of information. 
+* [**Tags**](/cards/tags/tags-overview) are used to add additional properties or behaviors to a Type. Tags allow you to define a specific set of properties that can be applied to multiple Types.
+* [**Cards**](/cards/cards/creating-cards) are "instances" of a Type — the real information that you're storing in your knowledge management system. Each Card is a unique piece of information that follows the structure defined by its Type.
+* [**Relations**](/cards/relations/relations-overview) define the connections between different Types and Tags, allowing you to link related information together with Cards.
+
+## Using Cards for knowledge management
+
+Cards provide a structured and scalable way to organize knowledge. Unlike traditional document-based systems, where information can become scattered and difficult to navigate, Cards allow for dynamic connections, filtering, and categorization.
+
+This approach offers several advantages:
+
+* **Structured organization** - Each Card follows a defined Type, ensuring consistency.
+* **Easy navigation** - Relations between Cards create a web of interconnected knowledge, making it easy to find associated information.
+* **Scalability** - The modular nature of Cards allows you to expand your system at scale.
+* **Collaborative editing** - The rich text editor and activity tracking allow teams to work together collaboratively.
+
+Continue through the guides to learn how to put these concepts into practice, creating your own knowledge management system with Cards.
+
+<div style={{ height: "7px" }}></div>
+
+<div className="rounded-box">
+  <h5><strong>Let's build a game design system with Cards! 🎮</strong></h5>
+  <p>In the following guides, we'll look at how to design an adventure game system using Cards. Game designers need to store information about **game components**, **documents** and **files**, keeping track of how everything is connected. We'll use this example to illustrate how Cards can be used to create a comprehensive knowledge management system.</p>
+</div>
+
+<Image src={cards} alt="Cards sneak peek" inferSize quality="max" />
