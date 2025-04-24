@@ -65,7 +65,8 @@ export default defineConfig({
                 items: [
                   {label: 'Creating Cards', link: '/cards/cards/creating-cards/'},
                   {label: 'Parent-child Cards', link: '/cards/cards/parent-child-cards/'},     
-                  {label: 'View, sort and filter Cards', link: '/cards/cards/view-sort-filter-cards/'},     
+                  {label: 'View, sort and filter Cards', link: '/cards/cards/view-sort-filter-cards/'},
+                  {label: 'Cards vs. Documents', link: '/cards/cards/cards-vs-documents/'},     
                 ]
               },
               {
