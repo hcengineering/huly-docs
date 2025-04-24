@@ -55,19 +55,11 @@ export default defineConfig({
             label: "Cards",
             collapsed: false,
             items: [
-              {
-                label: "Introduction to Cards",
-                link: "/cards/cards-overview/",
-              },
-              {
-                label: "Cards",
-                collapsed: false,
-                items: [
-                  {label: 'Creating Cards', link: '/cards/cards/creating-cards/'},
-                  {label: 'Parent-child Cards', link: '/cards/cards/parent-child-cards/'},     
-                  {label: 'View, sort and filter Cards', link: '/cards/cards/view-sort-filter-cards/'},     
-                ]
-              },
+              {label: "Introduction to Cards", link: "/cards/cards-overview/"},
+              {label: 'Creating Cards', link: '/cards/creating-cards/'},
+              {label: 'Parent-child Cards', link: '/cards/parent-child-cards/'},     
+              {label: 'View, sort and filter Cards', link: '/cards/view-sort-filter-cards/'},
+              {label: 'Cards vs. Documents', link: '/cards/cards-vs-documents/'},     
               {
                 label: "Types",
                 collapsed: false,
