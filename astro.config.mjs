@@ -60,6 +60,7 @@ export default defineConfig({
               {label: 'Parent-child Cards', link: '/cards/parent-child-cards/'},     
               {label: 'View, sort and filter Cards', link: '/cards/view-sort-filter-cards/'},
               {label: 'Cards vs. Documents', link: '/cards/cards-vs-documents/'},     
+              {label: 'Use cases', link: '/cards/use-cases/'},     
               {
                 label: "Types",
                 collapsed: false,
