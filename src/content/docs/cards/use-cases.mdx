@@ -1,0 +1,159 @@
+---
+title: Use cases for Cards
+description: Learn about some common use cases for Cards.
+---
+
+This guide provides examples of common ways to use Cards for knowledge management. Each example includes suggested [Type](/cards/types/types-overview) structures and [Relations](/cards/relations/relations-overview) that you can use as inspiration and adapt to your own workspace.
+
+---
+
+## 📚 Dive into real-world use cases
+Cards are a versatile solution for managing many different kinds of knowledge in your workspace. Click on each section below to see an example of Types and Relations for each use case based on real-world knowledge systems. You'll find that some of these examples can also be interconnected, allowing you to create a network of knowledge spanning all areas of your organization.
+
+<details>
+<summary><strong>Knowledge Base Articles</strong> — build a structured knowledge base to organize articles like how-to guides, FAQs, and release notes.</summary>
+
+##### Types and sub-types
+>Articles come in many formats, and different kinds of articles can have different properties. Here are some examples of Types you might use in a knowledge base and their unique attributes:
+
+- **`Knowledge Base Article`**
+  - Summary (string)
+  - Category (select)
+  - Audience (multi-select)
+  - Last updated (date)
+  - Product area (select)
+  - **`How-To Guide`** (Sub-type)
+    - Prerequisites (multi-select)
+    - Estimated time (number)
+  - **`FAQ Entry`** (Sub-type)
+    - Question (string)
+    - Answer (string)
+    - Related topics (multi-select: reference to `Topic` Cards)
+  - **`Release Note`** (Sub-type)
+    - Release version (string)
+    - Release date (date)
+
+##### Relations
+- Related articles (`Knowledge Base Article` ↔ `Knowledge Base Article`)
+- Supports feature (`Knowledge Base Article` → `Product Feature`)
+- Explains concept (`Knowledge Base Article` → `Glossary Term`)
+</details>
+
+<details>
+<summary><strong>Meeting Notes</strong> — keep track of discussions from meetings across teams.</summary>
+
+##### Types and sub-types
+> Depending on how many different kinds of meetings your team operates, you may wish to organize your meeting notes into different Types. Here are some examples:
+
+- **`Meeting Note`**
+  - Topic (string)
+  - Date (date)
+  - Participants (multi-select: reference to Employees)
+  - Summary (string)
+  - **`Team Meeting`** (Sub-type)
+    - Department (select: reference to `Department` Card)
+    - Recurrence (select: weekly, bi-weekly, monthly)
+  - **`Project Meeting`** (Sub-type)
+    - Related project (reference: `Project` Card)
+
+##### Relations
+> In some cases, you may want to use Relations instead of References to link your meeting notes. Check out [this guide](/cards/relations/relations-vs-references) to determine which is best for you! Here are a few example Relations you might use:
+- Related to project (`Meeting Note` → `Project`)
+- Related to department (`Meeting Note` → `Department`)
+</details>
+
+<details>
+<summary><strong>Feature Specs</strong> — document detailed plans for product features.</summary>
+
+##### Types and sub-types
+
+- **`Feature Spec`**
+  - Feature (string)
+  - Status (select: Draft, Approved, In Development, Released)
+  - Owner (reference: Employee)
+  - **`UI Feature`** (Sub-type)
+    - Screens affected (multi-select)
+    - Design link (url)
+  - **`Backend Feature`** (Sub-type)
+    - API changes required (checkbox)
+    - Data model changes (checkbox)
+
+##### Relations
+- Depends on (`Feature Spec` → `Feature Spec`)
+- Implements (`Feature Spec` → `Product Feature`)
+- Informed by (`Feature Spec` → `Research Summary`)
+</details>
+
+<details>
+<summary><strong>Research Summaries</strong> — record findings from studies, interviews, and experiments.</summary>
+
+##### Types and sub-types
+
+- **`Research Summary`**
+  - Research method (select: Survey, Interview, Usability Test, Experiment)
+  - Date conducted (date)
+  - Related product area (select)
+  - **`User Interview Summary`** (Sub-type)
+    - Interviewee (reference: Person)
+    - Interviewer (reference: Employee)
+
+##### Relations
+- Informs (`Research Summary` → `Feature Spec`)
+- References (`Research Summary` →`Research Summary`)
+</details>
+
+<details>
+<summary><strong>Process Documentation</strong> — map out operational workflows, standard procedures, and playbooks.</summary>
+
+##### Types and sub-types
+
+- **`Process Guide`**
+  - Process name (string)
+  - Trigger event (string)
+  - Owner (reference: Employee)
+  - **`Standard Operating Procedure`** (Sub-type)
+    - Compliance Requirement (select)
+    - Review Cycle (Months) (number)
+  - **`Playbook`** (Sub-Type)
+    - Scenario (string)
+
+##### Relations
+- Related Processes (Process Guide ↔ Process Guide)
+- Supports (Process Guide → Department or Team Card)
+</details>
+
+<details>
+<summary><strong>Marketing Campaign Plans</strong> — organize campaign briefs, timelines, and strategies in one place.</summary>
+
+##### Types and sub-types
+
+- **`Campaign Plan`**
+  - Campaign name (string)
+  - Objective summary (string)
+  - Launch date (date)
+  - Channels (multi-select: Email, Social, Paid Ads, Web)
+  - Target Audience (multi-select)
+  - **`Product Launch Campaign`** (Sub-type)
+    - Related product (reference: `Product` Card)
+  - **`Seasonal Campaign`** (Sub-type)
+    - Seasonal theme (string)
+
+##### Relations
+> You can relate a campaign to a product by a reference attribute (in the example above), or by using a Relation. Check out [this guide](/cards/relations/relations-vs-references) to determine which is best for you! Here are some examples of Relations you might use:
+- Related product (`Campaign Plan` → `Product`)
+- Supported by content items (`Campaign Plan` → `Content`)
+</details>
+
+---
+
+## 💡 Tips for designing your own Cards system
+
+While it's helpful to look at example use cases when considering how to use Cards in your own workspace, you are ultimately the architect of your own knowledge management system, and it's up to you how to prefer to structure your information. Here are some tips to help you design your own Cards system:
+
+1. **Start simple:** Begin with a few core Types that cover your most important information. You can always expand later as your needs grow. It's also possible to change the Type of a Card after it's been created — so no worries if you decide to re-organize later!
+
+2. **Keep processes in mind:** If you read the [Introduction to Cards](/cards/cards-overview) doc, you already know that we are currently building a new process management system entirely based on Cards. You'll be able to build processes like customized leads funnels, agile workflows, customer management systems and more — all from a foundation built with Cards. If you think you'd like to leverage Cards for your processes in the future, we suggest building your information architecture with this in mind.
+
+3. **Connect Cards to the rest of your workspace:** While we expect to deliver processes by the end of Q2 2025, you can already connect Cards to other parts of your workspace. From any Card, you can create a Reference attribute to point to any person or company already in your Contacts. You can also link to Cards from anywhere — including chats and issue descriptions — using @ mention syntax. Try it out!
+
+4. **Reach out for support and inspiration!** Join over 2,700 members in our [Slack community](https://huly.link/slack) to ask questions, share your use cases, and provide feedback and feature requests for our team. We're happy to help you get started with Cards and would love to work with you to make this system as useful as possible.
