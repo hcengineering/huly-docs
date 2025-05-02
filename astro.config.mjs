@@ -279,6 +279,14 @@ export default defineConfig({
                 label: "Surveys",
                 link: "/additional-modules/surveys/",
               },
+              {
+                label: "Products",
+                link: "/additional-modules/products/",
+              },
+              {
+                label: "Trainings",
+                link: "/additional-modules/trainings/",
+              },
             ],
           },
           {
@@ -311,14 +319,6 @@ export default defineConfig({
             label: "TraceX eQMS modules",
             collapsed: true,
             items: [
-              {
-                label: "Products",
-                link: "/eqms/products/",
-              },
-              {
-                label: "Trainings",
-                link: "/eqms/trainings/",
-              },
               {
                 label: "Controlled doc: types",
                 items: [
