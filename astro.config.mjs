@@ -53,7 +53,7 @@ export default defineConfig({
           },
           {
             label: "Cards",
-            collapsed: false,
+            collapsed: true,
             items: [
               {label: "Introduction to Cards", link: "/cards/cards-overview/"},
               {label: 'Creating Cards', link: '/cards/creating-cards/'},
