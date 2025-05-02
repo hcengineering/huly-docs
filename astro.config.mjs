@@ -186,6 +186,58 @@ export default defineConfig({
             ],
           },
           {
+            label: "Controlled documents",
+            collapsed: true,
+            items: [
+              {
+                label: "Types",
+                items: [
+                  {
+                    label: "Templates",
+                    link: "/controlled-documents/templates/",
+                  },
+                  {
+                    label: "Quality documents",
+                    link: "/controlled-documents/quality-documents/",
+                  },
+                  {
+                    label: "Technical documentation",
+                    link: "/controlled-documents/technical-documentation/",
+                  },
+                ],
+              },
+              {
+                label: "Authoring",
+                items: [
+                  {
+                    label: "Editing and formatting",
+                    link: "/controlled-documents/editing-formatting/",
+                  },
+                  {
+                    label: "Additional document settings",
+                    link: "/controlled-documents/document-settings/",
+                  },
+                  {
+                    label: "Versions and obsolete documents",
+                    link: "/controlled-documents/document-versions/",
+                  },
+                  {
+                    label: "Ownership vs. authorship",
+                    link: "/controlled-documents/ownership-authorship/",
+                  },
+                ],
+              },
+              {
+                label: "Review and approval",
+                link: "/controlled-documents/review-approval/",
+              },
+              {
+                label: "Filtering documents",
+                link: "/controlled-documents/document-filtering/",
+              },
+            ],
+          },
+          {
             label: "Communication",
             collapsed: true,
             items: [
@@ -312,58 +364,6 @@ export default defineConfig({
               {
                 label: "Text templates",
                 link: "/advanced-settings/text-templates/",
-              },
-            ],
-          },
-          {
-            label: "TraceX eQMS modules",
-            collapsed: true,
-            items: [
-              {
-                label: "Controlled doc: types",
-                items: [
-                  {
-                    label: "Templates",
-                    link: "/eqms/templates/",
-                  },
-                  {
-                    label: "Quality documents",
-                    link: "/eqms/quality-documents/",
-                  },
-                  {
-                    label: "Technical documentation",
-                    link: "/eqms/technical-documentation/",
-                  },
-                ],
-              },
-              {
-                label: "Controlled doc: authoring",
-                items: [
-                  {
-                    label: "Editing and formatting",
-                    link: "/eqms/editing-formatting/",
-                  },
-                  {
-                    label: "Additional document settings",
-                    link: "/eqms/document-settings/",
-                  },
-                  {
-                    label: "Versions & obsolete documents",
-                    link: "/eqms/document-versions/",
-                  },
-                  {
-                    label: "Ownership vs. authorship",
-                    link: "/eqms/ownership-authorship/",
-                  },
-                ],
-              },
-              {
-                label: "Controlled doc: review & approval",
-                link: "/eqms/review-approval/",
-              },
-              {
-                label: "Filtering documents",
-                link: "/eqms/document-filtering/",
               },
             ],
           },
