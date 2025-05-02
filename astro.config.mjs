@@ -312,10 +312,6 @@ export default defineConfig({
             collapsed: true,
             items: [
               {
-                label: "Roles and permissions",
-                link: "/eqms/roles/",
-              },
-              {
                 label: "Products",
                 link: "/eqms/products/",
               },
