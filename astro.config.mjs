@@ -235,6 +235,10 @@ export default defineConfig({
                 label: "Filtering documents",
                 link: "/controlled-documents/document-filtering/",
               },
+              {
+                label: "Products",
+                link: "/controlled-documents/products/",
+              },
             ],
           },
           {
@@ -330,10 +334,6 @@ export default defineConfig({
               {
                 label: "Surveys",
                 link: "/additional-modules/surveys/",
-              },
-              {
-                label: "Products",
-                link: "/additional-modules/products/",
               },
               {
                 label: "Trainings",
