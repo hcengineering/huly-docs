@@ -277,6 +277,10 @@ export default defineConfig({
                 label: "Meeting scheduler",
                 link: "/communication/meeting-scheduler/",
               },
+              {
+                label: "Screen recording",
+                link: "/communication/screen-recording/",
+              },
             ],
           },
           {
