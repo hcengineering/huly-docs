@@ -1,0 +1,77 @@
+---
+title: Meeting scheduler
+description: Learn how to let external contacts book meetings with you in your virtual office.
+---
+
+import { Image } from 'astro:assets';
+import scheduler from '../../../assets/screenshots/huly/scheduler.png';
+import schedulerBookingLink from '../../../assets/screenshots/huly/scheduler-booking-link.png';
+
+The meeting scheduler allows you to set up a schedule for external contacts (guests) to book meetings with you in your virtual office. This is useful for scheduling interviews, consultations, or any other type of meeting where you want to provide a convenient way for others to book time with you.
+
+Meeting guests are automatically added to your workspace as contacts, making it convenient for you to keep records of related conversations and refer to them in discussions with your team.
+
+## Creating your schedule
+
+<Image 
+src={scheduler} 
+alt='Creating a meeting schedule' 
+inferSize
+quality='max'
+/>
+
+To create a schedule, navigate to your personal Planner and find the `Public schedule` section. Click the `+` button to create a new schedule.
+
+From here, you can add some details:
+- **Schedule title:** Will be displayed to guests when you send them your booking link.
+- **Description:** Anything you'd like guests to see on your booking page (displays below the title).
+- **Meeting duration:** The length of the meeting (default is 30 minutes). Guests will only be able to book meetings in increments of this duration.
+- **Pause between meetings:** The time between meetings (default is 15 minutes). For example, if someone books a 30 minute meeting from 3:00-3:30, the next available time slot will be 3:45. Setting this also allows guests to pick meeting slots at 15-minute intervals.
+
+Set your availability for meetings each day of the week. Currently, the scheduler only supports one time slot per day. 
+
+Your scheduler is aware of all tasks and events scheduled on your Huly Planner, so your busy times will automatically be blocked out on your booking page. For example, if you set your availability from 9:00-17:00, but you have tasks and events scheduled between 11:00-13:00, guests will not see those time slots available at your booking link.
+
+> **Note:** Your availability is set in your local timezone, but your guest will see the time slots in their own timezone, making it easy to book meetings without worrying about time differences.
+
+## Sharing a booking link
+
+To share your booking link, hover over your schedule in the side panel and click the link icon. Then, click `Copy link`. This will copy the link to your clipboard, where you can share it with anyone.
+
+## Booking a meeting
+
+<Image 
+src={schedulerBookingLink} 
+alt='Scheduler booking link' 
+inferSize
+quality='max'
+/>
+
+When your guests open your booking link, they'll be able to select a time slot from your scheduler. To book a meeting, they'll need to enter their name, email and subject line, and click `Book`.
+
+Once they book a meeting, a few things will happen:
+
+1. The guest and host (you) both receive an email confirmation with the meeting details.
+2. You receive a notification in your Huly Inbox.
+3. The meeting is added to your calendar in your Huly Planner, and the guest is added to your workspace as a contact/guest user.
+
+In order to receive emails and notifications about scheduled meetings, ensure you have notifications enabled in your Huly settings. Navigate to Settings > Notifications and toggle General notifications.
+
+> **Note:** Meeting reminders are not currently supported. 
+
+### Rescheduling or cancelling a meeting
+
+Meeting guests can reschedule or cancel their meeting by clicking the links in their confirmation email. This will take them to a page where they can select a new time slot or cancel the meeting altogether.
+
+> **Note:** While it's possible to cancel or change the time of your meeting as the *host* in Huly, doing so will not trigger an email notification for your guest yet. We plan to implement this in a future release, but in the meantime if you need to cancel or reschedule a meeting, we recommend that you contact your guest directly.
+
+## Permissions for meeting guests
+
+Meeting guests do not need a Huly account to book a meeting, join a meeting or access the workspace as a guest user.
+
+By default, meeting guests are added to your workspace as contacts. This enables you to save notes related to their contact, allowing you to track conversations for easy follow-up and coordinating related tasks and discussions with your team.
+
+Meeting guests will also be able to see any public chat channels you have in your workspace and join a direct message channel with you. This allows you to communicate easily with your guests before, during and after the meeting, without ever needing to leave Huly to use another communication platform.
+
+Meeting guests will not be able to see any private channels or direct messages you have with other users in your workspace. They won't be able to see or access any of your projects, documents, or any spaces in the workspace that they aren't a member of.
+

@@ -273,6 +273,10 @@ export default defineConfig({
                 label: "Live transcription",
                 link: "/communication/live-transcription/",
               },
+              {
+                label: "Meeting scheduler",
+                link: "/communication/meeting-scheduler/",
+              },
             ],
           },
           {
