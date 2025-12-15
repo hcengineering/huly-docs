@@ -26,6 +26,8 @@ From here, you can select a role for each team member:
 - **Owner** - The workspace owner has full control over the workspace. They can remove team members and manage workspace settings. A workspace can have multiple owners.
 - **Maintainer** - Maintainers have the same permissions as owners, except they cannot delete the workspace, remove owners, or remove team members. Maintainers cannot change their own role in the system. Maintainers can manage workspace settings.
 - **User** - Users cannot manage workspace settings, change their own role, or remove team members.
+- **Guest** - Guests have limited access to the workspace. They can only create, update, or delete content in spaces that explicitly allow Guest access level. Guests cannot manage workspace settings, change roles, remove team members, or access most workspace features. Guest access is typically used for external collaborators who need limited, controlled access to specific content.
+- **Readonly Guest** - Readonly guests have view-only access to the workspace. They cannot create, update, or delete any content. Readonly guests are blocked from all write operations and can only view content that has been shared with them. This role is used for anonymous public access when enabled in workspace settings.
 
 > **Note:** [TraceX](/getting-started/introduction-tracex) workspaces come with additional roles: `Qualified User`, `Manager`, and `QARA`. These roles are used to manage permissions for controlled documents, products, product documents and trainings.
 
