@@ -15,6 +15,24 @@ We offer the option to self-host the Huly platform on your own server. All of th
 
 Everything you see in the cloud version can potentially be self-hosted; however, we may not "prepackage" some services for various reasons. Some integrations (like GitHub) may require you to install a separate app in GitHub or work with Google to enable an API, and we do not have extensive documentation to describe every case. Also, some parts of cloud version rely on proprietary Cloudflare services, which we intentionally do not include into self-hosting packages to avoid any vendor lock-ins. 
 
+## Connecting the Desktop App to your self-hosted server
+
+You can connect the Huly Desktop App to your self-hosted server by launching it with the `--server` option pointing to your server URL.
+
+**Windows:**
+1. Right-click the Huly shortcut → Properties
+2. In the "Target" field, add `--server https://your-huly-server.com` after the exe path
+3. Example: `"C:\Program Files\Huly\Huly.exe" --server https://your-huly-server.com`
+
+**macOS:**
+```bash
+# Using the app name
+open -a "Huly" --args --server https://your-huly-server.com
+
+# Or using the executable path directly
+/Applications/Huly.app/Contents/MacOS/Huly --server https://your-huly-server.com
+```
+
 ## Migrating data between self-hosted and cloud
 
 We do not have a way for users to migrate data from a self-hosted Huly instance to our cloud version through the GUI, but there is still a way to manually export/import your self-hosted data to huly.io. Feel free to reach us out when you need to do this and we will provide you guidance and help.
