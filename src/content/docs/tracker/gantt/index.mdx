@@ -1,0 +1,62 @@
+---
+title: Gantt Chart Overview
+description: Visualize project timelines and task dependencies with the Huly Gantt chart view.
+---
+
+import { Image } from 'astro:assets';
+import ganttOverviewLight from '../../../../assets/gantt/overview-default-light.png';
+import ganttOverviewDataLight from '../../../../assets/gantt/overview-with-data-light.png';
+import ganttViewSwitcherLight from '../../../../assets/gantt/overview-view-switcher-light.png';
+
+## What is the Gantt Chart?
+
+The Gantt chart view in Huly transforms your project issues into a visual timeline. Each issue is represented as a horizontal bar spanning from its **start date** to its **due date**, arranged on a time axis so you can instantly see scheduling conflicts, parallel work, and critical dependencies.
+
+Use the Gantt view when you need to plan sprints across multiple weeks, coordinate team capacity across components, or identify whether your milestone deadlines are at risk.
+
+## Key Features
+
+- **Visual timeline** — bars rendered from `startDate` to `dueDate` at configurable zoom levels (Day, Week, Month, Quarter)
+- **Bar coloring** — choose what each bar's color means via the toolbar **Color by** dropdown: Status (default) / Priority / Assignee / Component / Milestone / Uniform. See [Bar coloring and overlays](./bar-coloring)
+- **Overlays** — past-due bars get a red left stripe; blocked bars get a diagonal hatch; critical-path bars get a red border — all readable on top of any color mode
+- **Dependency arrows** — directional arrows between bars for Finish-to-Start, Start-to-Start, Finish-to-Finish, and Start-to-Finish relations
+- **Cascade scheduling** — drag one bar and dependent bars automatically shift forward
+- **Critical Path highlighting** — the longest path through your dependency graph is highlighted in red
+- **Working-days awareness** — weekends and custom holidays are visually tinted and optionally skipped in scheduling calculations
+- **Saved views** — save your current filter, grouping, time window AND bar-coloring choices as a named view and share it with teammates
+- **Bulk operations** — select multiple issues with Cmd+Click or Shift+Click and drag them together
+- **Export** — render the full Gantt chart as PNG or PDF via the hamburger menu
+
+## How to Open the Gantt View
+
+1. Open **Tracker** from the left sidebar.
+2. Select your project under **Your projects**.
+3. Click **Issues**.
+4. In the top-right toolbar, click the **Gantt** view icon (the third radio button in the view switcher, after List and Board).
+
+<Image src={ganttViewSwitcherLight} alt="View switcher showing List, Board, and Gantt options" inferSize quality='max' />
+
+## Understanding Issue Bars
+
+Once in Gantt view, each issue appears as a color-coded bar:
+
+- **Bar position** = `startDate` (left edge) to `dueDate` (right edge)
+- **Bar color** = whatever **Color by** in the toolbar currently maps to — Status (default), Priority, Assignee, Component, Milestone, or Uniform. See [Bar coloring and overlays](./bar-coloring) for the full reference
+- **Bar label** = issue identifier and title, shown inside or alongside the bar depending on zoom level
+- **Pin icon** on a bar = issue is in **Manual** scheduling mode (will not be cascade-shifted)
+- **Red left stripe** = past-due (dueDate has passed and the issue is not Done)
+- **Diagonal hatch** = blocked (at least one finish-to-start predecessor is not Done)
+
+<Image src={ganttOverviewDataLight} alt="Gantt chart with Game Design project issues showing bars and dependencies" inferSize quality='max' />
+
+## Zoom and Navigation
+
+Use the zoom selector in the toolbar to switch between **Day**, **Week**, **Month**, and **Quarter** granularity. Press **T** to jump to today's date. Use **Ctrl+Mouse wheel** for stepless zoom adjustment.
+
+<Image src={ganttOverviewLight} alt="Gantt chart default state with zoom controls visible" inferSize quality='max' />
+
+## Tips
+
+- Set `startDate` and `dueDate` on your issues before switching to Gantt view; issues without dates appear in a collapsed row at the top.
+- Use **Week** zoom for sprint planning and **Month** or **Quarter** zoom for roadmap reviews.
+- Press **?** to open the full keyboard shortcut reference at any time.

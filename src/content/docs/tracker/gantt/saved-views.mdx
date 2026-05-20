@@ -1,0 +1,55 @@
+---
+title: Saved Views
+description: Save your current Gantt filter, grouping, and time window as a named view and share it with teammates.
+---
+
+import { Image } from 'astro:assets';
+import ganttSavedViewsHamburgerLight from '../../../../assets/gantt/saved-views-hamburger-light.png';
+import ganttSavedViewsSaveDialogLight from '../../../../assets/gantt/saved-views-save-dialog-light.png';
+import ganttSavedViewsLoadMenuLight from '../../../../assets/gantt/saved-views-load-menu-light.png';
+
+## Overview
+
+Saved Views capture the current state of your Gantt chart — including active filters, group-by selection, zoom level, and optional time-window pin — as a named preset. Once saved, a view can be loaded in one click and optionally shared with other project members. Shared views appear in their Gantt dropdown automatically.
+
+## Key Features
+
+- **Filter + Group snapshot** — saves the exact combination of active filters and group-by setting
+- **Bar-coloring snapshot** — the **Color by** dropdown state plus the past-due / blocked / sub-issue-progress toggles are saved along with the view. See [Bar coloring and overlays](./bar-coloring)
+- **Time-window pin** — optionally pins the visible date range so the view always opens at the same time position
+- **Sharing** — views can be scoped to just you (personal) or shared with all project members
+- **Instant load** — switch between views from a dropdown without re-applying filters manually
+- **Modified indicator** — once any of the captured fields drifts from the saved snapshot the toolbar shows a `Modified` marker; pick the same view again to revert
+- **Active-default reset** — switching to a different view (or the synthetic _Default_) resets the bar-color toolbar to its spec defaults (Status / past-due on / blocked on / progress off) so the prior view's encoding never leaks across switches
+
+## How to Save a View
+
+1. Configure your Gantt chart filters, grouping, and zoom to the desired state.
+2. Click the **hamburger menu** (three horizontal lines) in the top-right of the Gantt toolbar.
+3. Select **Save current view**.
+
+<Image src={ganttSavedViewsHamburgerLight} alt="Gantt toolbar hamburger menu open showing Save current view option" inferSize quality='max' />
+
+4. In the **Save View** dialog:
+   - Enter a **name** for the view.
+   - Toggle **Fix time window** if you want the view to always open at the current date range.
+   - Toggle **Share with members** to make the view visible to all project members.
+5. Click **Save**.
+
+<Image src={ganttSavedViewsSaveDialogLight} alt="Save View dialog with name field, Fix time window toggle, and Share with members toggle" inferSize quality='max' />
+
+## How to Load a Saved View
+
+1. Click the **hamburger menu** in the Gantt toolbar.
+2. Hover over **Load view** — a submenu appears with all available views.
+3. Views are grouped as **Personal** (only visible to you) and **Shared** (visible to all members).
+4. Click a view name to apply it instantly.
+
+<Image src={ganttSavedViewsLoadMenuLight} alt="Hamburger menu Load view submenu showing Personal and Shared view groups" inferSize quality='max' />
+
+## Tips
+
+- Use descriptive names like "Sprint 4 — Art Team" or "Q3 Milestone Review" to make views findable.
+- Shared views are great for recurring planning meetings — create a "Weekly Sync" view that always opens at the current week.
+- You can delete a saved view from the hamburger menu → **Manage views**.
+- Personal views are not visible to other team members even if they load the same project.

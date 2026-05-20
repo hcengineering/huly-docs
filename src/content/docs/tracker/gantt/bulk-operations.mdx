@@ -1,0 +1,52 @@
+---
+title: Bulk Operations
+description: Select multiple issues at once and drag them together or apply the same date shift to all selected bars.
+---
+
+import { Image } from 'astro:assets';
+import ganttBulkSelectedLight from '../../../../assets/gantt/bulk-selected-bars-light.png';
+
+## Overview
+
+Bulk operations let you select multiple issue bars in the Gantt chart and move them together with a shared date delta. This is useful when an entire set of issues needs to shift by the same amount — for example, rescheduling a sprint block by one week — without manually dragging each bar individually.
+
+## Selecting Multiple Issues
+
+| Action | Result |
+|--------|--------|
+| **Click** a bar | Selects that bar, deselects others |
+| **Cmd+Click** (Mac) / **Ctrl+Click** (Win) a bar | Adds bar to selection, or removes it if already selected |
+| **Shift+Click** a bar | Selects all bars between the last-clicked bar and this one |
+| **Cmd+A** / **Ctrl+A** | Selects all visible bars |
+| **Escape** | Clears the selection |
+
+Selected bars are highlighted with a distinct outline and a selection indicator.
+
+<Image src={ganttBulkSelectedLight} alt="Gantt chart showing three selected issue bars with highlight outlines" inferSize quality='max' />
+
+## Dragging Multiple Bars
+
+1. Select 2 or more bars.
+2. Drag any one of the selected bars.
+3. All selected bars move together — they maintain their relative positions (the **delta** is shared).
+4. While dragging, a preview shows where all selected bars will land.
+
+During the drag, all selected bars move in unison — each bar shifts by the same number of days as the one you are actively dragging. A semi-transparent preview shows each bar's projected landing position before you release.
+
+## Confirm Dialog
+
+When you release the drag, Huly shows a confirmation dialog:
+
+- Lists all **directly selected issues** with their new dates.
+- Lists any **cascade-affected successor issues** (if cascade is enabled).
+- **Apply** — commits all changes atomically.
+- **Cancel** — discards the entire operation.
+
+The confirm dialog lists each selected issue with its new start and due dates, followed by any cascade-shifted successors. Clicking **Apply** commits all changes atomically; **Cancel** discards everything.
+
+## Tips
+
+- Bulk drag respects **Manual mode** — pinned issues in the selection move with the drag, but their successors are not cascade-shifted.
+- Use **Shift+Click** on the first and last bar of a sprint block to quickly select all issues in that range.
+- If you accidentally include an issue in the selection, **Cmd+Click** it to deselect before dragging.
+- Bulk operations work across **group-by swim lanes** — you can select bars from different components or priorities.

@@ -1,0 +1,58 @@
+---
+title: Advanced Search
+description: Prefix operators, search scopes, and match highlighting for the Tracker search bar.
+---
+
+import { Image } from 'astro:assets';
+import customizeViewPlan2Toggles from '../../../../assets/gantt/customize-view-plan2-toggles-light.png';
+
+## Overview
+
+The Tracker search bar in every Issue viewlet (List, Kanban, Gantt) supports more than plain substring search. You can target specific fields via short prefix operators, decide whether bare terms search the title only or also the description and comments, and toggle visual highlighting of matched substrings.
+
+## Prefix operators
+
+Type `field:value` to restrict the search to a specific field. The Tracker recognises three friendly shorthands:
+
+| Prefix | Routes to | Example |
+|---|---|---|
+| `title:foo` | issue title (`searchTitle`) | `title:loader` |
+| `id:foo` | issue identifier (`identifier`) | `id:HULY-` |
+| `comments:foo` | issue comments (`comments.message`) | `comments:fixed` |
+
+Power users can also type the underlying Elasticsearch field names directly — `searchTitle:`, `identifier:`, `description.plain:`, `comments.message:`, `fulltextSummary:` and `searchShortTitle:` all pass through verbatim.
+
+Anything else with a colon (URLs, times of day, `POC: design review`, `C++ developer`) is treated as plain text. The search bar is smart enough not to confuse a stray `:` for a field-targeted query, so the search engine never sees a malformed clause.
+
+## Search scope
+
+The **Customize View** popover (cog icon, next to the viewlet selector) carries a **Search in…** dropdown that decides how bare-text searches (no prefix) are interpreted:
+
+- **Only Title** — bare terms are constrained to issue titles. Fastest, lowest noise.
+- **Title + Description** — also matches the issue body.
+- **Title + Description + Comments** (default) — also matches comment messages and the fulltext summary.
+
+Switching the scope re-runs the current search immediately — you don't need to retype.
+
+<Image src={customizeViewPlan2Toggles} alt="Customize View popover showing the toggles for Quick filter, Search in, and Highlight search matches" inferSize quality='max' />
+
+The same popover also exposes two more search-related toggles:
+
+- **Quick filter: All / Active / Backlog** — show or hide the All/Active/Backlog mode selector on the toolbar. Hide it if your team only uses chip filters.
+- **Highlight search matches** — visually highlight the matched substring inside issue identifiers (in the sidebar) and issue titles. Turn off if you find the highlight distracting.
+
+## Clearing the search
+
+The search input has a **×** button on the right end (visible when there is text). Clicking it clears the input and re-runs the now-empty query, restoring the full result set. The **Escape** key inside the focused input does the same.
+
+## Empty results
+
+When a search returns zero issues, the Tracker shows a dedicated empty-state card explaining the situation and offering two actions ("Suche ohne Filter" / "In allen Projekten suchen"). See [No search results](./empty-state) for details.
+
+## Tips
+
+- Prefix-targeted searches always win over the scope dropdown. If you type `title:foo`, the **Search in…** setting is ignored — your prefix is explicit.
+- Combining multiple prefix-targeted clauses works: `title:loader id:HULY-` matches issues that have "loader" in the title **and** an identifier starting with HULY-.
+- The Lucene-style boolean operators (`AND`, `OR`, `NOT`) are accepted in prefix-targeted clauses.
+- Special characters work transparently — `title:C++`, `comments:foo/bar`, `title:POC:123`, `title:list[0]` and similar inputs are auto-escaped so the Elasticsearch query_string parser reads them as literal text. Wildcards (`*`, `?`) and hyphens stay un-escaped because they are intentional syntax.
+- Quoted phrases (`title:"release notes"`) are passed through as phrase literals, even when they contain whitespace or otherwise reserved characters.

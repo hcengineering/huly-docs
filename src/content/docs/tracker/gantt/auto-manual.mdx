@@ -1,0 +1,52 @@
+---
+title: Auto vs Manual Scheduling
+description: Control whether an issue participates in cascade scheduling or is pinned to its current dates.
+---
+
+import { Image } from 'astro:assets';
+import ganttSchedulingToggleLight from '../../../../assets/gantt/auto-manual-toggle-light.png';
+
+## Overview
+
+Every issue in Huly's Gantt chart has a **scheduling mode**: **Auto** or **Manual**. In Auto mode, the issue participates in cascade scheduling and will be shifted when a predecessor is dragged. In Manual mode, the issue is pinned to its current dates and acts as a hard constraint — the cascade stops at it.
+
+## Auto Mode (Default)
+
+- The issue can be shifted by cascade when a predecessor's dates change.
+- The issue is not pinned; its dates are considered flexible.
+- No visual indicator in the bar.
+
+## Manual Mode
+
+- The issue is pinned to its current `startDate` and `dueDate`.
+- Cascade shifts stop at this issue — successors of a manual issue are not affected when predecessors are dragged.
+- A **pin icon** is shown inside the bar as a visual indicator.
+
+A small pin icon appears inside the bar near its left edge when the issue is in Manual mode. The pin is not shown for Auto-mode issues, so its presence makes manually-pinned bars immediately distinguishable in the timeline.
+
+## How to Switch Scheduling Mode
+
+**From the issue editor:**
+1. Open an issue by clicking it in the Gantt sidebar or double-clicking the bar.
+2. Find the **Scheduling** field in the issue detail panel.
+3. Toggle between **Auto** and **Manual**.
+
+<Image src={ganttSchedulingToggleLight} alt="Issue editor panel showing the Scheduling toggle set to Manual" inferSize quality='max' />
+
+**From the bar context menu:**
+1. Right-click a bar in the Gantt chart.
+2. Select **Pin (Manual mode)** or **Unpin (Auto mode)**.
+
+## When to Use Manual Mode
+
+- **Milestone issues** — milestones have fixed dates and should not drift with cascade.
+- **External dependencies** — issues blocked by an external delivery date (e.g., a vendor's deadline).
+- **Fixed-date deliverables** — contractual commitments where the date cannot change.
+- **Review / sign-off gates** — tasks that must happen on a specific calendar date regardless of upstream delays.
+
+## Tips
+
+- Use Manual mode sparingly — if too many issues are pinned, cascade scheduling loses its value.
+- Manual mode does not prevent you from manually dragging the bar — you can still reposition it by hand.
+- When a cascade hits a Manual issue, Huly shows a warning in the confirm dialog: "X issues could not be shifted due to Manual constraints."
+- You can bulk-set multiple issues to Manual mode by selecting them and using the right-click context menu.

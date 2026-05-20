@@ -1,0 +1,52 @@
+---
+title: Cascade Scheduling
+description: Understand how Huly automatically shifts dependent issues when you drag a predecessor bar in the Gantt chart.
+---
+
+import { Image } from 'astro:assets';
+import ganttCascadeBeforeLight from '../../../../assets/gantt/cascade-before-light.png';
+
+## Overview
+
+Cascade scheduling automatically propagates date shifts through your dependency graph. When you drag an issue bar in the Gantt chart, Huly calculates how all downstream (successor) issues are affected and presents a confirmation dialog before applying any changes. Issues in **Manual** scheduling mode are pinned and excluded from cascade shifts.
+
+## How Cascade Works
+
+1. You drag a bar left or right.
+2. Huly runs the cascade simulation across the full dependency graph.
+3. A **Confirm Cascade** popup appears, listing all issues that would shift and their new dates.
+4. You review the list and click **Apply** to commit, or **Cancel** to discard.
+
+Only **Auto** mode issues in the successor chain are included in the cascade. Manual-pinned issues act as hard boundaries — the cascade stops at them.
+
+<Image src={ganttCascadeBeforeLight} alt="Gantt chart before drag — three issues with FS dependencies shown" inferSize quality='max' />
+
+## Drag and Preview
+
+While dragging, a semi-transparent **preview bar** shows where the issue will land. Successor bars also shift in preview mode to give you a live sense of the ripple effect before you release.
+
+While dragging, the bar being moved shows at its projected position as a semi-transparent preview. Successor bars simultaneously shift to their projected new positions, giving a live preview of the cascade ripple effect before you release.
+
+## Confirm Popup
+
+When you release the drag, the Confirm Cascade dialog appears:
+
+- **Primary issue** — the issue you dragged, with its new start and due date.
+- **Affected issues list** — all successor issues that will be shifted, with their old and new dates.
+- **Apply / Cancel** — confirm or discard all changes atomically. No partial commits.
+
+The confirm popup shows the primary issue at the top with its new start and due dates, followed by each cascade-affected successor in order. Each entry shows the before and after dates. **Apply** commits all at once; **Cancel** restores the original state.
+
+## How to Skip Cascade for One Issue
+
+If you want to drag an issue without shifting its successors:
+
+1. Hold **Alt** while dragging — cascade is suppressed for that drag operation.
+2. Alternatively, set the issue to **Manual** mode before dragging (see [Auto vs Manual Scheduling](./auto-manual)).
+
+## Tips
+
+- The cascade respects **lag**: if a dependency has a 2-day lag, the successor shifts to `predecessor.dueDate + 2 working days`.
+- Cascade is transitive: if A → B → C, dragging A shifts both B and C.
+- Circular dependencies are detected and highlighted in red before you can apply them.
+- If a cascade would push an issue past a Milestone deadline, the milestone row is highlighted in the confirm popup.

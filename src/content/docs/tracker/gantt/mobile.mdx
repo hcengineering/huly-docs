@@ -1,0 +1,58 @@
+---
+title: Mobile and Tablet Access
+description: Use the Huly Gantt chart on phones and tablets with touch-optimized controls and a slide-out drawer for the issue sidebar.
+---
+
+import { Image } from 'astro:assets';
+import ganttMobileDrawerOpenLight from '../../../../assets/gantt/mobile-drawer-open-light.png';
+import ganttMobileDrawerClosedLight from '../../../../assets/gantt/mobile-drawer-closed-light.png';
+import ganttTabletViewLight from '../../../../assets/gantt/mobile-tablet-view-light.png';
+import ganttMobilePinchZoomLight from '../../../../assets/gantt/mobile-pinch-zoom-light.png';
+
+## Overview
+
+The Huly Gantt chart adapts to mobile and tablet screen sizes with a responsive layout. On phones, the sidebar is hidden by default and accessible via a slide-out drawer. On tablets, the full two-column layout is available with touch-optimized drag controls. Pinch-to-zoom adjusts the time scale on both form factors.
+
+## Phone Layout (below 640px)
+
+On small phone screens:
+
+- The **issue sidebar** (left column with issue names) is hidden to maximize timeline space.
+- A **drawer toggle button** appears at the bottom of the screen.
+- Tap the toggle to slide open the sidebar drawer from the left.
+- The Gantt timeline is **read-only** on phones below 640px — bars cannot be dragged on very small screens to prevent accidental edits.
+- Tap a bar to open the issue detail view.
+
+<Image src={ganttMobileDrawerOpenLight} alt="Phone screen showing Gantt chart with sidebar drawer open from the left" inferSize quality='max' />
+
+<Image src={ganttMobileDrawerClosedLight} alt="Phone screen showing Gantt chart with sidebar drawer closed and bars visible" inferSize quality='max' />
+
+## Tablet Layout (641px – 1024px)
+
+On tablet screens:
+
+- The **full two-column layout** is shown (sidebar + timeline).
+- **Drag editing is enabled** — use a long-press (approximately 500ms) to initiate a bar drag.
+- **Pinch-to-zoom** on the timeline adjusts the zoom level (equivalent to Ctrl+Mouse Wheel on desktop).
+- The hamburger menu and filter bar are accessible via the top toolbar.
+
+<Image src={ganttTabletViewLight} alt="Tablet screen showing the full Gantt chart with sidebar and timeline in two columns" inferSize quality='max' />
+
+## Pinch-to-Zoom
+
+On touch-enabled devices, use a two-finger pinch gesture on the timeline area to zoom in or out:
+
+- **Pinch in** (fingers together) → zoom in to finer detail (e.g., Day view)
+- **Pinch out** (fingers apart) → zoom out to broader overview (e.g., Month view)
+
+The zoom level snaps to the nearest standard level (Day, Week, Month, Quarter) when you release.
+
+<Image src={ganttMobilePinchZoomLight} alt="Tablet screen showing pinch-to-zoom gesture on the Gantt timeline" inferSize quality='max' />
+
+## Tips
+
+- On phones, use the **drawer** to quickly check issue names and priorities before navigating to the issue detail.
+- On tablets in landscape orientation, the sidebar and timeline both have more space — landscape is recommended for sprint planning sessions.
+- Tablet drag uses **long-press** to distinguish from scrolling. Hold the bar for about half a second before dragging.
+- Export (PNG/PDF) is available on mobile via the hamburger menu — useful for sharing a snapshot during a meeting.
+- The Huly mobile app provides the same Gantt chart experience as the mobile web with native touch handling.

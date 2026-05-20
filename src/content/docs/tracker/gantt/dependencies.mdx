@@ -1,0 +1,62 @@
+---
+title: Dependencies
+description: Model Finish-to-Start, Start-to-Start, Finish-to-Finish, and Start-to-Finish relationships with optional lag between issues.
+---
+
+import { Image } from 'astro:assets';
+import ganttDepArrowLight from '../../../../assets/gantt/dependencies-fs-arrow-light.png';
+import ganttDepEditorLight from '../../../../assets/gantt/dependencies-editor-light.png';
+
+## Overview
+
+Huly supports four standard dependency types between issues. Dependencies are rendered as directional arrows in the Gantt chart and drive the [cascade scheduler](./cascade) when you drag a predecessor bar. A positive **lag** value adds a waiting period between the end of one constraint and the start of the next.
+
+## Dependency Types
+
+| Type | Abbreviation | Meaning |
+|------|-------------|---------|
+| **Finish-to-Start** | FS | Successor cannot start until predecessor finishes |
+| **Start-to-Start** | SS | Successor cannot start until predecessor starts |
+| **Finish-to-Finish** | FF | Successor cannot finish until predecessor finishes |
+| **Start-to-Finish** | SF | Successor cannot finish until predecessor starts |
+
+**FS** is the most common type and represents a simple "A must be done before B can begin" relationship. **SS** is useful for parallel tasks that must start together. **FF** ensures two tasks complete at the same time. **SF** is rare and models reverse dependency scenarios.
+
+<Image src={ganttDepArrowLight} alt="Gantt chart showing Finish-to-Start dependency arrows between issue bars" inferSize quality='max' />
+
+## Lag
+
+Lag is a duration (in working days) added to the dependency. Positive lag adds a gap, negative lag overlaps the two tasks. For example, an FS dependency with a lag of 2 days means the successor starts 2 working days *after* the predecessor finishes; an FS dependency with a lag of −1 lets the successor start one working day *before* the predecessor finishes.
+
+Lag is configured in the **Visual Dependency Editor** and displayed as a small badge on the dependency arrow.
+
+The arrow style varies by type: FS arrows run from the right edge of the predecessor to the left edge of the successor; SS arrows connect left edges; FF arrows connect right edges; SF arrows run from the left edge of the predecessor to the right edge of the successor.
+
+## How to Add a Dependency
+
+**Method 1 — Hover connector:**
+1. Hover over a bar in the Gantt chart.
+2. Small connector circles appear on the left and right edges.
+3. Drag from one connector to another bar to create an FS dependency.
+4. Release to confirm.
+
+**Method 2 — Visual Dependency Editor:**
+1. Click the **Dependencies** button in the Gantt toolbar (chain-link icon).
+2. The Visual Dependency Editor opens as an overlay panel.
+3. Select the **type** (FS / SS / FF / SF) from the 2×2 grid.
+4. Adjust the **lag** using the slider or numeric input.
+5. Click **Apply**.
+
+**Method 3 — Issue detail:**
+1. Open an issue.
+2. In the **Relations** section, add a "blocks" or "is blocked by" relation.
+3. Switch to Gantt view — Huly automatically renders the relation as a dependency arrow.
+
+<Image src={ganttDepEditorLight} alt="Visual Dependency Editor panel showing type grid and lag slider" inferSize quality='max' />
+
+## Tips
+
+- Dependency arrows are color-coded: **orange** arrows indicate the dependency is on the **critical path**.
+- You can remove a dependency by right-clicking its arrow and selecting **Remove**.
+- Lag can be 0 (immediate start/finish constraint), any positive integer (gap), or any negative integer (overlap).
+- SS and FF dependencies are especially useful for parallel workstreams that share a hard start or end constraint.

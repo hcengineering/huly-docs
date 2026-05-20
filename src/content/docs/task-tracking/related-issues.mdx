@@ -44,6 +44,18 @@ Open the dropdown menu on any issue detail page and select `Relations`, then cho
 
 > **Note:** The current implementation does not actually prevent a blocked issue from being marked as complete before the blocking issue, but future versions of Huly will include a more complete development of this feature. In the meantime, you can use this feature as a visual indicator of dependencies between issues. Just like any other issue property, blocking can also be used when sorting issues in your tracker (see below).
 
+## Typed scheduling dependencies
+
+In addition to the simple "blocked by" marker above, issues can have typed scheduling dependencies that drive the [Gantt chart](/tracker/gantt/) cascade scheduler. Each dependency carries a kind and an optional lag (in working days):
+
+- **FS (Finish-to-Start)** — successor starts after the predecessor finishes. Default. *"Build can start after design is done."*
+- **SS (Start-to-Start)** — successor starts when the predecessor starts. *"QA can start as soon as development starts."*
+- **FF (Finish-to-Finish)** — successor finishes when the predecessor finishes. *"Documentation should be done by the time the feature ships."*
+- **SF (Start-to-Finish)** — successor finishes when the predecessor starts. *Rare, used for handover constraints.*
+- **Lag** — number of working days between the linked anchors. Positive lag adds a gap, negative lag overlaps. *"FS +2d" means a two-working-day pause between predecessor end and successor start.*
+
+Add a typed dependency from the issue side panel: open the **Dependencies** section, pick a predecessor, then click the dependency kind chip to open the visual editor (a 2×2 grid that shows the four kinds graphically) and adjust lag. See [dependencies](/tracker/gantt/dependencies/) for the full picker.
+
 ## Viewing related and blocked issues
 
 In your tracker, you can filter issues by their related or blocking status by opening the `Filter` menu and selecting either "Related to" or "Blocked by". This will display only the issues that are related to or blocked by the selected issue. For example, below I've filtered all issues in the tracker by those related to an issue for checking color contrast:

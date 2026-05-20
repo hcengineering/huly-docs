@@ -1,0 +1,50 @@
+---
+title: Working Days
+description: Configure which days count as working days to make scheduling, lag calculations, and cascade shifts respect your team's calendar.
+---
+
+
+## Overview
+
+By default, Huly treats all 7 days of the week as working days when calculating durations, lag, and cascade shifts. You can configure a **Working Days** profile per project to exclude weekends and custom holidays. Once configured, the Gantt chart visually tints non-working days and all scheduling math uses only working days.
+
+## Key Concepts
+
+- **Working days** — days counted in scheduling calculations (default: Mon–Sun)
+- **Non-working days** — days excluded from scheduling (e.g., Saturday, Sunday, public holidays)
+- **Weekend tint** — light gray shading on non-working day columns in the Gantt timeline
+- **Calendar-day mode** — scheduling ignores working-day config and counts all 7 days (used for hard deadline tracking)
+
+## How to Configure Working Days
+
+1. Open your project settings (click the project name in the sidebar → **Settings**).
+2. Scroll to the **Scheduling** section.
+3. Click **Working Days Configuration**.
+4. Toggle which days of the week are working days (Mon–Fri selected by default once configured).
+5. Optionally add **Custom holidays** as specific dates.
+6. Click **Save**.
+
+The Working Days configuration panel shows a grid of the seven weekdays with toggle buttons. Enabled days are highlighted; disabled days are grayed out. A separate section lists custom holiday dates with an add-date control.
+
+## Weekend Tint in the Gantt Chart
+
+After configuring working days, non-working day columns in the Gantt timeline are shaded with a subtle gray tint. This provides a visual cue that no work is scheduled on those days.
+
+The tint does not affect bar rendering — bars still span their full date range including non-working days. The tint is purely informational.
+
+In the Gantt timeline, Saturday and Sunday columns (or whichever days are marked as non-working) appear with a light gray background band that spans the full height of the chart, making it easy to spot weekends at a glance.
+
+## Effect on Scheduling
+
+When working days are configured:
+
+- **Lag values** in dependencies are counted in working days (2-day lag = 2 working days, not 2 calendar days)
+- **Cascade shifts** skip non-working days — a bar dragged to end on Friday will push its successor to start on Monday, not Saturday
+- **Slack calculations** in the Critical Path view use working days
+- **Duration display** in the sidebar shows working-day duration alongside calendar-day duration
+
+## Tips
+
+- Configure working days before adding dependencies — lag values are re-evaluated when the configuration changes.
+- If your team is distributed across multiple time zones with different public holidays, create separate projects per region and configure working days independently.
+- The **Calendar-day** toggle (available per issue) overrides the project working-days config for deadline-tracking purposes.

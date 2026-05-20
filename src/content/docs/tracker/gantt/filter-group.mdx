@@ -1,0 +1,80 @@
+---
+title: Filtering and Grouping
+description: Use the filter bar and group-by options to focus on specific subsets of issues in the Gantt chart.
+---
+
+import { Image } from 'astro:assets';
+import ganttFilterBarLight from '../../../../assets/gantt/filter-bar-active-light.png';
+import ganttGroupByComponentLight from '../../../../assets/gantt/group-by-component-light.png';
+import ganttGroupByPriorityLight from '../../../../assets/gantt/group-by-priority-light.png';
+import ganttFilterOverflowLight from '../../../../assets/gantt/filter-chip-overflow-badge-light.png';
+import ganttHiddenFiltersPopoverLight from '../../../../assets/gantt/filter-hidden-filters-popover-light.png';
+
+## Overview
+
+The Gantt chart inherits the full Huly filter system, allowing you to narrow down visible issues by any combination of attributes. The **Group by** option organizes issues into swim lanes, making it easy to see work distribution across components, assignees, priorities, or milestones.
+
+## Using the Filter Bar
+
+The filter bar appears at the top of the Gantt view. Click **Filter** to open the filter picker:
+
+1. Select a **filter category** (Assignee, Component, Priority, Milestone, Status, Label, etc.).
+2. Choose one or more **values** for that category.
+3. The filter chip appears in the bar. Active filters are shown as colored chips.
+4. Add multiple filters — they are combined with AND logic.
+5. Click the **X** on a chip to remove that filter.
+
+<Image src={ganttFilterBarLight} alt="Gantt chart filter bar with two active filter chips (Component: Art, Priority: Urgent)" inferSize quality='max' />
+
+### Adding more filters once filters are active
+
+When at least one filter is set, the **Filter** button switches to **+ Add filter**. Clicking it always opens the filter-type picker so a second, third, … filter can be added without first clearing the existing ones. The trailing **Clear filters** button (next to the chip row) wipes the whole set in one click.
+
+### Chip overflow — the +N badge
+
+If many filters are active or the toolbar is narrow, chips collapse into an orange **+N badge** that keeps the toolbar's trailing controls (Group-by, date-nav, zoom, undo/redo, fullscreen) visible:
+
+<Image src={ganttFilterOverflowLight} alt="Filter bar with one collapsed chip shown as an orange +1 badge, the Add filter button and Clear filters control remain visible" inferSize quality='max' />
+
+Click the badge to open the **Hidden filters** popover, which lists every collapsed chip and lets you remove or edit them inline:
+
+<Image src={ganttHiddenFiltersPopoverLight} alt="Hidden filters popover above the filter bar, listing the chip Priority is" inferSize quality='max' />
+
+The popover sits on an opaque card so the Gantt grid behind it stays readable.
+
+## Group By Options
+
+Click the **Group by** dropdown in the toolbar to organize issues into swim lanes:
+
+| Group by | Description |
+|----------|-------------|
+| **None** | All issues in a flat list (default) |
+| **Component** | Swim lane per component |
+| **Priority** | Swim lane per priority level (Urgent, High, Medium, Low, No priority) |
+| **Assignee** | Swim lane per team member |
+| **Milestone** | Swim lane per milestone |
+| **Status** | Swim lane per issue status |
+
+Swim lane headers are collapsible — click the chevron to hide a lane and reduce visual noise.
+
+<Image src={ganttGroupByComponentLight} alt="Gantt chart grouped by Component showing Art, Design, and Engineering swim lanes" inferSize quality='max' />
+
+## Combining Filters and Groups
+
+Filters and grouping work together. For example:
+
+- **Filter**: Milestone = v1.0, **Group by**: Component → shows only v1.0 issues, organized by component
+- **Filter**: Assignee = Alice, **Group by**: Priority → shows Alice's issues by priority
+
+<Image src={ganttGroupByPriorityLight} alt="Gantt chart grouped by Priority with Urgent and High lanes visible" inferSize quality='max' />
+
+## ModeSelector conflict resolution
+
+The **All / Active / Backlog** mode selector and a **Status** filter both control which issues are visible. When you add an explicit Status filter, the mode selector greys out with a tooltip explaining why — the chip is now the source of truth, the All/Active/Backlog shortcut is no longer applied. Removing the Status filter re-enables the mode selector.
+
+## Tips
+
+- Filters persist when you switch between Gantt, List, and Board views within the same project.
+- Save frequently-used filter + group combinations as **Saved Views** (see [Saved Views](./saved-views)).
+- Use **Group by Milestone** to quickly review which issues are scheduled before vs. after your key milestones.
+- The **Customize View** popover (cog icon) hides the All/Active/Backlog mode selector entirely if you don't use it — see [Advanced Search](./advanced-search) for that toggle and other search-related options.

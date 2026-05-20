@@ -1,0 +1,43 @@
+---
+title: No Search Results
+description: What the Tracker shows when a search returns zero issues, and how to recover quickly.
+---
+
+## Overview
+
+When a search returns zero issues in the active viewlet (List, Kanban, or Gantt), the Tracker replaces the empty result area with a dedicated **empty-state card** instead of leaving an empty grid. The card tells you what you searched for, lists which filters are active, and offers two quick recovery actions.
+
+## What the card shows
+
+- **🔍 Heading** — `No issues found for "<your query>"`.
+- **Active filters line** — if filters are also set, the card lists them so you can see whether the empty result is caused by the search text, the filters, or both.
+- **"Clear filters" button** — removes every filter chip while keeping the search text. Tap this if you suspect a filter (rather than the search text) is masking results.
+- **"Search all projects" button** — re-runs the same search across **All Issues** (every project in the workspace), in case the issue you're looking for lives outside the current project.
+
+The viewlet behind the card stays mounted: its background query keeps running, so the card disappears the moment the next query returns at least one match — no manual reload required.
+
+## When does the card appear?
+
+The card appears only when **both** conditions are true:
+
+1. The search input is non-empty (you typed something).
+2. The active viewlet's query has returned and the result count is exactly zero.
+
+During the initial page load, before the first query response arrives, the count stays at the sentinel value `-1` so the card does not flash briefly. Likewise, on every search-text or filter change the count resets to `-1` until the new query resolves — so a stale "no results" card can never linger from the previous query.
+
+## Workflow
+
+1. You typed something into the Lupe (search) and the issue list emptied.
+2. The empty-state card appears in the viewlet area.
+3. If you suspect the filter set is the culprit:
+   - Read the **Active filters** line below the heading.
+   - Click **Clear filters** to keep the search text but drop every filter chip.
+4. If the issue might be in another project:
+   - Click **Search all projects** to jump to the **All Issues** special view with the same query.
+5. If the search text itself is too narrow:
+   - Edit the search bar — the card disappears as soon as the new query returns hits.
+
+## Related
+
+- [Advanced Search](./advanced-search) — prefix operators, search scope, match highlighting.
+- [Filtering and Grouping](./filter-group) — filter UI, chip overflow popover, ModeSelector conflict resolution.

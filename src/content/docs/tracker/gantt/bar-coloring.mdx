@@ -1,0 +1,115 @@
+---
+title: Bar coloring and overlays
+description: Switch what the Gantt bar colors mean — Status, Priority, Assignee, Component, Milestone, or Uniform — and read past-due / blocked / sub-issue progress at a glance.
+---
+
+import { Image } from 'astro:assets';
+import colorByStatus from '../../../../assets/gantt/color-by-status-light.png';
+import colorByPriority from '../../../../assets/gantt/color-by-priority-light.png';
+import colorByAssignee from '../../../../assets/gantt/color-by-assignee-light.png';
+import colorByComponent from '../../../../assets/gantt/color-by-component-light.png';
+import colorByMilestone from '../../../../assets/gantt/color-by-milestone-light.png';
+import overlays from '../../../../assets/gantt/overlays-past-due-blocked-light.png';
+import editComponentSwatch from '../../../../assets/gantt/edit-component-swatch-light.png';
+import colorsPopup from '../../../../assets/gantt/colors-popup-light.png';
+
+## Overview
+
+The Gantt toolbar has a **Color by** dropdown that decides what each bar's fill color means. Switch between six modes whenever the question you're asking the chart changes — _where is work blocked?_ uses Status, _what's the team's load?_ uses Assignee, _which release does this belong to?_ uses Milestone.
+
+Independent of the color mode, two **overlays** mark bars with derived warnings (past-due deadlines, blocked predecessors) so they're visible regardless of the color encoding. An optional **sub-issue progress fill** shows completion as a darker section inside the bar.
+
+## The six Color-by modes
+
+The dropdown lives in the second toolbar row, next to **Group by**. Each option re-paints the canvas reactively; no reload required.
+
+### Status (default)
+
+Bar fill maps to the issue's status category — Backlog grey, Todo blue, In-Progress orange, Done green, Cancelled muted-grey. This is the most common view because it answers _where is work right now?_ on a glance.
+
+<Image src={colorByStatus} alt="Gantt with Color by Status — orange Todo bars, grey Backlog bars" inferSize quality='max' />
+
+### Priority
+
+Bar fill maps to the issue's priority: Urgent orange, High sunshine-yellow, Medium ocean-blue, Low cloud-grey, No-priority blueberry. Use this when you need to triage attention rather than track flow.
+
+<Image src={colorByPriority} alt="Gantt with Color by Priority — Urgent bars in orange, Medium bars in ocean blue" inferSize quality='max' />
+
+### Assignee
+
+Bar fill maps to the issue's assignee. The most-loaded eight team members each get a distinct palette slot (computed from the visible issue set); everyone beyond the top-8 shares a "rest of team" color. Unassigned issues render in neutral grey.
+
+<Image src={colorByAssignee} alt="Gantt with Color by Assignee — every team member's issues share one color" inferSize quality='max' />
+
+The palette is recomputed when filters or grouping change, so the top-N classification stays meaningful in any view.
+
+### Component
+
+Bar fill maps to each issue's Component, using the color set on the Component itself (see [Picking a Component or Milestone color](#picking-a-component-or-milestone-color) below). Issues without a component render in neutral grey.
+
+<Image src={colorByComponent} alt="Gantt with Color by Component — each component's issues share one custom color" inferSize quality='max' />
+
+### Milestone
+
+Same as Component but per Milestone. Useful for "what's our release plan?" reviews where you want to see Sprint 4 vs Sprint 5 work without filtering.
+
+<Image src={colorByMilestone} alt="Gantt with Color by Milestone — bars colored per release/milestone" inferSize quality='max' />
+
+### Uniform
+
+Every bar fills in the same neutral grey, regardless of any data attribute. Use this when chart noise from color coding distracts from a structural review (cascade chains, dependency arrows, working-days bands).
+
+## Overlays: past-due, blocked, critical
+
+Three overlay layers paint on top of the bar fill — regardless of which Color-by mode is active — so derived warnings stay visible even when the color encodes something else.
+
+<Image src={overlays} alt="Gantt with both overlays visible — red left stripe for past-due, diagonal hatch for blocked" inferSize quality='max' />
+
+| Overlay | Visual | Trigger |
+|---|---|---|
+| **Past-due** | 3 px red stripe on the left edge of the bar | `dueDate < today AND status category != Done` |
+| **Blocked** | diagonal hatch at 15 % opacity over the bar surface | at least one finish-to-start predecessor is not yet Done |
+| **Critical path** | red 2 px border on the whole bar | computed by the critical-path overlay (see [Critical path](./critical-path)) |
+
+The overlays use distinct visual channels (left stripe vs surface texture vs border) so a single bar can be past-due **and** blocked **and** critical without one signal masking another.
+
+Toggle each overlay independently via the Customize-View popover (cog icon). Past-due and Blocked are on by default; Critical path is on whenever you also enable the critical-path computation.
+
+## Sub-issue progress fill
+
+When **Show sub-issue progress** is enabled in Customize-View and you're in `Color by = Status` mode, each parent bar shows a darker inner section covering `done_subissues / total_subissues` of its width.
+
+Scope is intentionally **global** — both the numerator and denominator come from all sub-issues of the parent regardless of the active Gantt filter. The fraction means the same thing in any saved view, not "percentage of this filter."
+
+The fill is suppressed on:
+
+- Issues without sub-issues (no data, no fake bar).
+- Non-Status color modes (a darker section inside a categorical color would imply progress _within_ the category — confusing).
+- Summary bars in grouped views (those already aggregate across their children).
+
+## Picking a Component or Milestone color
+
+Open any **Component** or **Milestone** from the sidebar. The top of the Edit dialog has a color swatch next to the title.
+
+<Image src={editComponentSwatch} alt="EditComponent dialog with the color-swatch button highlighted" inferSize quality='max' />
+
+Click the swatch to open the color picker:
+
+<Image src={colorsPopup} alt="Color picker popup showing the 24-color Huly palette" inferSize quality='max' />
+
+The picker offers Huly's full 24-color platform palette (Firework, Watermelon, Pink, Fuchsia, Lavander, Mauve, Heather, Orchid, Blueberry, Arctic, Sky, Cerulean, Waterway, Ocean, Turquoise, Houseplant, Crocodile, Grass, Sunshine, Orange, Pumpkin, Cloud, Coin, Porpoise). Pick a color and the swatch + every bar painted with this Component / Milestone updates immediately.
+
+**Fallback when no color is set:** newly created Components / Milestones don't have an explicit color. The Gantt resolver derives one deterministically from the record's identifier, so the swatch is never blank and the same Component always shows the same color until you change it.
+
+## Persistence and saved views
+
+Every Color-by selection, overlay toggle, and the sub-issue-progress toggle are persisted as part of [Saved Views](./saved-views). Switch to a saved view and the toolbar restores its Color-by mode + overlay states; the `Modified` indicator lights up when any of the four fields drifts from the saved snapshot.
+
+When you switch to a fresh view (or the synthetic _Default_ view), the four fields snap back to their spec defaults — Status / past-due on / blocked on / progress off — regardless of what the previous saved view had configured. This is intentional: a fresh view should never leak the prior view's color encoding.
+
+## Related
+
+- [Filtering and grouping](./filter-group) — what's in the chart at all
+- [Saved views](./saved-views) — persisting the bar-coloring choices alongside zoom & pan
+- [Critical path](./critical-path) — the third overlay layer
+- [Dependencies](./dependencies) — the source of the "blocked" overlay

@@ -50,3 +50,5 @@ When creating or editing a project, you can configure the following settings:
 **Members**: Select all members for this Project.
 
 **Auto join**: Toggle whether you'd like new members to be automatically added to this project.
+
+**Working days configuration**: Optionally define a weekday mask (which days count as working days) and a list of holidays. Projects without a working-days configuration fall back to a seven-day-a-week calendar. When the configuration is set, the [Gantt chart](/tracker/gantt/) cascade scheduler skips non-working days, the critical-path computation uses working-day arithmetic, and weekends/holidays are painted as a tint on the chart. See [working days](/tracker/gantt/working-days/) for details.

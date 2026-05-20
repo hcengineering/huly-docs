@@ -1,0 +1,63 @@
+---
+title: Keyboard Shortcuts
+description: Master the Gantt chart keyboard shortcuts to navigate timelines, change zoom, and undo changes quickly.
+---
+
+import { Image } from 'astro:assets';
+import ganttShortcutsHelpLight from '../../../../assets/gantt/shortcuts-help-popup-light.png';
+
+## Overview
+
+The Huly Gantt chart supports a set of keyboard shortcuts for fast navigation and operation. Press **?** at any time while the Gantt chart is focused to open the built-in shortcut reference.
+
+## Navigation Shortcuts
+
+| Key | Action |
+|-----|--------|
+| **T** | Jump to today — centers the viewport on the current date |
+| **Arrow Left / Right** | Scroll the timeline left / right by one zoom unit |
+| **Home** | Scroll to the earliest issue bar |
+| **End** | Scroll to the latest issue bar |
+
+## Zoom Shortcuts
+
+| Key | Action |
+|-----|--------|
+| **D** | Switch to **Day** zoom level |
+| **W** | Switch to **Week** zoom level |
+| **M** | Switch to **Month** zoom level |
+| **Q** | Switch to **Quarter** zoom level |
+| **Ctrl + Mouse Wheel** | Stepless zoom in / out (interpolates between zoom levels) |
+
+## Editing Shortcuts
+
+| Key | Action |
+|-----|--------|
+| **Cmd+Z** (Mac) / **Ctrl+Z** (Win) | Undo the last drag or cascade commit |
+| **Cmd+Shift+Z** (Mac) / **Ctrl+Y** (Win) | Redo |
+| **Escape** | Cancel the current drag operation or clear selection |
+| **Cmd+A** (Mac) / **Ctrl+A** (Win) | Select all visible bars |
+
+## Selection Shortcuts
+
+| Key | Action |
+|-----|--------|
+| **Click** | Select single bar |
+| **Cmd+Click** (Mac) / **Ctrl+Click** (Win) | Toggle bar in/out of multi-selection |
+| **Shift+Click** | Range select from last-clicked bar to this bar |
+| **Escape** | Clear current selection |
+
+## Help
+
+| Key | Action |
+|-----|--------|
+| **?** | Open the keyboard shortcut reference popup |
+
+<Image src={ganttShortcutsHelpLight} alt="Gantt chart keyboard shortcut help popup showing all available shortcuts" inferSize quality='max' />
+
+## Tips
+
+- The **Ctrl+Mouse Wheel** stepless zoom is particularly useful for zooming in on a specific sprint period while keeping the context of surrounding weeks visible.
+- **T** is the fastest way to reorient yourself after scrolling far into the future or past.
+- **Cmd+Z** undoes the entire last cascade operation atomically — it is not possible to undo individual sub-shifts within a cascade.
+- Shortcuts only work when the Gantt chart area is focused. Click on the timeline area first if shortcuts are not responding.

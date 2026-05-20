@@ -1,0 +1,59 @@
+---
+title: Exporting the Gantt Chart
+description: Export the Gantt chart as a PNG image or PDF document for reporting and stakeholder communication.
+---
+
+import { Image } from 'astro:assets';
+import ganttExportMenuLight from '../../../../assets/gantt/export-hamburger-menu-light.png';
+import ganttExportFullscreenLight from '../../../../assets/gantt/export-fullscreen-light.png';
+
+## Overview
+
+The Gantt chart can be exported as a **PNG** image or a **PDF** document via the hamburger menu. Both formats render the full chart — including the sidebar with issue names and the complete timeline — regardless of how much is currently visible in the browser viewport.
+
+## How to Export
+
+1. Click the **hamburger menu** (three horizontal lines) in the top-right of the Gantt toolbar.
+2. Choose **Export as PNG** or **Export as PDF**.
+3. The browser downloads the file automatically.
+
+<Image src={ganttExportMenuLight} alt="Gantt toolbar hamburger menu open showing Export as PNG and Export as PDF options" inferSize quality='max' />
+
+## PNG Export
+
+The PNG export renders the Gantt chart as a high-resolution data-driven SVG converted to PNG:
+
+- **Full width** — includes all issue bars from earliest to latest date, not just the current viewport
+- **Sidebar included** — issue identifiers and titles appear in the left sidebar column
+- **Resolution** — optimized for screen and presentation use at 1× device pixel ratio
+- **File name** — automatically named `gantt-YYYY-MM-DD.png` using the current date
+
+The exported PNG includes the full timeline from the earliest to the latest issue date, with issue titles in the left sidebar column, rendered at screen resolution.
+
+## PDF Export
+
+The PDF export uses jsPDF to generate a custom-size document:
+
+- **Page size** — automatically sized to fit the full chart width and height
+- **Landscape orientation** — Gantt charts are rendered in landscape by default
+- **File name** — automatically named `gantt-YYYY-MM-DD.pdf`
+
+The exported PDF opens as a landscape-oriented document sized to fit the full chart. The file is named `gantt-YYYY-MM-DD.pdf` and downloads automatically.
+
+## Fullscreen Mode
+
+For presenting the Gantt chart in a meeting or on a projector, use **Fullscreen** mode:
+
+1. Click the **hamburger menu**.
+2. Select **Fullscreen** (or press the fullscreen icon button in the toolbar).
+3. The Gantt chart expands to fill the entire browser window.
+4. Press **Escape** or click the exit button to leave fullscreen.
+
+<Image src={ganttExportFullscreenLight} alt="Gantt chart in fullscreen mode filling the entire browser window" inferSize quality='max' />
+
+## Tips
+
+- Apply your desired **filters**, **grouping**, and **zoom level** before exporting — these settings are included in the export.
+- For the cleanest export, use **Light theme** and zoom to **Week** or **Month** before exporting.
+- PNG is best for presentations and Slack/email sharing; PDF is better for printing or formal reports.
+- If the exported chart is too wide to read, zoom in to a shorter time range before exporting — the export will reflect the currently visible time window.

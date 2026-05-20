@@ -1,0 +1,48 @@
+---
+title: Critical Path
+description: Identify the longest path through your project dependency graph to understand which tasks drive your project end date.
+---
+
+
+## What is the Critical Path?
+
+The **Critical Path Method (CPM)** identifies the longest sequence of dependent tasks in your project. The total duration of the critical path determines the earliest possible project completion date. Any delay on a critical path task directly delays the project end date.
+
+Tasks on the critical path have zero **slack** (also called float) — there is no room to delay them without pushing back the project deadline.
+
+## Visual Indicators
+
+When Critical Path highlighting is enabled, Huly displays:
+
+- **Orange bars** — issues on the critical path
+- **Orange arrows** — dependency arrows that are part of the critical path
+- **Slack column** in the sidebar — shows the number of working days each issue can slip before it becomes critical
+
+When enabled, bars on the critical path turn orange and the dependency arrows connecting them also highlight in orange, making the longest path through the project immediately visible.
+
+## How to Enable Critical Path View
+
+1. Open the Gantt chart for your project.
+2. Click the **Critical Path** toggle in the toolbar (diamond icon).
+3. The critical path is calculated instantly and highlighted in orange.
+
+Toggle it off to return to the standard color-coding.
+
+## Understanding Slack
+
+**Slack** (or float) is the amount of time an issue can be delayed without affecting the project end date. Issues with zero slack are on the critical path. Issues with positive slack have scheduling flexibility.
+
+The **Slack** column in the Gantt sidebar shows:
+
+- `0 d` — critical path (no flexibility)
+- `3 d` — issue can slip 3 working days before becoming critical
+- `-2 d` — issue is already 2 working days behind schedule
+
+The Slack column appears between the issue title and the timeline area. Each row shows a numeric value such as `0 d`, `3 d`, or `-2 d` indicating how many working days that issue can slip before becoming critical.
+
+## Tips
+
+- Focus your risk management on zero-slack tasks — they are the ones that will delay your milestone if they slip.
+- When you add a new dependency, the critical path is recalculated automatically.
+- Critical path calculation respects **working days** configuration — weekends and holidays are excluded from slack calculations.
+- Use the **Group by Component** grouping together with critical path to quickly identify which component contains the most critical tasks.
