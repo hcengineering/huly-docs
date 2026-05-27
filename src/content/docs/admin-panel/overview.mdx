@@ -1,0 +1,39 @@
+---
+title: Admin panel overview
+description: Manage users, workspaces, and view administrative actions in your self-hosted Huly instance.
+---
+
+import { Image } from "astro:assets";
+import adminSidebar from "../../../assets/screenshots/huly/admin-panel/admin-panel-overview-sidebar.png";
+
+The Huly admin panel gives operators of self-hosted instances a single place to manage accounts, oversee workspaces, and review what other administrators have done. It is intended for self-hosting scenarios where you need to handle account-level operations without dropping to SQL.
+
+## Who can access it
+
+Access is restricted to administrators listed in the `ADMIN_EMAILS` environment variable of the account service. See the [Configuration](/admin-panel/configuration) page for details.
+
+Any account whose primary email matches an entry in `ADMIN_EMAILS` will see an `Admin panel` entry in the workbench menu. Non-admin accounts cannot reach the URL — server-side checks reject every request that is not authenticated as an admin.
+
+## How to open it
+
+Sign in to Huly with an admin account and navigate to `/login/admin` on your instance. From a logged-in workbench, you can also click the `Admin panel` link in the user menu.
+
+The admin panel has its own left sidebar with three sections and a back link to the workbench:
+
+<Image src={adminSidebar} alt="Admin panel sidebar showing Users, Workspaces, and Audit log sections" inferSize quality="max" />
+
+## The three sections
+
+- **[Users](/admin-panel/users)** — list, search, filter, and bulk-action accounts. Open a drawer per account to edit workspace memberships, trigger password resets, disable or enable, and add users to additional workspaces.
+- **[Workspaces](/admin-panel/workspaces)** — list, sort, and filter workspaces. Select rows to mass-archive. Open a drawer to see workspace members and remove or re-role them.
+- **[Audit log](/admin-panel/audit-log)** — review every administrative action with full filtering, sortable columns, batch grouping for bulk operations, and CSV export.
+
+## What it is not
+
+The admin panel is **not** a workspace-internal settings UI. It does not replace the per-workspace owner settings (people, members, billing). It only exposes the global, instance-wide account operations that previously required direct database access.
+
+It is also **not** a multi-tenancy console — there is only one admin panel per Huly instance, and all listed accounts and workspaces belong to that instance.
+
+## Backend support
+
+The admin panel works against the PostgreSQL/CockroachDB backend (`CommunityDB`). On the legacy MongoDB backend, admin-panel RPCs return a `not implemented` error and the audit-retention timer auto-disables itself to avoid log spam. Self-hosters on Mongo should plan a migration before relying on the admin panel.

@@ -1,0 +1,73 @@
+---
+title: Workspaces
+description: List, sort, filter, and bulk-manage workspaces in your self-hosted Huly instance.
+---
+
+import { Image } from "astro:assets";
+import workspacesDefault from "../../../assets/screenshots/huly/admin-panel/workspaces-default.png";
+import workspacesMassArchive from "../../../assets/screenshots/huly/admin-panel/workspaces-mass-archive.png";
+import workspacesDrawer from "../../../assets/screenshots/huly/admin-panel/workspaces-drawer.png";
+
+The `Workspaces` section gives you an instance-wide view of every workspace, with capacity stats, per-workspace details, and bulk actions for the cases when you need to clean up at scale.
+
+<Image src={workspacesDefault} alt="Workspaces page with stats, version/region breakdown, and workspace table" inferSize quality="max" />
+
+## Stats
+
+The header shows two bands:
+
+- **Counts:** Total · Active · With active sessions · Users · Connections · Created in last 30 days
+- **Capacity:** Total storage. If you have never run a backup, the panel shows `0 MB` with a `No backup data yet` hint instead of a misleading zero.
+
+Below that, a quick breakdown by **version** and **region** helps you spot version drift across the instance.
+
+## The workspace table
+
+Each row shows:
+
+| Column | Meaning |
+|--------|---------|
+| Name | The workspace's display name. Edit/copy buttons appear on hover. |
+| Region | Which region the workspace is hosted in (relevant for multi-region deployments). |
+| Last visit | When a member last opened the workspace. |
+| Mode | `Active` / `Archived` / `Creating` etc. |
+| Attempts | How many times the workspace has been created or restored. |
+| Progress | Workspace creation/migration progress (only meaningful for in-flight workspaces). |
+| Storage | Total bytes the workspace uses on backup storage. |
+| Backup age | How old the most recent backup is. |
+| Actions | Quick `Archive` button per row. |
+
+Every column with a small arrow is sortable. Filter icons on each header open per-column filter popups, the same pattern as on the Users page.
+
+## Selection and mass actions
+
+Each row has a checkbox; the header has a select-all checkbox that selects every visible (filtered) row.
+
+With at least one workspace selected, the toolbar shows:
+
+- A selection summary (`Selected: N · Clear`) on the left.
+- A `Mass Archive N` button that archives every selected active workspace in one batch.
+
+<Image src={workspacesMassArchive} alt="Two workspaces selected, Mass Archive 2 button visible" inferSize quality="max" />
+
+The mass action only operates on rows that are both selected and currently active. Archived workspaces in the selection are skipped silently.
+
+As with bulk user actions, every mass operation is stamped with a single `batch_id` so the audit log can group it under one header.
+
+## Drawer: per-workspace details
+
+Clicking a row opens a side drawer showing:
+
+<Image src={workspacesDrawer} alt="Workspace drawer with members tab and audit history" inferSize quality="max" />
+
+- **Members tab** — every account that belongs to the workspace, with their role and a remove button. You can also re-role members inline.
+- **Audit tab** — recent admin actions targeting this workspace.
+
+The drawer has the same Prev/Next pager as the Users drawer, refetches when you switch rows, and dismisses on outside click or `Escape`.
+
+## Toolbar buttons
+
+- **Top 10 by storage** — quick sort/filter to surface the biggest workspaces. Disabled until backup data exists.
+- **Add workspace** — primary CTA, links to the regular workspace creation flow.
+- **Export CSV** — client-side CSV export of the currently filtered list. RFC 4180-compliant, no server roundtrip needed for this one.
+- **Presets** — save and reload filter combinations, same pattern as on the Users page.

@@ -367,6 +367,32 @@ export default defineConfig({
               },
             ],
           },
+          {
+            label: "Admin panel",
+            collapsed: true,
+            items: [
+              {
+                label: "Overview",
+                link: "/admin-panel/overview/",
+              },
+              {
+                label: "Users",
+                link: "/admin-panel/users/",
+              },
+              {
+                label: "Workspaces",
+                link: "/admin-panel/workspaces/",
+              },
+              {
+                label: "Audit log",
+                link: "/admin-panel/audit-log/",
+              },
+              {
+                label: "Configuration",
+                link: "/admin-panel/configuration/",
+              },
+            ],
+          },
         ],
       }),
     ],

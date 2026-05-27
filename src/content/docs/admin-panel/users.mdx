@@ -1,0 +1,122 @@
+---
+title: Users
+description: List, filter, edit, and bulk-manage accounts in your self-hosted Huly instance.
+---
+
+import { Image } from "astro:assets";
+import usersDefault from "../../../assets/screenshots/huly/admin-panel/users-default.png";
+import usersStatPills from "../../../assets/screenshots/huly/admin-panel/users-stat-pills.png";
+import usersActiveFilter from "../../../assets/screenshots/huly/admin-panel/users-active-filter.png";
+import usersOrphanFilter from "../../../assets/screenshots/huly/admin-panel/users-orphan-filter.png";
+import usersDrawer from "../../../assets/screenshots/huly/admin-panel/users-drawer.png";
+import usersBulkBar from "../../../assets/screenshots/huly/admin-panel/users-bulk-bar.png";
+
+The `Users` section is the default landing page of the admin panel. It shows every account on your instance with the columns you need to triage day to day: name, email, authentication methods, workspace count, last activity, and status.
+
+<Image src={usersDefault} alt="Users page with stat pills, filter row, and account table" inferSize quality="max" />
+
+## Stat pills
+
+Five clickable pills above the search row summarize the account base and double as quick filters:
+
+<Image src={usersStatPills} alt="Five clickable stat pills: Total, Active, Disabled, Admins, Orphan" inferSize quality="max" />
+
+- **Total** — every account, regardless of status. Clicking resets all filters.
+- **Active** — accounts that are enabled and can sign in. Green tint when active.
+- **Disabled** — accounts that have been disabled. Red tint.
+- **Admins** — accounts whose primary email appears in the `ADMIN_EMAILS` allowlist. Blue tint.
+- **Orphan** — active accounts with zero workspace memberships. Amber tint. These are the accounts to triage first because they cannot do anything useful until added to a workspace.
+
+Pills are toggle filters. Clicking the same pill twice clears it.
+
+<Image src={usersActiveFilter} alt="Active pill clicked, table narrowed to active accounts" inferSize quality="max" />
+
+Orphan accounts also get a small `orphan` badge inline in the **Workspaces** column, so you can spot them in mixed lists too:
+
+<Image src={usersOrphanFilter} alt="Orphan filter applied, account shows orphan badge in workspaces column" inferSize quality="max" />
+
+## Search and column filters
+
+The search box matches against name and email (substring, case-insensitive, 300 ms debounce). Each column header also has a small filter icon that opens a popup with column-specific options:
+
+- **Name** / **Email** — substring filters that combine with the global search via AND.
+- **Auth** — multi-select of `email`, `oidc`, `mixed`, `none`.
+- **Status** — multi-select of `active`, `disabled`.
+- **Workspaces** — count range (min, max).
+- **Last activity** — date range, or the special `never` predicate.
+
+The `All auth methods` and `All statuses` dropdowns next to the search box are convenience shortcuts for the single-value variants.
+
+## Sorting
+
+Every column with a small arrow next to the label is sortable. Click to toggle ascending/descending. The arrow appears only on the column that is currently driving the sort, so the header row stays uncluttered.
+
+## Drawer: per-account actions
+
+Clicking a row opens a side drawer with the account's full details and the actions you can take against it:
+
+<Image src={usersDrawer} alt="User drawer with workspace memberships, role pickers, and admin action buttons" inferSize quality="max" />
+
+The drawer header shows the account's name, primary email, status pill, and an Admin badge if applicable. Below that you find:
+
+- **Workspace memberships** — every workspace the account belongs to with a role picker (Owner, Maintainer, Member, Guest, Read-only). Changes take effect on save.
+- **Recent audit entries** — the last few admin actions targeting this account, with timestamps and the admin who performed them.
+- **Action buttons:**
+  - `Send password reset` — sends a reset link to the account's primary email.
+  - `Disable account` / `Enable account` — flips the `disabled_at` flag. Disabled accounts are signed out within seconds of the click via a force-logout transaction.
+  - `Add to workspace` — opens a workspace picker and assigns a role.
+  - `Remove from workspace` — removes the account from the selected workspace.
+
+The drawer has Prev/Next pager controls so you can step through accounts without going back to the table. Click outside the drawer or press `Escape` to dismiss.
+
+### Self-block
+
+When the drawer is opened on the calling admin's own row, the **Disable account** button is greyed out and labelled `Cannot disable yourself`. The server-side `cannot_self_disable` guard remains the security primitive — this is a UX layer so the admin sees the impossible-action labelled before the click reaches the server.
+
+### Workspace-root backlink (V5a)
+
+Each row in the drawer's **Workspaces** section exposes an `Open ↗` link next to the role picker. Clicking opens the workspace root (`/workbench/<workspace-url>`) in a new tab.
+
+The link is unconditional — there is no archived-state branching, because the admin-side `workspaceMemberships` payload does not carry an archived flag. If a workspace happens to be archived, the workbench-side renders its own "not available" view when the link is followed.
+
+This is intentionally a workspace-root link rather than an Employee deep-link. A future iteration may add a per-workspace `Ref<Employee>` enrichment so the link can jump directly to the user's Employee record inside HR; the current version is the zero-backend-changes version of that feature.
+
+## Bulk actions
+
+Select rows via the per-row checkboxes (or the select-all checkbox in the header) to enable the bulk action bar. The bar appears as a sticky strip directly above the table (between the filter row and the header row) and stays visible while you scroll — the position matches the standard data-grid convention so the affordance is where the eye expects it.
+
+<Image src={usersBulkBar} alt="Bulk action bar above the table with Add to workspace, Remove from workspace, Disable, Enable, Send password reset" inferSize quality="max" />
+
+Available bulk actions:
+
+- **Disable** — disables every selected account and force-logs them out.
+- **Send password reset** — sends a reset link to every selected account's primary email.
+- **Add to workspace** — picks one workspace and assigns the chosen role to every selected account.
+- **Remove from workspace** — picks one workspace and removes every selected account from it.
+
+When the selection equals the entire (unfiltered) account list, the panel asks you to type the count to confirm before proceeding — a guard against accidental fleet-wide actions.
+
+Every bulk action is stamped with a single `batch_id` UUID in the audit log so the audit page can group all the resulting rows under one header. See [Audit log](/admin-panel/audit-log) for details.
+
+## Add user
+
+The primary `Add user` button in the toolbar opens a small form to create a new account directly. You provide a first name, last name, and primary email, and choose whether to:
+
+- send an invite email so the user sets their own password, or
+- set the password yourself (useful for service accounts).
+
+You can optionally pick an initial workspace and role so the account is usable immediately.
+
+## Export CSV
+
+The `Export CSV` button next to `Presets` exports the currently filtered account list. The export uses an `Authorization: Bearer` header (no token in the URL) and the server enforces a rate limit of 5 requests per minute per token. If you hit it you will get a 429 with `Retry-After: 60`. The CSV is RFC 4180-compliant: CRLF line endings, UTF-8 BOM for Excel compatibility.
+
+## Presets
+
+The `Presets` dropdown groups three operations:
+
+- **Save current filter** — give the current search/filter combination a name to reuse later.
+- **Load preset** — apply a previously saved filter combination.
+- **Manage presets** — rename or delete saved presets.
+
+Presets are scoped to your account and stored locally.

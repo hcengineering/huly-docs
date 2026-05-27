@@ -1,0 +1,90 @@
+---
+title: Configuration
+description: Environment variables and prerequisites for the Huly admin panel.
+---
+
+The admin panel is wired into the account service. Configuration happens through environment variables on the account pod.
+
+## Required: ADMIN_EMAILS
+
+`ADMIN_EMAILS` is a comma-separated list of primary email addresses that are allowed to use the admin panel. Anyone whose Huly account's primary email matches an entry on this list sees the `Admin panel` link in their workbench menu and can call admin RPCs. Everyone else gets a server-side `403`.
+
+```bash
+# docker-compose.yml or .env
+ADMIN_EMAILS=ops@example.com,security@example.com
+```
+
+Notes:
+
+- Matching is case-insensitive.
+- Whitespace around entries is trimmed.
+- An empty or unset `ADMIN_EMAILS` means **no one** has admin access. Existing accounts that previously had admin access lose it on the next sign-in.
+- Removing an email from the list while that admin is signed in does **not** force-log them out — they keep their session until it expires. Their next admin-only RPC call is rejected.
+- The reverse — an admin disabling themselves — does force a logout via the same mechanism used for any disabled account.
+
+## Optional: AUDIT_RETENTION_DAYS
+
+`AUDIT_RETENTION_DAYS` controls how long admin audit entries are kept before the daily prune job deletes them.
+
+```bash
+AUDIT_RETENTION_DAYS=365   # default
+AUDIT_RETENTION_DAYS=90    # keep 90 days only
+AUDIT_RETENTION_DAYS=0     # disable prune entirely
+```
+
+- Default: `365` (one year).
+- `0` disables the prune. Use this if you forward audit rows to an external SIEM before they are deleted, and you want the database to be the source of truth indefinitely.
+- The prune job runs once per 24 hours.
+- On the legacy MongoDB backend, the timer auto-disables itself the first time the prune call returns `not implemented`, so you do not need to set this to `0` manually.
+
+V13 also adds an `admin_action_denied` audit action; see [Audit log](/admin-panel/audit-log) for the denial reasons and rate-limit behaviour.
+
+## Backend prerequisites
+
+The admin panel only fully works against the PostgreSQL/CockroachDB backend (`CommunityDB`). The implementation uses SQL patterns (typed query builders, partial indexes, batch UUID stamping) that the Mongo-based account store does not implement.
+
+On the Mongo backend:
+
+- Listing endpoints return `not implemented`.
+- The admin panel UI shows error states for every section.
+- The audit-retention timer auto-disables.
+
+Plan a migration to CockroachDB before relying on the admin panel in production.
+
+## Migrations
+
+The admin panel ships with four forward-only migrations on the `account` database:
+
+| Migration | Adds |
+|-----------|------|
+| V27 | `account.disabled_at`, `account.token_version`, `account.last_activity_at`, `admin_audit_log` table |
+| V28 | `admin_audit_log.target_account` NULLABLE + five query-tuning indexes |
+| V29 | `admin_audit_log.batch_id UUID NULL` |
+| V30 | Partial index on `admin_audit_log(batch_id) WHERE batch_id IS NOT NULL` |
+
+All four are `IF NOT EXISTS`-guarded and idempotent. They run on the next account-pod startup after upgrade. No downtime is required.
+
+There are no down-migrations. If you need to roll back, leave the schema in place and redeploy the previous account image. The new columns are nullable or have defaults that keep older code paths working.
+
+## Security posture
+
+The admin panel applies several layers of hardening worth knowing about:
+
+- **Server-side admin check** on every admin RPC (`assertAdmin`) — the UI only hides the menu, it does not gate access. A non-admin who manually crafts a request gets a `403`.
+- **CSV export rate limit:** 5 requests per minute per token. The token is SHA-256-hashed before being used as the limiter key, so a leaked memory dump does not expose a usable bearer.
+- **CSV bearer in header, not URL:** the admin UI uses `fetch + Authorization: Bearer + blob download` instead of `window.open(url-with-token)`. The server still accepts the legacy `?token=…` query parameter for one release with a deprecation warning so out-of-band scripts keep working.
+- **Filter param hardening:** the base64-JSON filter parameter parser rejects `__proto__` / `constructor` / `prototype` keys recursively and caps recursion at 32 levels, so a crafted filter cannot reach prototype pollution.
+- **LIKE wildcard escape:** all substring filters escape `%`, `_`, and `\` with explicit `ESCAPE '\'` clauses, so a search for `100%` matches the literal string and not "any prefix ending in 1".
+- **Force-logout on disable:** when an admin disables an account (including their own), every active session for that account is invalidated within seconds via an `AccountDisabled` transaction sent through the workbench websocket.
+
+### Disable behaviour
+
+The admin panel exposes one account-state action: **Disable**. Setting the disabled flag:
+
+- Writes `disabled_at` on the account row.
+- Increments `token_version` to invalidate every active session for that account (force-logout takes effect within seconds of the next request).
+- Leaves person, social_id, mailbox secrets, workspace memberships, billing subscription, and per-workspace permissions intact.
+
+Disable is reversible — Enable flips `disabled_at` back to NULL. Re-registration with the same email is implicitly blocked while disabled because the existing account row still occupies the email's `social_id` slot.
+
+The companion code PR originally included a hard-delete action with a database cascade across account, workspace_members, subscription, workspace_permissions, mailbox secrets, and integration secrets. That action was removed before the PR shipped: a hard-delete that does not also visit workspace-side documents (issues, comments, cards) is unsafe by default — it can orphan workspaces whose sole Owner is removed, and it leaves authored content silently re-attributed to the un-verified social_id of the deleted account. Hard-delete, if it returns, will be a separate smaller PR with a content/reference audit, a sole-owner workspace guard, and an impact preview before confirmation.
