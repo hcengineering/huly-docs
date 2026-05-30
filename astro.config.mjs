@@ -116,6 +116,10 @@ export default defineConfig({
                 link: "/task-tracking/issue-collaborators/",
               },
               {
+                label: "Sharing issues via @-mentions",
+                link: "/task-tracking/sharing-via-mentions/",
+              },
+              {
                 label: "Labels",
                 link: "/task-tracking/labels/",
               },

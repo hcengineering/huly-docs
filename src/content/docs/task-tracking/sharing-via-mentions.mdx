@@ -1,0 +1,76 @@
+---
+title: Sharing issues via @-mentions
+description: Learn how @-mentions can grant cross-space access to an issue, and what the mentioned person sees in their navigator.
+---
+
+import { Image } from 'astro:assets';
+import composerMentionPicker from '../../../assets/screenshots/huly/mention-grants/composer-mention-picker.png';
+import disclosureDialog from '../../../assets/screenshots/huly/mention-grants/disclosure-dialog.png';
+import navigatorSharedBadge from '../../../assets/screenshots/huly/mention-grants/navigator-shared-badge.png';
+import issueFromCollabView from '../../../assets/screenshots/huly/mention-grants/issue-from-collab-view.png';
+
+When you `@-mention` someone on an issue in a project they are not a member of, Huly can grant them read access to that specific issue — without adding them to the project itself. The mentioned person can then open the issue, follow its activity, and comment, while the rest of the project stays out of view.
+
+This page covers what you'll see as the author, what the mentioned person sees, and how to revoke a grant later.
+
+## When the disclosure dialog appears
+
+In the issue's comment composer, type `@` and pick a person from the suggestion list.
+
+<Image src={composerMentionPicker} alt="Comment composer with the @-mention picker open, listing employees, meeting minutes, and related issues" />
+
+When you send the comment, Huly checks each mentioned person against the project membership:
+
+- If the person is already a member of the project, the mention is a normal notification — no dialog appears.
+- If the person is **not** a member of the project, the disclosure dialog opens before send.
+
+<Image src={disclosureDialog} alt="Disclosure dialog titled 'This mention grants access' listing the mentioned person with a checkbox, and Cancel / Send-with-selected-grants buttons" />
+
+For each person not yet in the project, you choose:
+
+- **Grant access** *(default — checkbox ticked)* — the person becomes a collaborator on this issue. They will see the issue in their navigator (see below) and receive notifications according to their own settings.
+- **Don't grant** *(uncheck the box)* — the comment is sent with the mention, but no access is granted. If the person already has access through another path, they can still open the issue; otherwise the mention simply links to a page they cannot see.
+
+**Cancelling the dialog** returns to the composer with your draft text intact. Nothing is sent.
+
+> The check is per-person, so a single comment with several mentions can grant access to some people while leaving others unchanged.
+
+## What the mentioned person sees
+
+Once a grant is in place, the project hosting the issue surfaces in the mentioned person's tracker navigator under **Your Projects**, with a dimmed icon and a tooltip reading "Shared with you".
+
+<Image src={navigatorSharedBadge} alt="Tracker navigator showing two projects: a full-membership project with all sub-views, and a collab-only project with a dimmed icon and only the Issues sub-view visible" />
+
+Inside the shared project, only the **Issues** sub-view is available. Components, Milestones, and Templates remain hidden because the mentioned person has read access to specific issues only, not to those project-level views.
+
+<Image src={issueFromCollabView} alt="The issue page as seen by the mentioned person, showing the issue header, comment composer, and activity feed with a granted mention from the author" />
+
+The mentioned person can read the issue, follow its activity, comment, and use `@-mentions` themselves. They cannot edit issue fields (title, status, assignee, dates, etc.) because they remain a non-member of the project — only members can change project-managed metadata.
+
+## Opting out of granting on a specific mention
+
+You can mention someone without offering them access. In the picker, hold a modifier or pick from the "Mention only" item (depending on your client build) — the rendered reference carries the attribute `grantsAccess="false"` and the disclosure dialog will skip it.
+
+Use this when:
+
+- You want to credit or quote someone in a discussion thread without inviting them in.
+- The mentioned person is a project-wide stakeholder who should be added through normal membership, not per-issue.
+
+## Edit semantics: add-only re-grant
+
+Editing a comment to add a new `@-mention` follows the same disclosure flow as a fresh send: a dialog appears if the newly-mentioned person is not a project member.
+
+Editing to **remove** a mention does **not** retract the grant. A person who was added as a collaborator on a previous version of the comment remains a collaborator until the grant is removed explicitly. This is deliberate — silently losing access mid-thread is more surprising than seeing a kept name.
+
+To remove a grant today, the issue owner or a workspace admin must remove the corresponding collaborator record. A UI for managing existing grants is planned for a follow-up release.
+
+## Which document types support mention grants
+
+`@-mention` grants currently apply to issues only. Mentions on documents in other classes (channels, direct messages, cards, etc.) still trigger notifications but do not change access — those classes rely on their existing membership rules.
+
+If you are adopting Huly's collaboration model for additional document types, the opt-in is per class through the `ClassCollaborators.mentionsGrantAccess` flag in the model; see the corresponding source comments in `models/tracker/src/index.ts` for the canonical example.
+
+## Related
+
+- [Issue collaborators](/task-tracking/issue-collaborators/) — manual collaborators added through the right-sidebar (independent of `@-mentions`).
+- [Creating issues](/task-tracking/creating-issues/) — issue authoring basics.
